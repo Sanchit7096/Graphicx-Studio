@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
-import logoImg from '../assets/Logo/Gemini_Generated_Image_oflpeioflpeioflp-removebg-preview.png';
+import logoImg from '../assets/Logo/Image_from_iOS__2_-removebg-preview.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[150] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] py-0">
+    <nav className="fixed top-0 left-0 w-full z-[150] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] py-6 md:py-8">
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between relative text-white">
 
         {/* Responsive Logo Branding */}
         <div
-          className="flex items-center group cursor-pointer pointer-events-auto animate-in fade-in slide-in-from-left-8 duration-700 h-16 md:h-auto"
+          className="flex items-center group cursor-pointer pointer-events-auto animate-in fade-in slide-in-from-left-8 duration-700"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <div className="relative transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105 h-20 sm:h-32 md:h-48 w-auto -mt-2 sm:-mt-6 md:-mt-10">
+          <div className="relative transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105 h-12 md:h-14 w-auto flex items-center">
             <img
               src={logoImg}
               alt="GraphicX Studio Logo"
-              className="h-full w-auto object-contain filter drop-shadow-[0_0_35px_rgba(46,220,195,0.4)]"
+              className="h-full w-auto object-contain rounded-md"
               loading="eager"
             />
           </div>
         </div>
 
         {/* Desktop Navigation Menu */}
-        <div className="hidden md:flex items-center gap-2 pointer-events-auto animate-in fade-in slide-in-from-right-8 duration-700 pt-0 transition-all duration-500 -mt-2 md:-mt-12">
+        <div className="hidden md:flex items-center gap-2 pointer-events-auto animate-in fade-in slide-in-from-right-8 duration-700 transition-all duration-500">
           <div className="flex items-center rounded-full p-2 pr-2.5 bg-white/[0.03] backdrop-blur-3xl border border-white/10 shadow-2xl">
             <button className="relative px-8 py-3 text-[11px] font-black hover:text-white transition-all duration-300 uppercase tracking-[0.2em] whitespace-nowrap overflow-hidden group/btn1 text-white/60">
               <span className="relative z-10 font-bold tracking-widest leading-none text-white">Our Work</span>

@@ -1,11 +1,23 @@
 import Hero from './Component/Hero';
-import BrandingSolutions from './Component/BrandingSolutions';
+import About from './Pages/About';
+import BrandShowcase from './Component/BrandShowcase';
+import Service from './Pages/Service';
+import Feature from './Pages/Feature';
+import WhyChooseUs from './Pages/WhyChooseUs';
+import Footer from './Component/Footer';
 
 function App() {
   return (
     <div className="min-h-screen bg-black">
       <Hero />
-      <BrandingSolutions />
+      <BrandShowcase />
+      <About />
+      <Service />
+      <Feature />
+      <WhyChooseUs />
+      <Footer />
+
+
 
 
 
