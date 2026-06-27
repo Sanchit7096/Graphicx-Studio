@@ -69,7 +69,7 @@ const About = () => {
                     </p>
 
                     <p className="animate-fade">
-                        For over 6 years, we have been the creative engine behind successful brand identities, eye-catching signage, and high-converting digital assets. We don’t just create designs; we build visual experiences that capture attention, engage audiences, and drive business growth.
+                        For over 8 years, we have been the creative engine behind successful brand identities, eye-catching signage, and high-converting digital assets. We don’t just create designs; we build visual experiences that capture attention, engage audiences, and drive business growth.
                     </p>
 
                     <p className="animate-fade">

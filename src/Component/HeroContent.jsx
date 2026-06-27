@@ -5,6 +5,7 @@ const HeroContent = () => {
   const containerRef = useRef(null);
   const line1Ref = useRef(null);
   const line2Ref = useRef(null);
+  const line3Ref = useRef(null);
   const bodyRef = useRef(null);
   const btn1Ref = useRef(null);
   const btn2Ref = useRef(null);
@@ -39,15 +40,17 @@ const HeroContent = () => {
 
       const chars1 = splitLine(line1Ref.current);
       const chars2 = splitLine(line2Ref.current);
+      const chars3 = splitLine(line3Ref.current);
       tl.from(chars1, { y: '120%', opacity: 0, rotateX: -80, stagger: 0.03, duration: 1, ease: 'power4.out' }, 0.5);
       tl.from(chars2, { y: '120%', opacity: 0, rotateX: -80, stagger: 0.03, duration: 1, ease: 'power4.out' }, 0.75);
+      tl.from(chars3, { y: '120%', opacity: 0, rotateX: -80, stagger: 0.03, duration: 1, ease: 'power4.out' }, 1.0);
 
-      tl.from(dividerRef.current, { scaleX: 0, transformOrigin: 'left', duration: 0.8, ease: 'power2.out' }, 1.2);
-      tl.from(bodyRef.current, { y: 30, opacity: 0, duration: 1 }, 1.3);
-      tl.from([btn1Ref.current, btn2Ref.current], { y: 20, opacity: 0, stagger: 0.15, duration: 0.8 }, 1.5);
-      tl.from(statsRef.current?.children, { y: 20, opacity: 0, stagger: 0.12, duration: 0.8 }, 1.7);
+      tl.from(dividerRef.current, { scaleX: 0, transformOrigin: 'left', duration: 0.8, ease: 'power2.out' }, 1.4);
+      tl.from(bodyRef.current, { y: 30, opacity: 0, duration: 1 }, 1.5);
+      tl.from([btn1Ref.current, btn2Ref.current], { y: 20, opacity: 0, stagger: 0.15, duration: 0.8 }, 1.7);
+      tl.from(statsRef.current?.children, { y: 20, opacity: 0, stagger: 0.12, duration: 0.8 }, 1.9);
 
-      gsap.to([line1Ref.current, line2Ref.current], {
+      gsap.to([line1Ref.current, line2Ref.current, line3Ref.current], {
         y: -6, duration: 3.5, ease: 'sine.inOut', yoyo: true, repeat: -1, stagger: 0.5,
       });
     }, containerRef);
@@ -77,19 +80,27 @@ const HeroContent = () => {
         <h1 className="m-0">
           <span
             ref={line1Ref}
-            data-text="We Build the"
+            data-text="We Create"
             className="block overflow-hidden uppercase font-black leading-[0.88] tracking-tight text-white"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(64px, 11vw, 160px)', letterSpacing: '-0.02em' }}
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(44px, 7.5vw, 110px)', letterSpacing: '-0.02em' }}
           >
-            We Build the
+            We Create
           </span>
           <span
             ref={line2Ref}
-            data-text="Presence"
+            data-text="Brand Identity"
             className="block overflow-hidden uppercase font-black leading-[0.88] italic text-transparent pl-[clamp(16px,3vw,60px)]"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(64px, 11vw, 160px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(44px, 7.5vw, 110px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
           >
-            Presence
+            Brand Identity
+          </span>
+          <span
+            ref={line3Ref}
+            data-text='Not Just "Sign Board"'
+            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-tight text-white"
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(44px, 7.5vw, 110px)', letterSpacing: '-0.02em' }}
+          >
+            Not Just "Sign Board"
           </span>
         </h1>
 
@@ -145,7 +156,7 @@ const HeroContent = () => {
             className="font-black leading-none text-white"
             style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(44px, 4.5vw, 42px)' }}
           >
-            150<span className="text-[#2edcc3]">+</span>
+            4k+
           </div>
           <div className="mt-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">
             Projects Done

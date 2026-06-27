@@ -1,85 +1,93 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import image1 from "../assets/Feature/img-1.jpeg";
+import image2 from "../assets/Feature/img-2.jpeg";
+import image4 from "../assets/Feature/img-4.png";
+import image5 from "../assets/Feature/img-5.png";
+import image6 from "../assets/Feature/img-6.png";
+import image7 from "../assets/Feature/img-7.jpeg";
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
     id: 1,
-    client: "ASTAR RETAIL",
-    title: "Flagship Storefront",
-    category: "LED & 3D Letters",
-    beforeImage: "https://images.unsplash.com/photo-1555529733-0e670560f7e1?q=80&w=1600&auto=format&fit=crop", 
-    afterImage: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1600&auto=format&fit=crop", 
-    desc: "Complete exterior transformation featuring custom 3D illuminated letters and ACP cladding."
+    client: "Social Buddies",
+    title: "Corporate Branding",
+    category: "Acrylic & Office Branding",
+    beforeImage: image1,
+    afterImage: image2,
+    desc: "Modern acrylic logo installation that creates a clean, professional, and memorable workspace identity.."
   },
   {
     id: 2,
-    client: "NEXUS HQ",
-    title: "Corporate Branding",
-    category: "Acrylic & Edge-Lit",
-    beforeImage: "https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=1600&auto=format&fit=crop", 
-    afterImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop", 
-    desc: "Interior branding rollout turning a plain office into an immersive brand experience."
+    client: "AK FITNESS",
+    title: "Illuminated Gym Branding",
+    category: "LED & 3D Letters",
+    beforeImage: image5,
+    afterImage: image4,
+    desc: "Transforming a fitness space with custom LED channel letters that command attention both day and night."
   },
   {
     id: 3,
-    client: "LUMINA CAFE",
-    title: "Neon Restoration",
+    client: "BALAJI JEWELLERS",
+    title: "Luxury Jewellery Store Signage",
     category: "Custom Neon Signs",
-    beforeImage: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600&auto=format&fit=crop", 
-    afterImage: "https://images.unsplash.com/photo-1554290712-e640351074bd?q=80&w=1600&auto=format&fit=crop", 
-    desc: "Brought an iconic vintage storefront back to life with modern energy-efficient neon glass tubing."
+    beforeImage: image7,
+    afterImage: image6,
+    desc: "A complete signage transformation for a premium jewellery store, blending elegance with modern illumination."
   }
 ];
 
 // Reusable Image Slider Component
 const ImageComparisonSlider = ({ before, after }) => {
   const [sliderPos, setSliderPos] = useState(50);
-  
+
   return (
     <div className="relative w-full h-[45vh] lg:h-[55vh] rounded-2xl overflow-hidden select-none">
       {/* After Image (Background) */}
-      <img 
-        src={after} 
-        alt="After Transformation" 
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
+      <img
+        src={after}
+        alt="After Transformation"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
-      
+
       {/* Before Image (Foreground, Clipped) */}
-      <img 
-        src={before} 
-        alt="Before Transformation" 
+      <img
+        src={before}
+        alt="Before Transformation"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{ clipPath: `polygon(0 0, ${sliderPos}% 0, ${sliderPos}% 100%, 0 100%)` }}
       />
 
       {/* Slider Line and Handle */}
-      <div 
+      <div
         className="absolute top-0 bottom-0 w-[2px] bg-white pointer-events-none z-10 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
         style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)' }}
       >
         {/* Circle Handle */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center shadow-xl">
-           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-             <path d="M15 18l-6-6 6-6" /> {/* Left Arrow */}
-             <path d="M9 18l6-6-6-6" />   {/* Right Arrow */}
-           </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 18l-6-6 6-6" /> {/* Left Arrow */}
+            <path d="M9 18l6-6-6-6" />   {/* Right Arrow */}
+          </svg>
         </div>
       </div>
 
       {/* Invisible Range Input for accessibility and native touch/drag handling */}
-      <input 
-        type="range" 
-        min="0" 
-        max="100" 
+      <input
+        type="range"
+        min="0"
+        max="100"
         value={sliderPos}
         onChange={(e) => setSliderPos(e.target.value)}
         className="absolute inset-0 w-full h-full opacity-0 z-20 cursor-ew-resize touch-pan-y"
         aria-label="Image comparison slider"
       />
-      
+
       {/* Labels */}
       <div className="absolute top-4 left-4 z-10 bg-black/50 backdrop-blur-md border border-white/10 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full pointer-events-none">
         Before
@@ -97,7 +105,7 @@ const Feature = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Header fade in
-      gsap.fromTo('.feature-header', 
+      gsap.fromTo('.feature-header',
         { y: 50, opacity: 0 },
         {
           y: 0,
@@ -134,7 +142,7 @@ const Feature = () => {
 
   return (
     <section ref={containerRef} className="w-full bg-black py-24 md:py-32 border-t border-white/5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-      
+
       {/* Header */}
       <div className="feature-header max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">
         <div className="flex items-center justify-center gap-4 mb-6">
@@ -142,7 +150,7 @@ const Feature = () => {
           <span className="text-[#2edcc3] text-sm font-bold tracking-widest uppercase">Transformations</span>
           <span className="w-12 h-[1px] bg-[#2edcc3]"></span>
         </div>
-        <h2 
+        <h2
           className="text-5xl md:text-7xl font-black text-white uppercase leading-[0.9]"
           style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
         >
@@ -157,10 +165,10 @@ const Feature = () => {
       <div className="w-full max-w-screen-2xl mx-auto px-6 md:px-10 lg:px-16 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
         {projects.map((project, index) => (
           <div key={project.id} className="project-card flex flex-col gap-6 w-full group">
-            
+
             {/* Interactive Slider First */}
             <ImageComparisonSlider before={project.beforeImage} after={project.afterImage} />
-            
+
             {/* Project Info Header */}
             <div className="flex flex-col gap-3 px-2">
               <div className="flex justify-between items-start">
@@ -171,21 +179,21 @@ const Feature = () => {
                   {project.client}
                 </span>
               </div>
-              <h3 
+              <h3
                 className="text-3xl lg:text-4xl font-black uppercase text-white leading-none transition-colors duration-300 group-hover:text-[#2edcc3]"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
                 {project.title}
               </h3>
             </div>
-            
+
             {/* Description */}
             <div className="px-2">
               <p className="text-white/50 text-sm font-light leading-relaxed">
                 {project.desc}
               </p>
             </div>
-            
+
           </div>
         ))}
       </div>

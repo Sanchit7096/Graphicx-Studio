@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-[150] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] py-6 md:py-8">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between relative text-white">
+      <div className="max-w-[95%] mx-auto px-4 md:px-6 flex items-center justify-between relative text-white">
 
         {/* Responsive Logo Branding */}
         <div
