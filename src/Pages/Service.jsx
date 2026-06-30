@@ -82,7 +82,7 @@ const Service = () => {
       ref={sectionRef}
       id="services"
       className="w-full bg-black py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-white/[0.05]"
-      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+      style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="max-w-screen-xl mx-auto">
 
@@ -94,15 +94,13 @@ const Service = () => {
               <span className="text-[#D6D6D6] text-[10px] font-bold tracking-[0.3em] uppercase">Our Expertise</span>
             </div>
             <h2
-              className="text-5xl md:text-7xl font-black text-white uppercase leading-[0.88]"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+              className="text-4xl md:text-5xl font-black text-white uppercase leading-[0.88]"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              Premium Services
+              OUR Services
             </h2>
           </div>
-          <p className="text-white/40 text-sm font-light leading-relaxed max-w-xs">
-            Visual assets crafted to captivate, communicate, and convert — from first glance to lasting impression.
-          </p>
+
         </div>
 
         {/* Cards */}
@@ -131,7 +129,7 @@ const Service = () => {
                 <div>
                   <h3
                     className="text-2xl md:text-3xl font-black text-white uppercase mb-2 leading-tight"
-                    style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     {svc.title}
                   </h3>
@@ -155,3 +153,4 @@ const Service = () => {
 };
 
 export default Service;
+

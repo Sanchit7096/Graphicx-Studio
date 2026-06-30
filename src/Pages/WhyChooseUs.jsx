@@ -60,8 +60,8 @@ const WhyChooseUs = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-black py-18 md:py-18 border-t border-white/5"
-      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+      className="w-full bg-black py-8 md:py-34 border-t border-white/5"
+      style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
 
@@ -75,8 +75,8 @@ const WhyChooseUs = () => {
                 <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">The GraphicX Advantage</span>
               </div>
               <h2
-                className="text-5xl md:text-7xl font-black text-white uppercase leading-[0.9] tracking-tight mb-8"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                className="text-4xl md:text-5xl mx-w-2xl font-black text-white uppercase leading-[0.9] tracking-tight mb-8"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 Why Choose Us
               </h2>
@@ -106,7 +106,7 @@ const WhyChooseUs = () => {
                       </span>
                       <h3
                         className={`text-2xl md:text-4xl font-black uppercase transition-colors duration-300 ${isOpen ? 'text-white' : 'text-white/60 group-hover:text-white'}`}
-                        style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                        style={{ fontFamily: "'Poppins', sans-serif" }}
                       >
                         {reason.title}
                       </h3>
@@ -139,3 +139,4 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
+

@@ -15,27 +15,21 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    client: "Social Buddies",
     title: "Corporate Branding",
-    category: "Acrylic & Office Branding",
     beforeImage: image1,
     afterImage: image2,
     desc: "Modern acrylic logo installation that creates a clean, professional, and memorable workspace identity.."
   },
   {
     id: 2,
-    client: "AK FITNESS",
     title: "Illuminated Gym Branding",
-    category: "LED & 3D Letters",
     beforeImage: image5,
     afterImage: image4,
     desc: "Transforming a fitness space with custom LED channel letters that command attention both day and night."
   },
   {
     id: 3,
-    client: "BALAJI JEWELLERS",
     title: "Luxury Jewellery Store Signage",
-    category: "Custom Neon Signs",
     beforeImage: image7,
     afterImage: image6,
     desc: "A complete signage transformation for a premium jewellery store, blending elegance with modern illumination."
@@ -141,7 +135,7 @@ const Feature = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full bg-black py-18  md:py-18 border-t border-white/5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+    <section ref={containerRef} className="w-full bg-black py-8  md:py-10 border-t border-white/5" style={{ fontFamily: "'Poppins', sans-serif" }}>
 
       {/* Header */}
       <div className="feature-header max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">
@@ -151,12 +145,12 @@ const Feature = () => {
           <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
         </div>
         <h2
-          className="text-5xl md:text-7xl font-black text-white uppercase leading-[0.9]"
-          style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+          className="text-4xl md:text-5xl font-black text-white uppercase leading-[0.9]"
+          style={{ fontFamily: "'Poppins', sans-serif" }}
         >
           Before & After
         </h2>
-        <p className="mt-6 text-white/50 text-base md:text-lg font-light max-w-2xl mx-auto">
+        <p className="mt-6 text-white/50 text-base md:text-lg font-light max-w-3xl mx-auto">
           Drag the sliders to witness the incredible visual impact of premium signage.
         </p>
       </div>
@@ -181,7 +175,7 @@ const Feature = () => {
               </div>
               <h3
                 className="text-3xl lg:text-4xl font-black uppercase text-[#D6D6D6] leading-none"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 {project.title}
               </h3>
@@ -203,3 +197,4 @@ const Feature = () => {
 };
 
 export default Feature;
+

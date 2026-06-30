@@ -5,14 +5,14 @@ const Footer = () => {
     <footer
       id="contact"
       className="w-full bg-[#050505] border-t border-white/5"
-      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+      style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       {/* ── FOOTER GRID SECTION (Above Map) ── */}
       <div className="max-w-screen-2xl  mx-auto px-6 md:px-12 lg:px-24 py-24 md:py-28">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Column 1: Contact Us */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Contact Us
             </h4>
             <div className="flex flex-col gap-3.5 text-base">
@@ -38,7 +38,7 @@ const Footer = () => {
 
           {/* Column 2: Company */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Company
             </h4>
             <div className="flex flex-col gap-3.5 text-base">
@@ -59,7 +59,7 @@ const Footer = () => {
 
           {/* Column 3: More Information */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Poppins', sans-serif" }}>
               More Information
             </h4>
             <div className="flex flex-col gap-3.5 text-base">
@@ -77,7 +77,7 @@ const Footer = () => {
 
           {/* Column 4: Social Media */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Social Media
             </h4>
             <div className="flex flex-col gap-6">
@@ -169,3 +169,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
