@@ -4,113 +4,74 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import img1 from "../assets/Service/img-1.jpeg";
 import img2 from "../assets/Service/img-2.jpeg";
 import img3 from "../assets/Feature/img-7.png";
-import img4 from "../assets/Feature/img-1.jpeg"
+import img4 from "../assets/Feature/img-1.jpeg";
 import img5 from "../assets/Service/img-5.jpeg";
-
-
+import img6 from "../assets/Service/img-3.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    id: 1,
+    id: "01",
     title: "LED Signboards",
-    desc: "High-visibility, energy-efficient illuminated displays that make your brand impossible to ignore, day or night.",
-    className: "md:col-span-2 md:row-span-2 min-h-[300px] md:min-h-[400px]",
-    gradient: "from-[#2edcc3]/40 via-[#2edcc3]/10 to-transparent",
-    accent: "text-[#2edcc3]",
-    icon: "✦",
-    image: img3
+    desc: "Illuminated displays built to make your brand impossible to ignore.",
+    image: img3,
   },
   {
-    id: 2,
+    id: "02",
     title: "Acrylic Signboards",
-    desc: "Sleek, premium, and highly durable signage for a sophisticated modern aesthetic.",
-    className: "md:col-span-1 md:row-span-1 min-h-[250px]",
-    gradient: "from-white/20 via-white/5 to-transparent",
-    accent: "text-white",
-    icon: "◈",
-    image: img5
+    desc: "Crystal-clear, premium finish that elevates any storefront.",
+    image: img5,
   },
   {
-    id: 3,
+    id: "03",
     title: "ACP Signboards",
-    desc: "Robust aluminum composite panels built to withstand the elements.",
-    className: "md:col-span-1 md:row-span-1 min-h-[250px]",
-    gradient: "from-white/20 via-white/5 to-transparent",
-    accent: "text-white",
-    icon: "⬡",
-    image: img2
+    desc: "Durable aluminum panels with a sharp professional look.",
+    image: img2,
   },
   {
-    id: 4,
+    id: "04",
     title: "Neon Signs",
-    desc: "Vibrant, custom-shaped neon lighting to give your space a retro yet contemporary creative edge.",
-    className: "md:col-span-2 md:row-span-1 min-h-[250px]",
-    gradient: "from-[#ff4d6d]/40 via-[#ff4d6d]/10 to-transparent",
-    accent: "text-[#ff4d6d]",
-    icon: "◎",
-    image: "https://images.unsplash.com/photo-1554290712-e640351074bd?q=80&w=1000&auto=format&fit=crop"
+    desc: "Custom neon lighting that turns your space into a statement.",
+    image: "https://images.unsplash.com/photo-1554290712-e640351074bd?q=80&w=1000&auto=format&fit=crop",
   },
   {
-    id: 5,
+    id: "05",
     title: "3D Letter Signs",
-    desc: "Bold dimensional lettering that adds depth and architectural impact to your storefront.",
-    className: "md:col-span-1 md:row-span-1 min-h-[250px]",
-    gradient: "from-white/20 via-white/5 to-transparent",
-    accent: "text-white",
-    icon: "◩",
-    image: img1
+    desc: "Bold dimensional lettering that commands attention.",
+    image: img1,
   },
   {
-    id: 6,
+    id: "06",
     title: "Corporate Branding",
-    desc: "End-to-end visual identity systems spanning across physical signage and digital touchpoints.",
-    className: "md:col-span-3 md:row-span-1 min-h-[250px]",
-    gradient: "from-[#7b61ff]/40 via-[#7b61ff]/10 to-transparent",
-    accent: "text-[#7b61ff]",
-    icon: "❖",
-    image: img4
-  }
+    desc: "End-to-end identity systems — signage, print, and digital.",
+    image: img4,
+  },
 ];
 
 const Service = () => {
   const sectionRef = useRef(null);
-  const gridRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Heading animation
-      gsap.fromTo('.service-heading',
-        { y: 40, opacity: 0 },
+      gsap.fromTo('.svc-head',
+        { y: 25, opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-          }
+          y: 0, opacity: 1, duration: 1, ease: 'power3.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 78%' }
         }
       );
 
-      // Bento cards staggered entrance
-      gsap.fromTo('.bento-card',
-        { y: 60, opacity: 0, scale: 0.95 },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          stagger: 0.1,
-          duration: 0.8,
-          ease: 'back.out(1.2)',
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: 'top 85%',
+      gsap.utils.toArray('.svc-card').forEach((card, i) => {
+        gsap.fromTo(card,
+          { y: 40, opacity: 0 },
+          {
+            y: 0, opacity: 1, duration: 0.8, ease: 'power3.out',
+            delay: i * 0.07,
+            scrollTrigger: { trigger: card, start: 'top 90%' }
           }
-        }
-      );
+        );
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -120,71 +81,69 @@ const Service = () => {
     <section
       ref={sectionRef}
       id="services"
-      className="relative w-full bg-black py-18  md:py-18 px-6 md:px-12 lg:px-24 overflow-hidden"
+      className="w-full bg-black py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-white/[0.05]"
       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
     >
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="max-w-screen-xl mx-auto">
 
-        {/* Header section */}
-        <div className="service-heading mb-16 md:mb-24 flex flex-col items-center text-center">
-          <div className="flex items-center gap-4 mb-6">
-            <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
-            <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">Our Expertise</span>
-            <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
+        {/* Header */}
+        <div className="svc-head flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16 md:mb-20">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-8 h-[1px] bg-[#D6D6D6]" />
+              <span className="text-[#D6D6D6] text-[10px] font-bold tracking-[0.3em] uppercase">Our Expertise</span>
+            </div>
+            <h2
+              className="text-5xl md:text-7xl font-black text-white uppercase leading-[0.88]"
+              style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+            >
+              Premium Services
+            </h2>
           </div>
-          <h2
-            className="text-5xl md:text-7xl font-black text-white uppercase leading-[0.9]"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-          >
-            Premium Services
-          </h2>
-          <p className="mt-8 text-white/50 text-lg md:text-xl font-light max-w-2xl">
-            From striking illuminated displays to cohesive corporate identities, we craft visual assets that command attention.
+          <p className="text-white/40 text-sm font-light leading-relaxed max-w-xs">
+            Visual assets crafted to captivate, communicate, and convert — from first glance to lasting impression.
           </p>
         </div>
 
-        {/* Bento Grid */}
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-min">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {services.map((svc) => (
             <div
               key={svc.id}
-              className={`bento-card group relative rounded-3xl overflow-hidden border border-white/5 bg-[#0a0a0a] transition-all duration-500 hover:border-white/20 hover:-translate-y-1 hover:shadow-2xl ${svc.className}`}
+              className="svc-card group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer"
             >
-              {/* Background Image */}
-              <div className="absolute inset-0 z-0">
-                <img src={svc.image} alt={svc.title} className="w-full h-full object-cover opacity-65 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-90" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-              </div>
+              {/* Image */}
+              <img
+                src={svc.image}
+                alt={svc.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
 
-              {/* Background Gradient & Hover effect */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${svc.gradient} mix-blend-overlay opacity-60 transition-opacity duration-500 group-hover:opacity-100 z-0`} />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10 group-hover:via-black/40 transition-all duration-500" />
 
               {/* Content */}
-              <div className="relative z-10 h-full p-8 md:p-10 flex flex-col">
-                <div className="mb-auto">
-                  <span className={`text-4xl drop-shadow-lg ${svc.accent}`}>
-                    {svc.icon}
-                  </span>
-                </div>
+              <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                {/* Top: number */}
+                <span className="text-[11px] font-black text-white/30 tracking-[0.2em]">{svc.id}</span>
 
-                <div className="mt-8">
+                {/* Bottom: title + desc */}
+                <div>
                   <h3
-                    className="text-3xl md:text-4xl font-black text-white uppercase mb-4 transition-colors duration-300 group-hover:text-white"
+                    className="text-2xl md:text-3xl font-black text-white uppercase mb-2 leading-tight"
                     style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
                   >
                     {svc.title}
                   </h3>
-                  <p className="text-white/40 text-sm md:text-base font-light leading-relaxed group-hover:text-white/70 transition-colors duration-300">
+                  <p className="text-white/50 text-xs font-light leading-relaxed max-w-[90%] group-hover:text-white/75 transition-colors duration-300">
                     {svc.desc}
                   </p>
                 </div>
+              </div>
 
-                {/* Arrow indicator */}
-                <div className="absolute top-8 right-8 md:top-10 md:right-10 opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500">
-                  <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm">
-                    <span className="text-white text-lg">↗</span>
-                  </div>
-                </div>
+              {/* Hover arrow */}
+              <div className="absolute top-5 right-5 w-8 h-8 rounded-full border border-white/0 bg-white/0 flex items-center justify-center opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:border-white/30 group-hover:bg-white/10 transition-all duration-400">
+                <span className="text-white text-xs">↗</span>
               </div>
             </div>
           ))}
