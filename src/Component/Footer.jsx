@@ -8,9 +8,8 @@ const Footer = () => {
       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
     >
       {/* ── FOOTER GRID SECTION (Above Map) ── */}
-      <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 py-20 md:py-28">
+      <div className="max-w-screen-2xl  mx-auto px-6 md:px-12 lg:px-24 py-24 md:py-28">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
-          
           {/* Column 1: Contact Us */}
           <div className="flex flex-col gap-6">
             <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
@@ -20,13 +19,13 @@ const Footer = () => {
               <a href="tel:+918707862783" className="text-white/40 hover:text-[#2edcc3] transition-colors duration-200 w-fit">
                 +91 87078 62783
               </a>
-              <a href="mailto:hello@graphicxstudio.in" className="text-white/40 hover:text-[#2edcc3] transition-colors duration-200 w-fit">
-                hello@graphicxstudio.in
+              <a href="mailto:graphicxstudio18@gmail.com" className="text-white/40 hover:text-[#2edcc3] transition-colors duration-200 w-fit">
+                graphicxstudio18@gmail.com
               </a>
               <p className="text-white/40 leading-relaxed pr-4">
                 2nd Floor, Dream Shoppers, Nr. Police Station, Dindoli, Surat, Gujarat 394210
               </p>
-              <a 
+              <a
                 href="https://wa.me/918707862783?text=Hi%20GraphicX%20Studio!%20I'm%20interested%20in%20getting%20a%20quote."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -85,20 +84,20 @@ const Footer = () => {
               {/* Circular Social Icons */}
               <div className="flex items-center gap-3">
                 {/* Facebook */}
-                <a 
-                  href="#" 
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-[#2edcc3] hover:text-black hover:scale-105 transition-all duration-300 flex items-center justify-center text-white/60"
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white border border-white/10 hover:bg-[#2edcc3] hover:text-black hover:scale-105 transition-all duration-300 flex items-center justify-center text-white/60"
                   aria-label="Facebook"
                 >
                   <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
                     <path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.39-1 1-1h2V2h-3c-2.5 0-4 1.5-4 4v2z" />
                   </svg>
                 </a>
-                
+
                 {/* YouTube */}
-                <a 
-                  href="#" 
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-[#2edcc3] hover:text-black hover:scale-105 transition-all duration-300 flex items-center justify-center text-white/60"
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white border border-white/10 hover:bg-[#2edcc3] hover:text-black hover:scale-105 transition-all duration-300 flex items-center justify-center text-white/60"
                   aria-label="YouTube"
                 >
                   <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
@@ -107,9 +106,9 @@ const Footer = () => {
                 </a>
 
                 {/* Instagram */}
-                <a 
-                  href="#" 
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-[#2edcc3] hover:text-black hover:scale-105 transition-all duration-300 flex items-center justify-center text-white/60"
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white border border-white/10 hover:bg-[#2edcc3] hover:text-black hover:scale-105 transition-all duration-300 flex items-center justify-center text-white/60"
                   aria-label="Instagram"
                 >
                   <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
@@ -118,9 +117,9 @@ const Footer = () => {
                 </a>
 
                 {/* LinkedIn */}
-                <a 
-                  href="#" 
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-[#2edcc3] hover:text-black hover:scale-105 transition-all duration-300 flex items-center justify-center text-white/60"
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white border border-white/10 hover:bg-[#2edcc3] hover:text-black hover:scale-105 transition-all duration-300 flex items-center justify-center text-white/60"
                   aria-label="LinkedIn"
                 >
                   <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
@@ -146,7 +145,7 @@ const Footer = () => {
       </div>
 
       {/* ── GOOGLE MAPS EMBED ── */}
-      <div className="w-full h-72 md:h-96 border-t border-white/5 overflow-hidden grayscale brightness-50 hover:grayscale-0 hover:brightness-75 transition-all duration-700">
+      <div className="w-full h-62 md:h-62 border-t border-white/5 overflow-hidden grayscale brightness-50 hover:grayscale-0 hover:brightness-75 transition-all duration-700">
         <iframe
           title="GraphicX Studio Location"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.8765432109876!2d72.8765432!3d21.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f0b0b0b0b0b%3A0x0!2sDindoli%2C%20Surat%2C%20Gujarat%20394210!5e0!3m2!1sen!2sin!4v1718000000000!5m2!1sen!2sin"

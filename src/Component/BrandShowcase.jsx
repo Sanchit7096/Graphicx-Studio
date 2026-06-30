@@ -1,18 +1,24 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
-// Using simple typographic placeholders for logos to act as "demi logos"
-const LOGOS = [
-  { name: 'VERTEX', font: "'Barlow Condensed', sans-serif" },
-  { name: 'AURA', font: "'Space Grotesk', sans-serif" },
-  { name: 'NEXUS', font: "'Barlow Condensed', sans-serif" },
-  { name: 'ELEVATE', font: "sans-serif" },
-  { name: 'LUMINA', font: "'Space Grotesk', sans-serif" },
-  { name: 'OMNI', font: "'Barlow Condensed', sans-serif" },
-  { name: 'ZENITH', font: "sans-serif" },
-  { name: 'NOVA', font: "'Space Grotesk', sans-serif" },
-];
+// Import all brand logos
+import logo1 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.13.43_PM-removebg-preview.png';
+import logo2 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.13.43_PM__6_-removebg-preview.png';
+import logo3 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.13.43_PM__7_-removebg-preview.png';
+import logo4 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.14.13_PM-removebg-preview.png';
+import logo5 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.14.13_PM__1_-removebg-preview.png';
+import logo6 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.16.31_PM-removebg-preview.png';
+import logo7 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.13.43_PM__7_-removebg-preview (1).png';
 
+const LOGOS = [
+  { src: logo1, alt: 'Brand Logo 1' },
+  { src: logo2, alt: 'Brand Logo 2' },
+  { src: logo3, alt: 'Brand Logo 3' },
+  { src: logo4, alt: 'Brand Logo 4' },
+  { src: logo5, alt: 'Brand Logo 5' },
+  { src: logo6, alt: 'Brand Logo 6' },
+  { src: logo7, alt: 'Brand Logo 7' },
+];
 const BrandShowcase = () => {
   const containerRef = useRef(null);
   const marqueeRef = useRef(null);
@@ -46,8 +52,8 @@ const BrandShowcase = () => {
   };
 
   return (
-    <section ref={containerRef} className="w-full bg-black py-24 border-t border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">
+    <section ref={containerRef} className="w-full bg-black py-18 border-t border-white/5 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-24 mb-16 text-center">
         <h3 className="text-white/40 text-[11px] font-bold tracking-[0.3em] uppercase mb-4">
           Trusted By Innovative Brands
         </h3>
@@ -59,24 +65,25 @@ const BrandShowcase = () => {
         <div className="absolute top-0 right-0 w-24 md:w-64 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
         {/* Marquee Track */}
-        <div 
-            className="flex w-max" 
-            ref={marqueeRef}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+        <div
+          className="flex w-max items-center py-4"
+          ref={marqueeRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           {/* Double the logos to create the infinite scroll illusion */}
           {[...LOGOS, ...LOGOS].map((logo, index) => (
-            <div 
+            <div
               key={index}
-              className="flex-shrink-0 px-12 md:px-20 flex items-center justify-center group cursor-pointer transition-all duration-500"
+              className="flex-shrink-0 px-8 md:px-12 flex items-center justify-center group cursor-pointer transition-all duration-500"
             >
-              <span 
-                className="text-white/20 text-4xl md:text-5xl font-black uppercase tracking-widest transition-all duration-300 group-hover:text-white group-hover:scale-110 group-hover:drop-shadow-[0_0_25px_rgba(46,220,195,0.8)]"
-                style={{ fontFamily: logo.font }}
-              >
-                {logo.name}
-              </span>
+              <div className="bg-white p-4 md:p-6 rounded-2xl flex items-center justify-center h-24 md:h-32 w-48 md:w-56 transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_25px_rgba(46,220,195,0.4)]">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="w-full h-full object-contain opacity-70 grayscale transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -86,3 +93,5 @@ const BrandShowcase = () => {
 };
 
 export default BrandShowcase;
+
+

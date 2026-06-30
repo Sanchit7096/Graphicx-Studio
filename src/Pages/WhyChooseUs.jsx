@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Fade in the entire section smoothly
-      gsap.fromTo(containerRef.current, 
+      gsap.fromTo(containerRef.current,
         { opacity: 0, y: 50 },
         {
           opacity: 1,
@@ -58,23 +58,23 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <section 
-      ref={containerRef} 
-      className="w-full bg-black py-24 md:py-32 border-t border-white/5"
+    <section
+      ref={containerRef}
+      className="w-full bg-black py-18 md:py-18 border-t border-white/5"
       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
     >
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
-        
+
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-          
+
           {/* Left Side: Sticky Header */}
           <div className="lg:w-1/3">
             <div className="sticky top-32">
               <div className="flex items-center gap-4 mb-6">
-                <span className="w-12 h-[1px] bg-[#2edcc3]"></span>
-                <span className="text-[#2edcc3] text-sm font-bold tracking-widest uppercase">The GraphicX Advantage</span>
+                <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
+                <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">The GraphicX Advantage</span>
               </div>
-              <h2 
+              <h2
                 className="text-5xl md:text-7xl font-black text-white uppercase leading-[0.9] tracking-tight mb-8"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
@@ -92,8 +92,8 @@ const WhyChooseUs = () => {
               const isOpen = openIndex === index;
 
               return (
-                <div 
-                  key={reason.id} 
+                <div
+                  key={reason.id}
                   className={`border-b border-white/10 transition-colors duration-300 ${isOpen ? 'border-[#2edcc3]/30' : 'hover:border-white/30'}`}
                 >
                   <button
@@ -104,14 +104,14 @@ const WhyChooseUs = () => {
                       <span className={`text-sm md:text-base font-bold transition-colors duration-300 ${isOpen ? 'text-[#2edcc3]' : 'text-white/30 group-hover:text-white/50'}`}>
                         0{index + 1}
                       </span>
-                      <h3 
+                      <h3
                         className={`text-2xl md:text-4xl font-black uppercase transition-colors duration-300 ${isOpen ? 'text-white' : 'text-white/60 group-hover:text-white'}`}
                         style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
                       >
                         {reason.title}
                       </h3>
                     </div>
-                    
+
                     {/* Plus/Minus Icon */}
                     <div className="relative w-6 h-6 flex items-center justify-center">
                       <span className={`absolute w-full h-[2px] bg-current transition-all duration-300 ${isOpen ? 'text-[#2edcc3]' : 'text-white/50'}`}></span>
@@ -120,7 +120,7 @@ const WhyChooseUs = () => {
                   </button>
 
                   {/* Accordion Content */}
-                  <div 
+                  <div
                     className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isOpen ? 'max-h-40 opacity-100 pb-8' : 'max-h-0 opacity-0 pb-0'}`}
                   >
                     <p className="text-white/60 text-lg font-light leading-relaxed pl-12 md:pl-16 pr-4">

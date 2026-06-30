@@ -120,7 +120,7 @@ const Service = () => {
     <section
       ref={sectionRef}
       id="services"
-      className="relative w-full bg-black py-24 md:py-32 px-6 md:px-12 lg:px-24 overflow-hidden"
+      className="relative w-full bg-black py-18  md:py-18 px-6 md:px-12 lg:px-24 overflow-hidden"
       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
     >
       <div className="max-w-screen-2xl mx-auto">
@@ -128,9 +128,9 @@ const Service = () => {
         {/* Header section */}
         <div className="service-heading mb-16 md:mb-24 flex flex-col items-center text-center">
           <div className="flex items-center gap-4 mb-6">
-            <span className="w-12 h-[1px] bg-[#2edcc3]"></span>
-            <span className="text-[#2edcc3] text-sm font-bold tracking-widest uppercase">Our Expertise</span>
-            <span className="w-12 h-[1px] bg-[#2edcc3]"></span>
+            <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
+            <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">Our Expertise</span>
+            <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
           </div>
           <h2
             className="text-5xl md:text-7xl font-black text-white uppercase leading-[0.9]"

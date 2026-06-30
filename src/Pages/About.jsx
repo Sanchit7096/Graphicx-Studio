@@ -30,7 +30,7 @@ const About = () => {
         <section
             ref={sectionRef}
             id="about"
-            className="w-full bg-black py-24 md:py-32 px-6 md:px-12 lg:px-24"
+            className="w-full bg-black py-18  md:py-18 px-6 md:px-12 lg:px-24"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
             <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
@@ -38,8 +38,8 @@ const About = () => {
                 {/* Left Column - Heading & Stats */}
                 <div className="lg:w-1/3 flex flex-col justify-start">
                     <div className="animate-fade mb-6 flex items-center gap-4">
-                        <span className="w-12 h-[1px] bg-[#2edcc3]"></span>
-                        <span className="text-[#2edcc3] text-sm font-bold tracking-widest uppercase">Who We Are</span>
+                        <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
+                        <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">Who We Are</span>
                     </div>
 
                     <h2

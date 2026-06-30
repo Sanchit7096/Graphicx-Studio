@@ -72,7 +72,7 @@ const HeroContent = () => {
           ref={tagRef}
           className="flex items-center gap-3 mb-8 text-[10px] font-black uppercase tracking-[0.45em] text-white"
         >
-          <span className="inline-block w-8 h-px bg-[#2edcc3]" />
+          <span className="inline-block w-8 h-px bg-[#D6D6D6]" />
           GraphicX Studio — Premium Branding
         </div>
 

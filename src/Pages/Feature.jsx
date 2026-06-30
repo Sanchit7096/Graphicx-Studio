@@ -141,14 +141,14 @@ const Feature = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full bg-black py-24 md:py-32 border-t border-white/5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+    <section ref={containerRef} className="w-full bg-black py-18  md:py-18 border-t border-white/5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
 
       {/* Header */}
       <div className="feature-header max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">
         <div className="flex items-center justify-center gap-4 mb-6">
-          <span className="w-12 h-[1px] bg-[#2edcc3]"></span>
-          <span className="text-[#2edcc3] text-sm font-bold tracking-widest uppercase">Transformations</span>
-          <span className="w-12 h-[1px] bg-[#2edcc3]"></span>
+          <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
+          <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">Transformations</span>
+          <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
         </div>
         <h2
           className="text-5xl md:text-7xl font-black text-white uppercase leading-[0.9]"
@@ -180,7 +180,7 @@ const Feature = () => {
                 </span>
               </div>
               <h3
-                className="text-3xl lg:text-4xl font-black uppercase text-white leading-none transition-colors duration-300 group-hover:text-[#2edcc3]"
+                className="text-3xl lg:text-4xl font-black uppercase text-[#D6D6D6] leading-none"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
                 {project.title}
