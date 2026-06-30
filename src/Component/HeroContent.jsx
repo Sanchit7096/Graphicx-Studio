@@ -82,7 +82,7 @@ const HeroContent = () => {
             ref={line1Ref}
             data-text="We Create"
             className="block overflow-hidden uppercase font-black leading-[0.88] tracking-tight text-white"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(44px, 7.5vw, 110px)', letterSpacing: '-0.02em' }}
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(34px, 7.5vw, 110px)', letterSpacing: '-0.02em' }}
           >
             We Create
           </span>
@@ -90,15 +90,15 @@ const HeroContent = () => {
             ref={line2Ref}
             data-text="Brand Identity"
             className="block overflow-hidden uppercase font-black leading-[0.88] italic text-transparent pl-[clamp(16px,3vw,60px)]"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(44px, 7.5vw, 110px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(34px, 7.5vw, 110px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
           >
             Brand Identity
           </span>
           <span
             ref={line3Ref}
             data-text='Not Just "Sign Board"'
-            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-tight text-white"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(44px, 7.5vw, 110px)', letterSpacing: '-0.02em' }}
+            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-tight text-white whitespace-nowrap"
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(34px, 7.5vw, 110px)', letterSpacing: '-0.02em' }}
           >
             Not Just "Sign Board"
           </span>
@@ -107,7 +107,7 @@ const HeroContent = () => {
         {/* Accent divider */}
         <div
           ref={dividerRef}
-          className="my-5 h-px w-20 bg-gradient-to-r from-[#2edcc3] to-transparent"
+          className="my-5 h-px w-20 bg-gradient-to-r from-[#D6D6D6] to-transparent"
         />
 
         {/* Body + Buttons */}
@@ -125,7 +125,7 @@ const HeroContent = () => {
             {/* Primary CTA */}
             <button
               ref={btn1Ref}
-              className="group relative inline-flex items-center gap-3 px-8 py-3.5 bg-[#2edcc3] text-black text-[10px] font-black uppercase tracking-[0.35em] rounded-full border-none cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(46,220,195,0.4)]"
+              className="group relative inline-flex items-center gap-3 px-8 py-3.5 bg-[#D6D6D6] text-black text-[10px] font-black uppercase tracking-[0.35em] rounded-full border-none cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(214,214,214,0.4)]"
             >
               {/* shimmer */}
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out pointer-events-none" />
