@@ -31,7 +31,7 @@ const About = () => {
             ref={sectionRef}
             id="about"
             className="w-full bg-black py-18  md:py-18 px-6 md:px-12 lg:px-24"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
+            style={{ fontFamily: "'Manrope', sans-serif" }}
         >
             <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
 
@@ -43,8 +43,8 @@ const About = () => {
                     </div>
 
                     <h2
-                        className="animate-fade text-3xl md:text-4xl lg:text-5xl font-black text-white mb-12 leading-[0.9] uppercase"
-                        style={{ fontFamily: "'Poppins', sans-serif" }}
+                        className="animate-fade text-4xl md:text-4xl lg:text-5xl font-black text-white mb-12 leading-[1.1] tracking-wider uppercase"
+                        style={{ fontFamily: "'Audiowide', sans-serif" }}
                     >
                         GraphicX <br className="hidden lg:block" />
                         Studio
@@ -52,28 +52,28 @@ const About = () => {
 
                     <div className="animate-fade flex flex-col gap-8 mt-auto">
                         <div>
-                            <p className="text-5xl font-black text-white mb-1" style={{ fontFamily: "'Poppins', sans-serif" }}>8+</p>
+                            <p className="text-5xl font-black text-white mb-1" style={{ fontFamily: "'Manrope', sans-serif" }}>8+</p>
                             <p className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">Years of Experience</p>
                         </div>
                         <div>
-                            <p className="text-5xl font-black text-white mb-1" style={{ fontFamily: "'Poppins', sans-serif" }}>5.0</p>
+                            <p className="text-5xl font-black text-white mb-1" style={{ fontFamily: "'Manrope', sans-serif" }}>5.0</p>
                             <p className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">Client Star Rating</p>
                         </div>
                     </div>
                 </div>
 
                 {/* Right Column - Body Text */}
-                <div className="lg:w-2/3 flex flex-col justify-center gap-8 text-white/70 text-lg lg:text-xl font-light leading-relaxed">
+                <div className="lg:w-2/3 flex flex-col justify-center gap-6 text-white/70 text-lg lg:text-xl font-light leading-relaxed">
                     <p className="animate-fade">
-                        Welcome to GraphicX Studio, a premier full-service advertising agency based in the heart of Surat, Gujarat. With a passion for visual storytelling and a track record of excellence, we specialize in transforming brands through cutting-edge design, high-impact marketing, and strategic advertising solutions.
+                        A premier advertising agency in Surat, Gujarat, we transform brands through cutting-edge design, high-impact marketing, and strategic advertising solutions.
                     </p>
 
                     <p className="animate-fade">
-                        For over 8 years, we have been the creative engine behind successful brand identities, eye-catching signage, and high-converting digital assets. We don’t just create designs; we build visual experiences that capture attention, engage audiences, and drive business growth.
+                        We don't just create designs—we build visual experiences that capture attention, engage audiences, and drive business growth.
                     </p>
 
                     <p className="animate-fade">
-                        Driven by quality and trusted by hundreds of businesses, we take pride in our flawless track record—backed by a proud 5.0-star rating from our incredible clients. Whether you are a local startup looking to make a mark or an established enterprise aiming to scale, GraphicX Studio is your dedicated partner in creative excellence.
+                        Trusted by hundreds of businesses with a flawless 5.0-star rating, we're your dedicated partner in creative excellence—from local startups to established enterprises.
                     </p>
                 </div>
 

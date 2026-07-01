@@ -58,7 +58,7 @@ const HeroContent = () => {
     <div
       ref={containerRef}
       className="relative z-10 w-full h-full flex items-center gap-0 px-8 md:px-16 lg:px-24 mt-20"
-      style={{ fontFamily: "'Poppins', sans-serif" }}
+      style={{ fontFamily: "'Manrope', sans-serif" }}
     >
       {/* ── LEFT: Main content ── */}
       <div className="flex flex-col items-start flex-1 min-w-0">
@@ -66,7 +66,7 @@ const HeroContent = () => {
         {/* Tag line */}
         <div
           ref={tagRef}
-          className="flex items-center gap-3 mb-8 text-[10px] font-black uppercase tracking-[0.45em] text-white"
+          className="flex items-center gap-3 mb-8 text-[10px] font-black font-Audiowide uppercase tracking-[0.45em] text-white"
         >
           <span className="inline-block w-8 h-px bg-[#D6D6D6]" />
           GraphicX Studio — Premium Branding
@@ -78,7 +78,7 @@ const HeroContent = () => {
             ref={line1Ref}
             data-text="We Create"
             className="block overflow-hidden uppercase font-black leading-[0.88] tracking-tight text-white"
-            style={{ fontFamily: "'Poppins', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
+            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
           >
             We Create
           </span>
@@ -86,7 +86,7 @@ const HeroContent = () => {
             ref={line2Ref}
             data-text="Brand Identity"
             className="block overflow-hidden uppercase font-black leading-[0.88] italic text-transparent pl-[clamp(16px,3vw,60px)]"
-            style={{ fontFamily: "'Poppins', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
+            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
           >
             Brand Identity
           </span>
@@ -94,7 +94,7 @@ const HeroContent = () => {
             ref={line3Ref}
             data-text='Not Just "Sign Board"'
             className="block overflow-hidden uppercase font-black leading-[0.88] tracking-tight text-white whitespace-nowrap"
-            style={{ fontFamily: "'Poppins', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
+            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
           >
             Not Just "Sign Board"
           </span>
@@ -150,7 +150,7 @@ const HeroContent = () => {
         <div className="text-center">
           <div
             className="font-black leading-none text-white"
-            style={{ fontFamily: "'Poppins', sans-serif", fontSize: 'clamp(44px, 4.5vw, 42px)' }}
+            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(44px, 4.5vw, 42px)' }}
           >
             4k+
           </div>
@@ -165,7 +165,7 @@ const HeroContent = () => {
         <div className="text-center">
           <div
             className="font-black leading-none text-white"
-            style={{ fontFamily: "'Poppins', sans-serif", fontSize: 'clamp(44px, 4.5vw, 42px)' }}
+            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(44px, 4.5vw, 42px)' }}
           >
             8<span className="text-[#ff4d6d]">yr</span>
           </div>
@@ -180,7 +180,7 @@ const HeroContent = () => {
         <div className="text-center">
           <div
             className="font-black leading-none text-white"
-            style={{ fontFamily: "'Poppins', sans-serif", fontSize: 'clamp(44px, 4.5vw, 42px)' }}
+            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(44px, 4.5vw, 42px)' }}
           >
             100<span className="text-[#7b61ff]">%</span>
           </div>

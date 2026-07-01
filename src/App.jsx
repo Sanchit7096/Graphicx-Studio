@@ -9,6 +9,7 @@ import Service from './Pages/Service';
 import Feature from './Pages/Feature';
 import WhyChooseUs from './Pages/WhyChooseUs';
 import Footer from './Component/Footer';
+import Projects from './Pages/Projects';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <BrandShowcase />
       <About />
       <Service />
+      <Projects />
       <Feature />
       <WhyChooseUs />
       <Footer />

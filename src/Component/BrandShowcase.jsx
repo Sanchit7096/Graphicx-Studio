@@ -75,13 +75,13 @@ const BrandShowcase = () => {
           {[...LOGOS, ...LOGOS].map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 px-8 md:px-12 flex items-center justify-center group cursor-pointer transition-all duration-500"
+              className="flex-shrink-0 px-8 md:px-12 flex items-center justify-center"
             >
-              <div className="bg-white p-4 md:p-6 rounded-2xl flex items-center justify-center h-24 md:h-32 w-48 md:w-56 transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_25px_rgba(46,220,195,0.4)]">
+              <div className="bg-white p-4 md:p-6 rounded-2xl flex items-center justify-center h-24 md:h-32 w-48 md:w-56">
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="w-full h-full object-contain opacity-70 grayscale transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>

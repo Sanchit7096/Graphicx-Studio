@@ -26,10 +26,10 @@ const Navbar = () => {
         {/* Desktop Navigation Menu */}
         <div className="hidden md:flex items-center gap-2 pointer-events-auto animate-in fade-in slide-in-from-right-8 duration-700 transition-all duration-500">
           <div className="flex items-center rounded-full p-2 pr-2.5 bg-white/[0.03] backdrop-blur-3xl border border-white/10 shadow-2xl">
-            <button className="relative px-8 py-3 text-[11px] font-black hover:text-white transition-all duration-300 uppercase tracking-[0.2em] whitespace-nowrap overflow-hidden group/btn1 text-white/60">
+            <a href="#projects" className="relative px-8 py-3 text-[11px] font-black hover:text-white transition-all duration-300 uppercase tracking-[0.2em] whitespace-nowrap overflow-hidden group/btn1 text-white/60">
               <span className="relative z-10 font-bold tracking-widest leading-none text-white">Our Work</span>
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#D6D6D6] transition-all duration-300 group-hover/btn1:w-1/2 opacity-0 group-hover/btn1:opacity-100"></div>
-            </button>
+            </a>
             <a href="#contact" className="relative px-8 py-3 bg-white text-black text-[11px] font-black rounded-full hover:bg-gray-200 transition-all duration-500 uppercase tracking-[0.2em] hover:-translate-y-0.5 whitespace-nowrap">
               Contact Us
             </a>
@@ -58,7 +58,7 @@ const Navbar = () => {
           <div className="h-32 w-auto mb-10">
             <img src={logoImg} alt="GraphicX Studio Logo" className="h-full w-auto object-contain" />
           </div>
-          <button className="text-3xl font-black uppercase tracking-[0.3em] hover:text-[#D6D6D6] transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>Our Work</button>
+          <a href="#projects" className="text-3xl font-black uppercase tracking-[0.3em] hover:text-[#D6D6D6] transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>Our Work</a>
           <button className="text-3xl font-black uppercase tracking-[0.3em] hover:text-[#D6D6D6] transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>Services</button>
           <a href="#contact" className="px-16 py-6 bg-white text-black text-lg font-black rounded-full uppercase tracking-widest mt-10 hover:bg-[#D6D6D6] transition-colors duration-500 shadow-2xl inline-block" onClick={() => setIsMenuOpen(false)}>Contact Us</a>
         </div>

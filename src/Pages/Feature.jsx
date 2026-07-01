@@ -22,17 +22,10 @@ const projects = [
   },
   {
     id: 2,
-    title: "Illuminated Gym Branding",
+    title: "Ak fitness",
     beforeImage: image5,
     afterImage: image4,
     desc: "Transforming a fitness space with custom LED channel letters that command attention both day and night."
-  },
-  {
-    id: 3,
-    title: "Luxury Jewellery Store Signage",
-    beforeImage: image7,
-    afterImage: image6,
-    desc: "A complete signage transformation for a premium jewellery store, blending elegance with modern illumination."
   }
 ];
 
@@ -41,7 +34,7 @@ const ImageComparisonSlider = ({ before, after }) => {
   const [sliderPos, setSliderPos] = useState(50);
 
   return (
-    <div className="relative w-full h-[45vh] lg:h-[55vh] rounded-2xl overflow-hidden select-none">
+    <div className="relative w-full h-[35vh] lg:h-[35vh] rounded-2xl overflow-hidden select-none">
       {/* After Image (Background) */}
       <img
         src={after}
@@ -135,29 +128,29 @@ const Feature = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full bg-black py-8  md:py-10 border-t border-white/5" style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <section ref={containerRef} className="w-full bg-black py-8  md:py-10 border-t border-white/5" style={{ fontFamily: "'Manrope', sans-serif" }}>
 
       {/* Header */}
-      <div className="feature-header max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">
+      <div className="feature-header max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">
         <div className="flex items-center justify-center gap-4 mb-6">
           <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
           <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">Transformations</span>
           <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
         </div>
         <h2
-          className="text-4xl md:text-5xl font-black text-white uppercase leading-[0.9]"
-          style={{ fontFamily: "'Poppins', sans-serif" }}
+          className="text-4xl md:text-4xl font-black text-white uppercase leading-[0.9] tracking-wider"
+          style={{ fontFamily: "'Audiowide', sans-serif" }}
         >
-          Before & After
+         From Vision to Reality
         </h2>
         <p className="mt-6 text-white/50 text-base md:text-lg font-light max-w-3xl mx-auto">
           Drag the sliders to witness the incredible visual impact of premium signage.
         </p>
       </div>
 
-      {/* Projects List - 3 Column Grid */}
-      <div className="w-full max-w-screen-2xl mx-auto px-6 md:px-10 lg:px-16 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-        {projects.map((project, index) => (
+      {/* Projects List - 2 Column Grid */}
+      <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+        {projects.map((project) => (
           <div key={project.id} className="project-card flex flex-col gap-6 w-full group">
 
             {/* Interactive Slider First */}
@@ -165,17 +158,9 @@ const Feature = () => {
 
             {/* Project Info Header */}
             <div className="flex flex-col gap-3 px-2">
-              <div className="flex justify-between items-start">
-                <span className="inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#ff4d6d] bg-[#ff4d6d]/10 border border-[#ff4d6d]/20 rounded-full">
-                  {project.category}
-                </span>
-                <span className="text-white/40 text-[10px] tracking-[0.2em] uppercase font-bold text-right pt-1">
-                  {project.client}
-                </span>
-              </div>
               <h3
-                className="text-3xl lg:text-4xl font-black uppercase text-[#D6D6D6] leading-none"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
+                className="text-3xl lg:text-4xl font-black uppercase text-[#D6D6D6] leading-none tracking-wider"
+                style={{ fontFamily: "'Audiowide', sans-serif" }}
               >
                 {project.title}
               </h3>
