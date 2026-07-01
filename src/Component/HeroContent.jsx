@@ -66,7 +66,7 @@ const HeroContent = () => {
         {/* Tag line */}
         <div
           ref={tagRef}
-          className="flex items-center gap-3 mb-8 text-[10px] font-black font-Audiowide uppercase tracking-[0.45em] text-white"
+          className="flex items-center gap-3 mb-8 text-[10px] font-black  uppercase tracking-[0.45em] text-white"
         >
           <span className="inline-block w-8 h-px bg-[#D6D6D6]" />
           GraphicX Studio — Premium Branding
@@ -77,15 +77,15 @@ const HeroContent = () => {
           <span
             ref={line1Ref}
             data-text="We Create"
-            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-tight text-white"
-            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
+            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-wider text-white "
+            style={{ fontFamily: "'Audiowide', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
           >
             We Create
           </span>
           <span
             ref={line2Ref}
             data-text="Brand Identity"
-            className="block overflow-hidden uppercase font-black leading-[0.88] italic text-transparent pl-[clamp(16px,3vw,60px)]"
+            className="block overflow-hidden uppercase tracking-wider font-black leading-[0.88] italic text-transparent pl-[clamp(16px,3vw,60px)]"
             style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
           >
             Brand Identity
@@ -93,8 +93,8 @@ const HeroContent = () => {
           <span
             ref={line3Ref}
             data-text='Not Just "Sign Board"'
-            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-tight text-white whitespace-nowrap"
-            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
+            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-wider text-white whitespace-nowrap"
+            style={{ fontFamily: "'Audiowide', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
           >
             Not Just "Sign Board"
           </span>
