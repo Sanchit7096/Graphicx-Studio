@@ -16,31 +16,33 @@ const Footer = () => {
             <div className="h-16 w-auto">
               <img
                 src={logoImg}
-                alt="GraphicX Studio Logo"
+                alt="GraphicX Studio logo"
                 className="h-full w-auto object-contain"
+                loading="lazy"
+                decoding="async"
               />
             </div>
-            <p className="text-white/50 text-base leading-relaxed">
-              A premier full-service advertising agency transforming brands through cutting-edge design, high-impact marketing, and strategic advertising solutions.
+            <p className="text-base leading-relaxed text-white/70">
+              A premier signage and branding studio in Surat, helping businesses create stronger first impressions through premium signboards, visual identity, and strategic design.
             </p>
           </div>
 
           {/* Column 2: Company */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <h4 className="text-xl font-semibold uppercase tracking-[0.24em] text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Company
             </h4>
             <div className="flex flex-col gap-3.5 text-base">
-              <a href="#about" className="text-white/40 hover:text-[#2edcc3] transition-colors duration-200 w-fit">
+              <a href="#about" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
                 About Us
               </a>
-              <a href="#services" className="text-white/40 hover:text-[#2edcc3] transition-colors duration-200 w-fit">
+              <a href="#services" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
                 Our Services
               </a>
-              <a href="#work" className="text-white/40 hover:text-[#2edcc3] transition-colors duration-200 w-fit">
+              <a href="#projects" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
                 Our Work
               </a>
-              <a href="#contact" className="text-white/40 hover:text-[#2edcc3] transition-colors duration-200 w-fit">
+              <a href="#contact" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
                 Contact Us
               </a>
             </div>
@@ -48,27 +50,35 @@ const Footer = () => {
 
           {/* Column 3: Contact Us */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-white text-xl font-bold uppercase tracking-widest" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <h4 className="text-xl font-semibold uppercase tracking-[0.24em] text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Contact Us
             </h4>
             <div className="flex flex-col gap-3.5 text-base">
-              <a href="tel:+918707862783" className="text-white/40 hover:text-[#2edcc3] transition-colors duration-200 w-fit">
+              <a href="tel:+918707862783" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
                 +91 87078 62783
               </a>
-              <a href="mailto:graphicxstudio18@gmail.com" className="text-white/40 hover:text-[#2edcc3] transition-colors duration-200 w-fit">
+              <a href="mailto:graphicxstudio18@gmail.com" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
                 graphicxstudio18@gmail.com
               </a>
-              <p className="text-white/40 leading-relaxed pr-4">
+              <p className="pr-4 leading-relaxed text-white/70">
                 2nd Floor, Dream Shoppers, Nr. Police Station, Dindoli, Surat, Gujarat 394210
               </p>
-              <a
-                href="https://wa.me/918707862783?text=Hi%20GraphicX%20Studio!%20I'm%20interested%20in%20getting%20a%20quote."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#2edcc3] hover:underline font-bold uppercase tracking-wider text-sm mt-2 w-fit"
-              >
-                Chat on WhatsApp →
-              </a>
+              <div className="mt-2 flex flex-wrap gap-3">
+                <a
+                  href="https://wa.me/918707862783?text=Hi%20GraphicX%20Studio!%20I'm%20interested%20in%20getting%20a%20quote."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-fit rounded-full border border-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#2edcc3] transition hover:border-[#2edcc3]/50 hover:bg-[#2edcc3]/10"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href="mailto:graphicxstudio18@gmail.com"
+                  className="w-fit rounded-full border border-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-white/80 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
+                >
+                  Email
+                </a>
+              </div>
             </div>
           </div>
         </div>

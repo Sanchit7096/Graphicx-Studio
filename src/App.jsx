@@ -15,7 +15,7 @@ function App() {
 
 
   return (
-    <div className="min-h-screen bg-black">
+    <div id="top" className="min-h-screen bg-black">
       <Hero />
       <BrandShowcase />
       <About />

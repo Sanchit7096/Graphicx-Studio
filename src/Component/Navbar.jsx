@@ -30,7 +30,7 @@ const Navbar = () => {
               <span className="relative z-10 font-bold tracking-widest leading-none text-white">Our Work</span>
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#D6D6D6] transition-all duration-300 group-hover/btn1:w-1/2 opacity-0 group-hover/btn1:opacity-100"></div>
             </a>
-            <a href="#contact" className="relative px-8 py-3 bg-white text-black text-[11px] font-black rounded-full hover:bg-gray-200 transition-all duration-500 uppercase tracking-[0.2em] hover:-translate-y-0.5 whitespace-nowrap">
+            <a href="#contact" className="relative px-8 py-3  text-black text-[11px] font-black rounded-full transition-all duration-500 uppercase tracking-[0.2em] hover:-translate-y-0.5 whitespace-nowrap">
               Contact Us
             </a>
 
