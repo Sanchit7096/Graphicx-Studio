@@ -95,7 +95,7 @@ const HeroContent = () => {
             ref={line1Ref}
             data-text="We Create"
             className="block overflow-hidden uppercase font-black leading-[0.88] tracking-wider text-white "
-            style={{ fontFamily: "'Audiowide', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
+            style={{ fontFamily: "'Audiowide', sans-serif", fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em' }}
           >
             We Create
           </span>
@@ -103,7 +103,7 @@ const HeroContent = () => {
             ref={line2Ref}
             data-text="Brand Identity"
             className="block overflow-hidden uppercase tracking-wider font-black leading-[0.88] italic text-transparent pl-2 md:pl-[clamp(16px,3vw,60px)] md:mt-0 mt-2"
-            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
+            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
           >
             Brand Identity
           </span>
@@ -111,7 +111,7 @@ const HeroContent = () => {
             ref={line3Ref}
             data-text='Not Just "Sign Board"'
             className="block overflow-hidden uppercase font-black leading-[0.88] tracking-wider text-white mt-2"
-            style={{ fontFamily: "'Audiowide', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
+            style={{ fontFamily: "'Audiowide', sans-serif", fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em' }}
           >
             Not Just "Sign Board"
           </span>
@@ -124,11 +124,11 @@ const HeroContent = () => {
         />
 
         {/* Body + Buttons */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-end gap-8 lg:gap-16 mt-2 w-full max-w-3xl">
+        <div className="flex flex-col lg:flex-row items-start lg:items-end gap-8 lg:gap-16 mt-2 w-full max-w-4xl">
           <p
             ref={bodyRef}
-            className="font-light leading-[1.8] tracking-wide text-white/85 max-w-[620px]"
-            style={{ fontSize: 'clamp(14px, 1.2vw, 18px)' }}
+            className="font-light leading-[1.8] tracking-wide text-white/85 "
+            style={{ fontSize: 'clamp(18px, 1.2vw, 18px)' }}
           >
             From iconic logo design to high-impact LED storefronts and shop banners,
             GraphicX Studio bridges the gap between creative design and physical reality.
