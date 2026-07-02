@@ -23,13 +23,30 @@ const HeroContent = () => {
         const text = el.dataset.text || el.textContent;
         el.innerHTML = '';
         el.dataset.text = text;
-        return [...text].map(ch => {
-          const span = document.createElement('span');
-          span.textContent = ch === ' ' ? '\u00A0' : ch;
-          span.style.cssText = 'display:inline-block;will-change:transform,opacity;';
-          el.appendChild(span);
-          return span;
+
+        const words = text.split(' ');
+        const chars = [];
+
+        words.forEach((word, wordIndex) => {
+          const wordWrapper = document.createElement('span');
+          wordWrapper.style.cssText = 'display:inline-block; white-space:nowrap;';
+
+          [...word].forEach((ch) => {
+            const span = document.createElement('span');
+            span.textContent = ch;
+            span.style.cssText = 'display:inline-block;will-change:transform,opacity;';
+            wordWrapper.appendChild(span);
+            chars.push(span);
+          });
+
+          el.appendChild(wordWrapper);
+
+          if (wordIndex < words.length - 1) {
+            el.appendChild(document.createTextNode('\u00A0'));
+          }
         });
+
+        return chars;
       };
 
       tl.from(tagRef.current, { y: 20, opacity: 0, duration: 0.8 }, 0.2);
@@ -85,7 +102,7 @@ const HeroContent = () => {
           <span
             ref={line2Ref}
             data-text="Brand Identity"
-            className="block overflow-hidden uppercase tracking-wider font-black leading-[0.88] italic text-transparent pl-[clamp(16px,3vw,60px)]"
+            className="block overflow-hidden uppercase tracking-wider font-black leading-[0.88] italic text-transparent pl-2 md:pl-[clamp(16px,3vw,60px)] md:mt-0 mt-2"
             style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
           >
             Brand Identity
@@ -93,7 +110,7 @@ const HeroContent = () => {
           <span
             ref={line3Ref}
             data-text='Not Just "Sign Board"'
-            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-wider text-white whitespace-nowrap"
+            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-wider text-white mt-2"
             style={{ fontFamily: "'Audiowide', sans-serif", fontSize: 'clamp(34px, 4.5vw, 90px)', letterSpacing: '-0.02em' }}
           >
             Not Just "Sign Board"
