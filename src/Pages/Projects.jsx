@@ -21,7 +21,7 @@ const Projects = () => {
   ];
 
   return (
-   <section id="projects" className="w-full bg-black py-16 md:py-24" style={{ fontFamily: "'Manrope', sans-serif" }}>
+   <section id="projects" className="w-full bg-black py-16 md:py-20" style={{ fontFamily: "'Manrope', sans-serif" }}>
       {/* Header */}
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 mb-12 text-center">
         <div className="flex items-center justify-center gap-4 mb-6">

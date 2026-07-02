@@ -89,7 +89,7 @@ const Service = () => {
       style={{ fontFamily: "'Manrope', sans-serif" }}
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-15 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
-        <div className="lg:sticky lg:top-45 lg:self-start">
+        <div className="lg:sticky lg:top-55 lg:self-start">
           <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_0_80px_rgba(255,255,255,0.04)] backdrop-blur-md sm:p-10">
             <div className="flex items-center gap-3 mb-6">
               <span className="h-[1px] w-8 bg-[#D6D6D6]" />

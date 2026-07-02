@@ -88,7 +88,7 @@ const WhyChooseUs = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-black py-20 md:py-32 border-t border-white/5"
+      className="w-full bg-black py-20 md:py-20 border-t border-white/5"
       style={{ fontFamily: "'Manrope', sans-serif" }}
     >
       <div className="max-w-screen-2xl h-[80vh] md:h-[50vh] px-6 md:px-12 lg:px-24">
