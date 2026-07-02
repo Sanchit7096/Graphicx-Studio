@@ -50,125 +50,113 @@ const services = [
 ];
 
 const Service = () => {
-  
+  const sectionRef = useRef(null);
+  const cardRefs = useRef([]);
 
-  
+  useEffect(() => {
+    const cards = cardRefs.current.filter(Boolean);
+
+    if (!cards.length) return;
+
+    gsap.fromTo(
+      cards,
+      {
+        opacity: 0,
+        y: 70,
+        scale: 0.97,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        stagger: 0.14,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      }
+    );
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="services"
-      className="w-full bg-black py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-white/[0.05]"
+      className="w-full bg-[#040404] py-20 px-4 sm:px-6 lg:px-8 xl:px-10 border-t border-white/10"
       style={{ fontFamily: "'Manrope', sans-serif" }}
     >
-      <div className="max-w-screen-xl mx-auto">
-
-        {/* Header */}
-        <div className="svc-head flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16 md:mb-20">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-[1px] bg-[#D6D6D6]" />
-              <span className="text-[#D6D6D6] text-[10px] font-bold tracking-[0.3em] uppercase">Our Expertise</span>
+      <div className="mx-auto flex max-w-7xl flex-col gap-15 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+        <div className="lg:sticky lg:top-45 lg:self-start">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_0_80px_rgba(255,255,255,0.04)] backdrop-blur-md sm:p-10">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-[1px] w-8 bg-[#D6D6D6]" />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.36em] text-[#D6D6D6]">
+                Our Expertise
+              </span>
             </div>
+
             <h2
-              className="text-4xl md:text-4xl font-black text-white uppercase leading-[0.88]tracking-wider "
+              className="text-4xl font-black uppercase leading-[0.88] tracking-[0.2em] text-white sm:text-5xl"
               style={{ fontFamily: "'Audiowide', sans-serif" }}
             >
-              OUR Services
+              Our Services
             </h2>
-          </div>
 
-        </div>
+            <p className="mt-6 max-w-xl text-sm leading-7 text-white/70 sm:text-base">
+              We turn bold signage concepts into high-impact visual experiences that feel as premium as the brands they represent.
+            </p>
 
-        {/* Cards */}
-        <div className="flex flex-col gap-5 md:gap-6">
-          {/* First Row: 2 Cards (70% / 30%) */}
-          <div className="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-5 md:gap-6 items-stretch">
-            {services.slice(0, 2).map((svc) => (
-              <div
-                key={svc.id}
-                className="svc-card group relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[400px] cursor-pointer"
-              >
-                {/* Image */}
-                <img
-                  src={svc.image}
-                  alt={svc.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10 group-hover:via-black/40 transition-all duration-500" />
-
-                {/* Content */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                  {/* Top: number */}
-                  <span className="text-[11px] font-black text-white/30 tracking-[0.2em]">{svc.id}</span>
-
-                  {/* Bottom: title + desc */}
-                  <div>
-                    <h3
-                      className="text-2xl md:text-3xl font-black text-white uppercase mb-2 leading-tight tracking-wider"
-                      style={{ fontFamily: "'Audiowide', sans-serif" }}
-                    >
-                      {svc.title}
-                    </h3>
-                    <p className="text-white/50 text-xs font-light leading-relaxed max-w-[90%] group-hover:text-white/75 transition-colors duration-300">
-                      {svc.desc}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Hover arrow */}
-                <div className="absolute top-5 right-5 w-8 h-8 rounded-full border border-white/0 bg-white/0 flex items-center justify-center opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:border-white/30 group-hover:bg-white/10 transition-all duration-400">
-                  <span className="text-white text-xs">↗</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Second Row: 3 Equal Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {services.slice(2, 5).map((svc) => (
-              <div
-                key={svc.id}
-                className="svc-card group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer"
-              >
-                {/* Image */}
-                <img
-                  src={svc.image}
-                  alt={svc.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10 group-hover:via-black/40 transition-all duration-500" />
-
-                {/* Content */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                  {/* Top: number */}
-                  <span className="text-[11px] font-black text-white/30 tracking-[0.2em]">{svc.id}</span>
-
-                  {/* Bottom: title + desc */}
-                  <div>
-                    <h3
-                      className="text-2xl md:text-3xl font-black text-white uppercase mb-2 leading-tight"
-                      style={{ fontFamily: "'Audiowide', sans-serif" }}
-                    >
-                      {svc.title}
-                    </h3>
-                    <p className="text-white/50 text-xs font-light leading-relaxed max-w-[90%] group-hover:text-white/75 transition-colors duration-300">
-                      {svc.desc}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Hover arrow */}
-                <div className="absolute top-5 right-5 w-8 h-8 rounded-full border border-white/0 bg-white/0 flex items-center justify-center opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:border-white/30 group-hover:bg-white/10 transition-all duration-400">
-                  <span className="text-white text-xs">↗</span>
-                </div>
-              </div>
-            ))}
+            <div className="mt-8 h-px w-24 bg-white/15" />
+            <p className="mt-5 text-[11px] uppercase tracking-[0.38em] text-white/45">
+              Selected work
+            </p>
           </div>
         </div>
 
+        <div className="flex flex-col gap-6 md:gap-8">
+          {services.map((svc, index) => (
+            <article
+              key={svc.id}
+              ref={(el) => (cardRefs.current[index] = el)}
+              className="group overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0b0b]"
+            >
+              <div className="relative h-[320px] sm:h-[420px] lg:h-[350px]">
+                <img
+                  src={svc.image}
+                  alt={svc.title}
+                  className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
+
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">
+                      {svc.id}
+                    </span>
+                    <span className="rounded-full border border-white/20 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-white/70">
+                      Featured
+                    </span>
+                  </div>
+                  <h3
+                    className="mt-4 text-2xl font-black uppercase leading-tight tracking-[0.16em] text-white sm:text-3xl"
+                    style={{ fontFamily: "'Audiowide', sans-serif" }}
+                  >
+                    {svc.title}
+                  </h3>
+                </div>
+              </div>
+
+              <div className="px-6 py-6 sm:px-8 sm:py-7">
+                <p className="max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+                  {svc.desc}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
