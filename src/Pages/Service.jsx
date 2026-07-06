@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import img1 from "../assets/Service/img-1.jpeg";
-import img2 from "../assets/Service/image.png";
-import img3 from "../assets/Feature/img-7.png";
-import img4 from "../assets/Feature/img-1.jpeg";
-import img5 from "../assets/Service/img-5.jpeg";
-import img6 from "../assets/Service/Neon-Sign-Board3.jpg";
+import img1 from "../assets/OurService/img-1.jpeg";
+import img2 from "../assets/OurService/image.png";
+import img3 from "../assets/OurService/img-3.jpeg";
+import img4 from "../assets/OurService/img-1.jpeg";
+import img5 from "../assets/OurService/img-5.jpeg";
+import img6 from "../assets/OurService/Neon-Sign-Board3.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,8 +85,7 @@ const Service = () => {
     <section
       ref={sectionRef}
       id="services"
-      className="w-full bg-[#040404] py-20 px-4 sm:px-6 lg:px-8 xl:px-10 border-t border-white/10"
-      style={{ fontFamily: "'Manrope', sans-serif" }}
+      className="w-full bg-[#040404] py-20 px-4 sm:px-6 lg:px-8 xl:px-10 border-t border-white/10 font-manrope"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-15 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div className="lg:sticky lg:top-55 lg:self-start">
@@ -99,8 +98,7 @@ const Service = () => {
             </div>
 
             <h2
-              className="text-4xl font-black uppercase leading-[0.88] tracking-[0.2em] text-white sm:text-5xl"
-              style={{ fontFamily: "'Audiowide', sans-serif" }}
+              className="text-4xl font-semibold uppercase leading-[0.88] tracking-[0.2em] text-white sm:text-5xl font-poppins"
             >
               Our Services
             </h2>
@@ -141,8 +139,7 @@ const Service = () => {
                     </span>
                   </div>
                   <h3
-                    className="mt-4 text-2xl font-black uppercase leading-tight tracking-[0.16em] text-white sm:text-3xl"
-                    style={{ fontFamily: "'Audiowide', sans-serif" }}
+                    className="mt-4 text-2xl font-semibold uppercase leading-tight tracking-[0.16em] text-white sm:text-3xl font-poppins"
                   >
                     {svc.title}
                   </h3>

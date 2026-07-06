@@ -74,8 +74,7 @@ const HeroContent = () => {
   return (
     <div
       ref={containerRef}
-      className="relative z-10 w-full h-full flex items-center gap-0 px-8 md:px-16 lg:px-24 mt-20"
-      style={{ fontFamily: "'Manrope', sans-serif" }}
+      className="relative z-10 w-full h-full flex items-center gap-0 px-8 md:px-16 lg:px-24 mt-20 font-poppins"
     >
       {/* ── LEFT: Main content ── */}
       <div className="flex flex-col items-start flex-1 min-w-0">
@@ -85,7 +84,7 @@ const HeroContent = () => {
           ref={tagRef}
           className="flex items-center gap-3 mb-8 text-[10px] font-black  uppercase tracking-[0.45em] text-white"
         >
-          <span className="inline-block w-8 h-px bg-[#D6D6D6]" />
+          <span className="inline-block w-8  bg-[#D6D6D6]" />
           GraphicX Studio — Premium Branding
         </div>
 
@@ -94,24 +93,24 @@ const HeroContent = () => {
           <span
             ref={line1Ref}
             data-text="We Create"
-            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-wider text-white "
-            style={{ fontFamily: "'Audiowide', sans-serif", fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em' }}
+            className="block overflow-hidden uppercase font-semibold leading-[0.88] tracking-wider text-white font-poppins"
+            style={{ fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em' }}
           >
             We Create
           </span>
           <span
             ref={line2Ref}
             data-text="Brand Identity"
-            className="block overflow-hidden uppercase tracking-wider font-black leading-[0.88] italic text-transparent pl-2 md:pl-[clamp(16px,3vw,60px)] md:mt-0 mt-2"
-            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
+            className="block overflow-hidden uppercase tracking-wider font-black leading-[0.88] italic text-transparent pl-2 md:pl-[clamp(16px,3vw,60px)] md:mt-0 mt-2 font-poppins"
+            style={{ fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
           >
             Brand Identity
           </span>
           <span
             ref={line3Ref}
             data-text='Not Just "Sign Board"'
-            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-wider text-white mt-2"
-            style={{ fontFamily: "'Audiowide', sans-serif", fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em' }}
+            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-wider text-white mt-2 font-poppins"
+            style={{ fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em' }}
           >
             Not Just "Sign Board"
           </span>
@@ -181,8 +180,8 @@ const HeroContent = () => {
         {/* Stat 2 */}
         <div className="text-center">
           <div
-            className="font-black leading-none text-white"
-            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(44px, 4.5vw, 42px)' }}
+            className="font-black leading-none text-white font-manrope"
+            style={{ fontSize: 'clamp(44px, 4.5vw, 42px)' }}
           >
             8<span className="text-[#ff4d6d]">yr</span>
           </div>
@@ -196,8 +195,8 @@ const HeroContent = () => {
         {/* Stat 3 */}
         <div className="text-center">
           <div
-            className="font-black leading-none text-white"
-            style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(44px, 4.5vw, 42px)' }}
+            className="font-black leading-none text-white font-manrope"
+            style={{ fontSize: 'clamp(44px, 4.5vw, 42px)' }}
           >
             100<span className="text-[#7b61ff]">%</span>
           </div>

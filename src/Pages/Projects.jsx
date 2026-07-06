@@ -21,7 +21,7 @@ const Projects = () => {
   ];
 
   return (
-   <section id="projects" className="w-full bg-black py-16 md:py-20" style={{ fontFamily: "'Manrope', sans-serif" }}>
+   <section id="projects" className="w-full bg-black py-16 md:py-20 font-manrope">
       {/* Header */}
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 mb-12 text-center">
         <div className="flex items-center justify-center gap-4 mb-6">
@@ -30,8 +30,7 @@ const Projects = () => {
           <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
         </div>
         <h2
-          className="text-4xl md:text-4xl font-black text-white uppercase leading-[0.9] tracking-wider mb-6"
-          style={{ fontFamily: "'Audiowide', sans-serif" }}
+          className="text-4xl md:text-4xl font-semibold text-white uppercase leading-[0.9] tracking-wider mb-6 font-poppins"
         >
           Our Projects
         </h2>

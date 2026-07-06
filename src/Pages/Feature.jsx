@@ -128,7 +128,7 @@ const Feature = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full bg-black py-8  md:py-10 border-t border-white/5" style={{ fontFamily: "'Manrope', sans-serif" }}>
+    <section ref={containerRef} className="w-full bg-black py-8  md:py-10 border-t border-white/5 font-manrope">
 
       {/* Header */}
       <div className="feature-header max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">
@@ -138,8 +138,7 @@ const Feature = () => {
           <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
         </div>
         <h2
-          className="text-4xl md:text-4xl font-black text-white uppercase leading-[0.9] tracking-wider"
-          style={{ fontFamily: "'Audiowide', sans-serif" }}
+          className="text-4xl md:text-4xl font-semibold text-white uppercase leading-[0.9] tracking-wider font-poppins"
         >
          From Vision to Reality
         </h2>
@@ -159,8 +158,7 @@ const Feature = () => {
             {/* Project Info Header */}
             <div className="flex flex-col gap-3 px-2">
               <h3
-                className="text-3xl lg:text-4xl font-black uppercase text-[#D6D6D6] leading-none tracking-wider"
-                style={{ fontFamily: "'Audiowide', sans-serif" }}
+                className="text-3xl lg:text-4xl font-semibold uppercase text-[#D6D6D6] leading-none tracking-wider font-poppins"
               >
                 {project.title}
               </h3>

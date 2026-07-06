@@ -5,8 +5,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="w-full bg-[#0a0a0a] border-t border-white/5"
-      style={{ fontFamily: "'Manrope', sans-serif" }}
+      className="w-full bg-[#0a0a0a] border-t border-white/5 font-manrope"
     >
       {/* ── FOOTER MAIN SECTION ── */}
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-20">
@@ -29,7 +28,7 @@ const Footer = () => {
 
           {/* Column 2: Company */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-xl font-semibold uppercase tracking-[0.24em] text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <h4 className="text-xl font-semibold uppercase tracking-[0.24em] text-white font-poppins">
               Company
             </h4>
             <div className="flex flex-col gap-3.5 text-base">
@@ -50,7 +49,7 @@ const Footer = () => {
 
           {/* Column 3: Contact Us */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-xl font-semibold uppercase tracking-[0.24em] text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <h4 className="text-xl font-semibold uppercase tracking-[0.24em] text-white font-poppins">
               Contact Us
             </h4>
             <div className="flex flex-col gap-3.5 text-base">

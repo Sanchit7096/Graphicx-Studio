@@ -30,8 +30,7 @@ const About = () => {
         <section
             ref={sectionRef}
             id="about"
-            className="w-full bg-black py-18  md:py-18 px-6 md:px-12 lg:px-24"
-            style={{ fontFamily: "'Manrope', sans-serif" }}
+            className="w-full bg-black py-18  md:py-18 px-6 md:px-12 lg:px-24 font-manrope"
         >
             <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
 
@@ -43,8 +42,7 @@ const About = () => {
                     </div>
 
                     <h2
-                        className="animate-fade text-4xl md:text-4xl lg:text-5xl font-black text-white mb-12 leading-[1.1] tracking-wider uppercase"
-                        style={{ fontFamily: "'Audiowide', sans-serif" }}
+                        className="animate-fade font-semibold text-4xl md:text-4xl lg:text-5xl  text-white mb-12 leading-[1.1] tracking-wider uppercase font-poppins"
                     >
                         GraphicX <br className="hidden lg:block" />
                         Studio
@@ -52,11 +50,11 @@ const About = () => {
 
                     <div className="animate-fade flex flex-col gap-8 mt-auto">
                         <div>
-                            <p className="text-5xl font-black text-white mb-1" style={{ fontFamily: "'Manrope', sans-serif" }}>8+</p>
+                            <p className="text-5xl font-semibold text-white mb-1 font-poppins">8+</p>
                             <p className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">Years of Experience</p>
                         </div>
                         <div>
-                            <p className="text-5xl font-black text-white mb-1" style={{ fontFamily: "'Manrope', sans-serif" }}>5.0</p>
+                            <p className="text-5xl font-semibold text-white mb-1 font-poppins">5.0</p>
                             <p className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">Client Star Rating</p>
                         </div>
                     </div>
