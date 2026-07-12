@@ -34,7 +34,7 @@ const ImageComparisonSlider = ({ before, after }) => {
   const [sliderPos, setSliderPos] = useState(50);
 
   return (
-    <div className="relative w-full h-[35vh] lg:h-[35vh] rounded-2xl overflow-hidden select-none">
+    <div className="relative w-full h-[35vh] lg:h-[45vh] rounded-2xl overflow-hidden select-none">
       {/* After Image (Background) */}
       <img
         src={after}
@@ -128,7 +128,7 @@ const Feature = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full bg-black py-8  md:py-10 border-t border-white/5 font-manrope">
+    <section ref={containerRef} className="w-full bg-black py-20 md:py-24 min-h-[75vh] border-t border-white/5 font-manrope">
 
       {/* Header */}
       <div className="feature-header max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">

@@ -85,9 +85,9 @@ const Service = () => {
     <section
       ref={sectionRef}
       id="services"
-      className="w-full bg-[#040404] py-20 px-4 sm:px-6 lg:px-8 xl:px-10 border-t border-white/10 font-manrope"
+      className="w-full bg-[#040404] py-20 md:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 min-h-[75vh] border-t border-white/10 font-manrope"
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-15 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+      <div className="mx-auto flex max-w-screen-2xl flex-col gap-15 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div className="lg:sticky lg:top-55 lg:self-start">
           <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_0_80px_rgba(255,255,255,0.04)] backdrop-blur-md sm:p-10">
             <div className="flex items-center gap-3 mb-6">

@@ -88,129 +88,114 @@ const WhyChooseUs = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-black py-20 md:py-20 border-t border-white/5 font-poppins"
+      className="w-full bg-black py-20 md:py-24 min-h-[75vh]  border-t border-white/5 font-poppins"
     >
-      <div className="max-w-screen-2xl mx-auto  px-6 md:px-12 lg:px-24">
+      <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
+        <div className="grid gap-12 lg:grid-cols-[minmax(300px,360px)_1fr] items-start">
+          <div className="space-y-8">
+            
 
-        {/* Main Heading */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
-            <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">
-              Testimonials
-            </span>
-            <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
+            <div className="space-y-6">
+              <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tight leading-tight">
+                Customers Feedback
+              </h2>
+              <p className="text-white/70 text-lg leading-8">
+               See Why Our Clients Love Working With Us.
+              </p>
+            </div>
+
+            <div className="flex gap-4">
+              <button
+                onClick={() =>
+                  setStartIndex(
+                    startIndex === 0
+                      ? testimonials.length - 1
+                      : startIndex - 1
+                  )
+                }
+                className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition hover:border-[#2edcc3] hover:bg-[#2edcc3]/15 hover:text-white"
+                aria-label="Previous testimonial"
+              >
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={() =>
+                  setStartIndex((startIndex + 1) % testimonials.length)
+                }
+                className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition hover:border-[#2edcc3] hover:bg-[#2edcc3]/15 hover:text-white"
+                aria-label="Next testimonial"
+              >
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <h2
-            className="text-4xl md:text-4xl font-semibold text-white uppercase leading-[0.9] tracking-wider font-poppins"
-          >
-            See Why Our Clients Love Working With Us
-          </h2>
-        </div>
-
-        {/* Testimonial Cards */}
-        <div className="relative">
-
-          {/* Left Arrow */}
-          <button
-            onClick={() =>
-              setStartIndex(
-                startIndex === 0
-                  ? testimonials.length - 1
-                  : startIndex - 1
-              )
-            }
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 rounded-full border border-white/20 hover:border-[#2edcc3] hover:bg-[#2edcc3]/10 flex items-center justify-center transition-all duration-300 group z-10"
-          >
-            <svg
-              className="w-5 h-5 text-white/50 group-hover:text-[#2edcc3] transition-colors duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          {/* Right Arrow */}
-          <button
-            onClick={() =>
-              setStartIndex((startIndex + 1) % testimonials.length)
-            }
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 rounded-full border border-white/20 hover:border-[#2edcc3] hover:bg-[#2edcc3]/10 flex items-center justify-center transition-all duration-300 group z-10"
-          >
-            <svg
-              className="w-5 h-5 text-white/50 group-hover:text-[#2edcc3] transition-colors duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-
-          {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid gap-6 sm:grid-cols-2">
             {visibleTestimonials.map((testimonial) => (
-              <div
+              <article
                 key={testimonial.id}
-                className="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+                className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] transition hover:border-[#2edcc3]/20 hover:bg-white/10"
               >
-                <div className="text-center">
-
-                  {/* Quote Icon */}
-                  <div className="mb-4">
-                    <svg
-                      className="w-6 h-6 mx-auto text-[#2edcc3]"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white/90">
+                    <span className="text-sm font-semibold uppercase tracking-[0.25em]">
+                      {testimonial.author
+                        .split(' ')
+                        .map((word) => word[0])
+                        .slice(0, 2)
+                        .join('')}
+                    </span>
                   </div>
 
-                  {/* Quote */}
-                  <p className="text-white/80 text-base md:text-lg font-light leading-relaxed mb-6">
-                    "{testimonial.quote}"
-                  </p>
-
-                  {/* Author */}
-                  <div className="flex flex-col items-center gap-3">
-
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <svg
-                          key={i}
-                          className="w-4 h-4 text-yellow-400"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-
-                    <h4 className="text-white font-bold text-sm uppercase tracking-wider">
+                  <div>
+                    <h3 className="text-base font-semibold text-white">
                       {testimonial.author}
-                    </h4>
-
+                    </h3>
+                    <p className="text-sm text-white/70">Trusted customer</p>
                   </div>
                 </div>
-              </div>
+
+                <div className="mt-6 flex items-center gap-1">
+                  {[...Array(5)].map((_, index) => (
+                    <span
+                      key={index}
+                      className={`h-4 w-4 ${index < testimonial.rating ? 'text-amber-400' : 'text-white/20'}`}
+                    >
+                      ★
+                    </span>
+                  ))}
+                </div>
+
+                <p className="mt-6 text-white/80 leading-8">
+                  “{testimonial.quote}”
+                </p>
+              </article>
             ))}
           </div>
-
         </div>
       </div>
     </section>

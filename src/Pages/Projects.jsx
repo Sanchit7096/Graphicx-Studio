@@ -1,23 +1,15 @@
 import CircularGallery from '../Component/CircularGallery'
-import img1 from "../assets/Projects/img1.jpeg";
-import img2 from "../assets/Projects/img2.jpeg";
-import img3 from "../assets/Projects/img3.jpeg";
-import img4 from "../assets/Projects/img4.jpeg";
-import img5 from "../assets/Projects/img5.jpeg";
-import img6 from "../assets/Projects/img6.jpeg";
-import img7 from "../assets/Projects/img7.jpeg";
-import img8 from "../assets/Projects/img8.jpeg";
+import img1 from "../assets/Projects/img1.png";
+import img2 from "../assets/Projects/img2.png";
+import img3 from "../assets/Projects/img3.png";
+import img4 from "../assets/Projects/img4.png";
 
 const Projects = () => {
   const projectItems = [
     { image: img1, text: 'Hotel Signage' },
     { image: img2, text: 'Hospital branding' },
     { image: img3, text: 'Dance Studio branding' },
-    { image: img4, text: 'Clothing Store branding' },
-    { image: img5, text: 'Mobile shop branding' },
-    { image: img6, text: 'Karate Studio branding' },
-    { image: img7, text: 'School branding' },
-    { image: img8, text: 'Hospital and clinic branding' }
+    { image: img4, text: 'Clothing Store branding' }
   ];
 
   return (

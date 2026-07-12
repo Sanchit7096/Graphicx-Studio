@@ -30,7 +30,7 @@ const About = () => {
         <section
             ref={sectionRef}
             id="about"
-            className="w-full bg-black py-18  md:py-18 px-6 md:px-12 lg:px-24 font-manrope"
+            className="w-full bg-black  min-h-[75vh] px-6 md:px-12 lg:px-12 font-manrope"
         >
             <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
 

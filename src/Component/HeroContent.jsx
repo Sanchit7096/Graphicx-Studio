@@ -7,8 +7,6 @@ const HeroContent = () => {
   const line2Ref = useRef(null);
   const line3Ref = useRef(null);
   const bodyRef = useRef(null);
-  const btn1Ref = useRef(null);
-  const btn2Ref = useRef(null);
   const dividerRef = useRef(null);
   const statsRef = useRef(null);
   const tagRef = useRef(null);
@@ -60,7 +58,6 @@ const HeroContent = () => {
 
       tl.from(dividerRef.current, { scaleX: 0, transformOrigin: 'left', duration: 0.8, ease: 'power2.out' }, 1.4);
       tl.from(bodyRef.current, { y: 30, opacity: 0, duration: 1 }, 1.5);
-      tl.from([btn1Ref.current, btn2Ref.current], { y: 20, opacity: 0, stagger: 0.15, duration: 0.8 }, 1.7);
       tl.from(statsRef.current?.children, { y: 20, opacity: 0, stagger: 0.12, duration: 0.8 }, 1.9);
 
       gsap.to([line1Ref.current, line2Ref.current, line3Ref.current], {
@@ -132,28 +129,6 @@ const HeroContent = () => {
             From iconic logo design to high-impact LED storefronts and shop banners,
             GraphicX Studio bridges the gap between creative design and physical reality.
           </p>
-
-          <div className="flex flex-row lg:flex-col gap-4 flex-shrink-0">
-            {/* Primary CTA */}
-            <button
-              ref={btn1Ref}
-              className="group relative inline-flex items-center gap-3 px-8 py-3.5 bg-[#D6D6D6] text-black text-[10px] font-black uppercase tracking-[0.35em] rounded-full border-none cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(214,214,214,0.4)]"
-            >
-              {/* shimmer */}
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out pointer-events-none" />
-              <span className="relative z-10">Explore Our Work</span>
-              <span className="relative z-10 flex items-center justify-center w-5 h-5 rounded-full bg-black/10 flex-shrink-0">↗</span>
-            </button>
-
-            {/* Ghost CTA */}
-            <button
-              ref={btn2Ref}
-              className="inline-flex items-center gap-3 px-8 py-3.5 bg-transparent text-white/70 text-[10px] font-black uppercase tracking-[0.35em] rounded-full border border-white/10 cursor-pointer transition-all duration-300 hover:border-white/40 hover:text-white hover:scale-105 hover:bg-white/5"
-            >
-              Get a Quote
-              <span className="opacity-40">→</span>
-            </button>
-          </div>
         </div>
       </div>
 

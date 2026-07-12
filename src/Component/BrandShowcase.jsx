@@ -52,11 +52,13 @@ const BrandShowcase = () => {
   };
 
   return (
-    <section ref={containerRef} className="w-full bg-black py-18 border-t border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-24 mb-16 text-center">
-        <h3 className="text-white/40 text-[11px] font-bold tracking-[0.3em] uppercase mb-4">
-          Trusted By Innovative Brands
-        </h3>
+    <section ref={containerRef} className="w-full bg-black py-16 md:py-16 border-t border-white/5 overflow-hidden min-h-[75vh]">
+      <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
+        <div className="mb-16 text-center">
+          <h3 className="text-white/40 text-[11px] font-bold tracking-[0.3em] uppercase mb-4">
+            Trusted By Innovative Brands
+          </h3>
+        </div>
       </div>
 
       <div className="relative w-full flex flex-col justify-center overflow-hidden">
