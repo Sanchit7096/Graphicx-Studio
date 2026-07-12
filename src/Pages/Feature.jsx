@@ -128,7 +128,7 @@ const Feature = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full bg-black py-20 md:py-24 min-h-[75vh] border-t border-white/5 font-manrope">
+    <section ref={containerRef} className="w-full bg-black py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 min-h-[75vh] border-t border-white/5 font-manrope">
 
       {/* Header */}
       <div className="feature-header max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">

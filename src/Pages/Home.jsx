@@ -5,7 +5,6 @@ import Service from '../Pages/Service';
 import Feature from '../Pages/Feature';
 import WhyChooseUs from '../Pages/WhyChooseUs';
 import Footer from '../Component/Footer';
-import Projects from '../Pages/Projects';
 import FeaturedProjects from '../Component/FeaturedProjects';
 
 function Home() {
@@ -14,7 +13,6 @@ function Home() {
       <Hero />
       <BrandShowcase />
       <About />
-
       <Service />
       <FeaturedProjects />
       <Feature />

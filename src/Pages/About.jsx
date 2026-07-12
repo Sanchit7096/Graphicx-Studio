@@ -23,14 +23,15 @@ const About = () => {
             });
         }, sectionRef);
 
-        return () => ctx.revert();
+        return () => ctx.revert();`
+        `
     }, []);
 
     return (
         <section
             ref={sectionRef}
             id="about"
-            className="w-full bg-black  min-h-[75vh] px-6 md:px-12 lg:px-12 font-manrope"
+            className="w-full bg-black  min-h-[75vh] py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 font-manrope"
         >
             <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
 

@@ -10,31 +10,30 @@ import logo5 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.14.13_PM__
 import logo6 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.16.31_PM-removebg-preview.png';
 import logo7 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.13.43_PM__7_-removebg-preview (1).png';
 
+// TODO: verify logo4 and logo5 names — filled in placeholders below, confirm against actual client list
 const LOGOS = [
-  { src: logo1, alt: 'Brand Logo 1' },
-  { src: logo2, alt: 'Brand Logo 2' },
-  { src: logo3, alt: 'Brand Logo 3' },
-  { src: logo4, alt: 'Brand Logo 4' },
-  { src: logo5, alt: 'Brand Logo 5' },
-  { src: logo6, alt: 'Brand Logo 6' },
-  { src: logo7, alt: 'Brand Logo 7' },
+  { src: logo1, alt: 'Mahabali Fitness Club logo' },
+  { src: logo2, alt: 'D.K Computer logo' },
+  { src: logo3, alt: 'G9 Multispeciality Hospital & ICU logo' },
+  { src: logo4, alt: 'Client logo 4' },
+  { src: logo5, alt: 'Client logo 5' },
+  { src: logo6, alt: 'Client logo 6' },
+  { src: logo7, alt: 'Mahabali Fitness Club logo' },
 ];
+
 const BrandShowcase = () => {
   const containerRef = useRef(null);
   const marqueeRef = useRef(null);
   const tweenRef = useRef(null);
 
   useEffect(() => {
-    // We duplicate the logos array once to make it seamless
-    // The total width of one set of logos needs to be scrolled, then it repeats
     const ctx = gsap.context(() => {
-      // Get the width of half the marquee (one full set of logos)
       const totalWidth = marqueeRef.current.scrollWidth;
       const distance = totalWidth / 2;
 
       tweenRef.current = gsap.to(marqueeRef.current, {
         x: -distance,
-        duration: 30, // Adjust speed here
+        duration: 30,
         ease: 'none',
         repeat: -1,
       });
@@ -52,34 +51,34 @@ const BrandShowcase = () => {
   };
 
   return (
-    <section ref={containerRef} className="w-full bg-black py-16 md:py-16 border-t border-white/5 overflow-hidden min-h-[75vh]">
-      <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
-        <div className="mb-16 text-center">
-          <h3 className="text-white/40 text-[11px] font-bold tracking-[0.3em] uppercase mb-4">
+    <section
+      ref={containerRef}
+      className="w-full bg-black py-10 md:py-12 lg:py-16 px-5 sm:px-6 lg:px-8 xl:px-10 border-t border-white/5 overflow-hidden"
+    >
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="mb-8 md:mb-10 text-center">
+          <h3 className="text-white/40 text-[11px] font-bold tracking-[0.3em] uppercase">
             Trusted By Innovative Brands
           </h3>
         </div>
       </div>
 
       <div className="relative w-full flex flex-col justify-center overflow-hidden">
-        {/* Left and Right Fade Gradients for smooth entering/exiting */}
         <div className="absolute top-0 left-0 w-24 md:w-64 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-24 md:w-64 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-        {/* Marquee Track */}
         <div
-          className="flex w-max items-center py-4"
+          className="flex w-max items-center"
           ref={marqueeRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {/* Double the logos to create the infinite scroll illusion */}
           {[...LOGOS, ...LOGOS].map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 px-8 md:px-12 flex items-center justify-center"
+              className="flex-shrink-0 px-4 md:px-6 flex items-center justify-center"
             >
-              <div className="bg-white p-4 md:p-6 rounded-2xl flex items-center justify-center h-24 md:h-32 w-48 md:w-56">
+              <div className="bg-white p-4 md:p-5 rounded-2xl flex items-center justify-center h-20 md:h-28 w-40 md:w-48 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105">
                 <img
                   src={logo.src}
                   alt={logo.alt}
@@ -95,6 +94,3 @@ const BrandShowcase = () => {
 };
 
 export default BrandShowcase;
-
-
-

@@ -83,7 +83,7 @@ export default function FeaturedProjects() {
 
   return (
     <>
-      <section className="relative w-full bg-[#080808] flex flex-col overflow-hidden pt-[8vh] pb-[6vh] select-none min-h-[75vh]">
+      <section className="relative w-full bg-[#080808] flex flex-col overflow-hidden py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 select-none min-h-[75vh]">
 
         {/* Background Grain & Numbers */}
         <div

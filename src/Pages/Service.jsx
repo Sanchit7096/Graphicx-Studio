@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import img1 from "../assets/OurService/img-1.jpeg";
 import img2 from "../assets/OurService/image.png";
 import img3 from "../assets/OurService/img-3.jpeg";
-import img4 from "../assets/OurService/img-1.jpeg";
+import img4 from "../assets/OurService/img-1.jpeg"; // TODO: duplicate of img1 — replace with a real Corporate Branding photo
 import img5 from "../assets/OurService/img-5.jpeg";
 import img6 from "../assets/OurService/Neon-Sign-Board3.jpg";
 
@@ -16,36 +16,42 @@ const services = [
     title: "LED Signboards",
     desc: "Illuminated displays built to make your brand impossible to ignore.",
     image: img3,
+    featured: true,
   },
   {
     id: "02",
     title: "Acrylic Signboards",
     desc: "Crystal-clear, premium finish that elevates any storefront.",
     image: img5,
+    featured: false,
   },
   {
     id: "03",
     title: "ACP Signboards",
     desc: "Durable aluminum panels with a sharp professional look.",
     image: img2,
+    featured: false,
   },
   {
     id: "04",
     title: "Neon Signs",
     desc: "Custom neon lighting that turns your space into a statement.",
     image: img6,
+    featured: true,
   },
   {
     id: "05",
     title: "3D Letter Signs",
     desc: "Bold dimensional lettering that commands attention.",
     image: img1,
+    featured: false,
   },
   {
     id: "06",
     title: "Corporate Branding",
     desc: "End-to-end identity systems — signage, print, and digital.",
     image: img4,
+    featured: false,
   },
 ];
 
@@ -85,7 +91,7 @@ const Service = () => {
     <section
       ref={sectionRef}
       id="services"
-      className="w-full bg-[#040404] py-20 md:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 min-h-[75vh] border-t border-white/10 font-manrope"
+      className="w-full bg-[#040404] py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 min-h-[75vh] border-t border-white/10 font-manrope"
     >
       <div className="mx-auto flex max-w-screen-2xl flex-col gap-15 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div className="lg:sticky lg:top-55 lg:self-start">
@@ -97,9 +103,7 @@ const Service = () => {
               </span>
             </div>
 
-            <h2
-              className="text-4xl font-semibold uppercase leading-[0.88] tracking-[0.2em] text-white sm:text-5xl font-poppins"
-            >
+            <h2 className="text-4xl font-semibold uppercase leading-[0.88] tracking-[0.2em] text-white sm:text-5xl font-poppins">
               Our Services
             </h2>
 
@@ -119,9 +123,10 @@ const Service = () => {
             <article
               key={svc.id}
               ref={(el) => (cardRefs.current[index] = el)}
-              className="group overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0b0b]"
+              tabIndex={0}
+              className="group overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0b0b] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-white/20 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4"
             >
-              <div className="relative h-[320px] sm:h-[420px] lg:h-[350px]">
+              <div className="relative h-[320px] sm:h-[420px] lg:h-[350px] overflow-hidden">
                 <img
                   src={svc.image}
                   alt={svc.title}
@@ -134,13 +139,13 @@ const Service = () => {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">
                       {svc.id}
                     </span>
-                    <span className="rounded-full border border-white/20 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-white/70">
-                      Featured
-                    </span>
+                    {svc.featured && (
+                      <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-white backdrop-blur-sm">
+                        Featured
+                      </span>
+                    )}
                   </div>
-                  <h3
-                    className="mt-4 text-2xl font-semibold uppercase leading-tight tracking-[0.16em] text-white sm:text-3xl font-poppins"
-                  >
+                  <h3 className="mt-4 text-2xl font-semibold uppercase leading-tight tracking-[0.16em] text-white sm:text-3xl font-poppins transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
                     {svc.title}
                   </h3>
                 </div>
@@ -160,4 +165,3 @@ const Service = () => {
 };
 
 export default Service;
-

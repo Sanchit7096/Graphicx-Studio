@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="w-full bg-[#0a0a0a] border-t border-white/5 font-manrope"
+      className="w-full bg-[#0a0a0a] py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 border-t border-white/5 font-manrope"
     >
       {/* ── FOOTER MAIN SECTION ── */}
-      <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-20">
+      <div className="max-w-screen-2xl ">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           {/* Column 1: Logo & Description */}
           <div className="flex flex-col gap-6">
