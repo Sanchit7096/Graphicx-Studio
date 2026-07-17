@@ -80,6 +80,13 @@ export default function FeaturedProjects() {
       else if (e.deltaX < -25) navigate(-1);
     }
   };
+  // Auto-advance every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex(prev => (prev + 1) % total);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [activeIndex, total]);
 
   return (
     <>
