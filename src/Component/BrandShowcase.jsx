@@ -7,7 +7,7 @@ import logo2 from '../assets/BrandLogo/DkComputer.png';
 import logo3 from '../assets/BrandLogo/G9Logo.png';
 import logo4 from '../assets/BrandLogo/KigsGym.png';
 import logo5 from '../assets/BrandLogo/Mahabali.png';
-import logo6 from '../assets/BrandLogo/SocialBudies.png';
+import logo6 from '../assets/BrandLogo/SociaLBudies.png';
 
 // TODO: verify logo4 and logo5 names — filled in placeholders below, confirm against actual client list
 const LOGOS = [
