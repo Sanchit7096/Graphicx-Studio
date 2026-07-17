@@ -60,9 +60,9 @@ const WhyChooseUs = () => {
   const visibleTestimonials = isMobile
     ? [testimonials[startIndex]]
     : [
-        testimonials[startIndex],
-        testimonials[(startIndex + 1) % testimonials.length]
-      ];
+      testimonials[startIndex],
+      testimonials[(startIndex + 1) % testimonials.length]
+    ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -88,19 +88,20 @@ const WhyChooseUs = () => {
   return (
     <section
       ref={containerRef}
+      id='clients'
       className="w-full bg-black py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 min-h-[75vh]  border-t border-white/5 font-poppins"
     >
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid gap-12 lg:grid-cols-[minmax(300px,360px)_1fr] items-start">
           <div className="space-y-8">
-            
+
 
             <div className="space-y-6">
               <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tight leading-tight">
                 Customers Feedback
               </h2>
               <p className="text-white/70 text-lg leading-8">
-               See Why Our Clients Love Working With Us.
+                See Why Our Clients Love Working With Us.
               </p>
             </div>
 

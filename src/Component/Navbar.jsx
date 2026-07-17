@@ -132,7 +132,7 @@ export default function Navbar() {
 
           <a href="#Service" className="hover:text-orange-400">Services</a>
           <a href="#about" className="hover:text-orange-400">About Us</a>
-          <a href="#locations" className="hover:text-orange-400">Locations</a>
+          <a href="#contact" className="hover:text-orange-400">Locations</a>
           <a href="#clients" className="hover:text-orange-400">Clients</a>
           <a href="#contact" className="hover:text-orange-400">Contact</a>
 

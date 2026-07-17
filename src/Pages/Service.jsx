@@ -90,7 +90,7 @@ const Service = () => {
   return (
     <section
       ref={sectionRef}
-      id="services"
+      id="Service"
       className="w-full bg-[#040404] py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 min-h-[75vh] border-t border-white/10 font-manrope"
     >
       <div className="mx-auto flex max-w-screen-2xl flex-col gap-15 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
