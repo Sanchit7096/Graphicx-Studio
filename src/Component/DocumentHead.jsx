@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-const siteTitle = 'GraphicX Studio | Signage & Branding Agency in Surat';
-const siteDescription = 'GraphicX Studio is a signage and branding agency in Surat, Gujarat, creating premium signboards, branding, and visual identity for local businesses.';
+const siteTitle = 'GraphicX Studio | LED Sign Board, ACP Signage & Branding Company in Surat & Dindoli';
+const siteDescription = 'GraphicX Studio is a LED Sign Board, ACP Signage & Branding Company in Surat & Dindoli, Gujarat, creating premium signboards, branding, and visual identity for local businesses.';
 const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://graphicxstudio.com';
 
 const schema = {
