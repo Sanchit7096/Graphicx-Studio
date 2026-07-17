@@ -17,7 +17,6 @@ const LOGOS = [
   { src: logo4, alt: 'Client logo 4' },
   { src: logo5, alt: 'Client logo 5' },
   { src: logo6, alt: 'Client logo 6' },
-  // { src: logo7, alt: 'Mahabali Fitness Club logo' },
 ];
 
 const BrandShowcase = () => {

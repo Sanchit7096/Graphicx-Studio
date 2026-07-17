@@ -5,8 +5,7 @@ import image1 from "../assets/Feature/img-1.jpeg";
 import image2 from "../assets/Feature/img-2.jpeg";
 import image4 from "../assets/Feature/img-4.png";
 import image5 from "../assets/Feature/img-5.png";
-import image6 from "../assets/Feature/img-6.png";
-import image7 from "../assets/Feature/img-7.jpeg";
+
 
 
 
@@ -140,7 +139,7 @@ const Feature = () => {
         <h2
           className="text-4xl md:text-4xl font-semibold text-white uppercase leading-[0.9] tracking-wider font-poppins"
         >
-         From Vision to Reality
+          From Vision to Reality
         </h2>
         <p className="mt-6 text-white/50 text-base md:text-lg font-light max-w-3xl mx-auto">
           Drag the sliders to witness the incredible visual impact of premium signage.

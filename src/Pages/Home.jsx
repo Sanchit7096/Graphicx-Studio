@@ -1,11 +1,11 @@
 import Hero from '../Component/Hero';
 import About from '../Pages/About';
-import BrandShowcase from '../Component/BrandShowcase';
 import Service from '../Pages/Service';
 import Feature from '../Pages/Feature';
 import WhyChooseUs from '../Pages/WhyChooseUs';
 import Footer from '../Component/Footer';
 import FeaturedProjects from '../Component/FeaturedProjects';
+import BrandShowcase from '../Component/BrandShowcase';
 
 function Home() {
   return (
