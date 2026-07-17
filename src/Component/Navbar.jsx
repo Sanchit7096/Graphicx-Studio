@@ -16,9 +16,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[150] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] ${
-        isScrolled ? 'py-3 md:py-4 bg-black/60 backdrop-blur-2xl border-b border-white/10 shadow-lg' : 'py-6 md:py-8 bg-transparent border-b border-transparent'
-      }`}
+      className={`fixed top-0 left-0 w-full z-[150] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] ${isScrolled ? 'py-3 md:py-4 bg-black/60 backdrop-blur-2xl border-b border-white/10 shadow-lg' : 'py-6 md:py-8 bg-transparent border-b border-transparent'
+        }`}
     >
       <div className="max-w-[95%] mx-auto px-4 md:px-6 flex items-center justify-between relative text-white">
 
@@ -28,9 +27,8 @@ const Navbar = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <div
-            className={`relative transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105 w-auto flex items-center ${
-              isScrolled ? 'h-9 md:h-10' : 'h-12 md:h-14'
-            }`}
+            className={`relative transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105 w-auto flex items-center ${isScrolled ? 'h-9 md:h-10' : 'h-12 md:h-14'
+              }`}
           >
             <img
               src={logoImg}
@@ -44,17 +42,17 @@ const Navbar = () => {
         {/* Desktop Navigation Menu */}
         <div className="hidden md:flex items-center gap-2 pointer-events-auto animate-in fade-in slide-in-from-right-8 duration-700 transition-all duration-500">
           <div className="flex items-center rounded-full p-2 pr-2.5 bg-white/[0.03] backdrop-blur-3xl border border-white/10 shadow-2xl">
-             <a
+            <a
               href="#projects"
               className="relative px-8 py-3 text-[11px] font-black hover:text-white transition-all duration-300 uppercase tracking-[0.2em] whitespace-nowrap overflow-hidden group/btn1 text-white/60 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
-           >
+            >
               <span className="relative z-10 font-bold tracking-widest leading-none text-white">Our Work</span>
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#D6D6D6] transition-all duration-300 group-hover/btn1:w-1/2 opacity-0 group-hover/btn1:opacity-100"></div>
             </a>
             <a
-              href="#projects"
+              href="#Service"
               className="relative px-8 py-3 text-[11px] font-black hover:text-white transition-all duration-300 uppercase tracking-[0.2em] whitespace-nowrap overflow-hidden group/btn1 text-white/60 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
-           >
+            >
               <span className="relative z-10 font-bold tracking-widest leading-none text-white">Our Service</span>
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#D6D6D6] transition-all duration-300 group-hover/btn1:w-1/2 opacity-0 group-hover/btn1:opacity-100"></div>
             </a>

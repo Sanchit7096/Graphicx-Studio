@@ -2,13 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 // Import all brand logos
-import logo1 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.13.43_PM-removebg-preview.png';
-import logo2 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.13.43_PM__6_-removebg-preview.png';
-import logo3 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.13.43_PM__7_-removebg-preview.png';
-import logo4 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.14.13_PM-removebg-preview.png';
-import logo5 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.14.13_PM__1_-removebg-preview.png';
-import logo6 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.16.31_PM-removebg-preview.png';
-import logo7 from '../assets/BrandLogo/WhatsApp_Image_2026-06-24_at_3.13.43_PM__7_-removebg-preview (1).png';
+import logo1 from '../assets/BrandLogo/bowling.png';
+import logo2 from '../assets/BrandLogo/DkComputer.png';
+import logo3 from '../assets/BrandLogo/G9Logo.png';
+import logo4 from '../assets/BrandLogo/KigsGym.png';
+import logo5 from '../assets/BrandLogo/Mahabali.png';
+import logo6 from '../assets/BrandLogo/SocialBudies.png';
 
 // TODO: verify logo4 and logo5 names — filled in placeholders below, confirm against actual client list
 const LOGOS = [
@@ -18,7 +17,7 @@ const LOGOS = [
   { src: logo4, alt: 'Client logo 4' },
   { src: logo5, alt: 'Client logo 5' },
   { src: logo6, alt: 'Client logo 6' },
-  { src: logo7, alt: 'Mahabali Fitness Club logo' },
+  // { src: logo7, alt: 'Mahabali Fitness Club logo' },
 ];
 
 const BrandShowcase = () => {
