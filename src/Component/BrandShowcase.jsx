@@ -54,7 +54,7 @@ import rajPurohitSolar from "../assets/BrandLogo/RAJPUROHITSOLAR.png";
 import sand from "../assets/BrandLogo/SAND.png";
 import shubhamMobileLogo from "../assets/BrandLogo/SHUBHAMMOBILELOGO.png";
 import sideAcrylicAkFitness from "../assets/BrandLogo/SIDEACRYLICAKFITNESS.png";
-import socialBudies from "../assets/BrandLogo/SocialBudies.png";
+import socialBudies from "../assets/BrandLogo/SociaLBudies.png";
 
 import spicyOfPunjab from "../assets/BrandLogo/SPICYOFPANJAB.png";
 import studyPoint from "../assets/BrandLogo/STUDYPOINT.png";
