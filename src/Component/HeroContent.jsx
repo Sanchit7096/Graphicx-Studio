@@ -79,7 +79,7 @@ const HeroContent = () => {
         {/* Tag line */}
         <div
           ref={tagRef}
-          className="flex items-center gap-3 mb-8 text-[10px] font-black  uppercase tracking-[0.45em] text-white"
+          className="flex items-center gap-3 mb-8 text-[10px] font-semibold  uppercase tracking-[0.45em] text-white"
         >
           <span className="inline-block w-8  bg-[#D6D6D6]" />
           GraphicX Studio — Premium Branding
@@ -106,7 +106,7 @@ const HeroContent = () => {
           <span
             ref={line3Ref}
             data-text='Not Just "Sign Board"'
-            className="block overflow-hidden uppercase font-black leading-[0.88] tracking-wider text-white mt-2 font-poppins"
+            className="block overflow-hidden uppercase font-semibold leading-[0.88] tracking-wider text-white mt-2 font-poppins"
             style={{ fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em' }}
           >
             Not Just "Sign Board"
