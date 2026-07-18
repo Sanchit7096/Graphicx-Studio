@@ -7,50 +7,58 @@ import img3 from "../assets/OurService/img-3.jpeg";
 import img4 from "../assets/OurService/img-1.jpeg"; // TODO: duplicate of img1 — replace with a real Corporate Branding photo
 import img5 from "../assets/OurService/img-5.jpeg";
 import img6 from "../assets/OurService/Neon-Sign-Board3.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
     id: "01",
-    title: "LED Signboards",
-    desc: "Illuminated displays built to make your brand impossible to ignore.",
+    title: "LED Sign Board Manufacturer in Surat",
+    desc: "Custom illuminated LED signboards designed and installed to make your storefront impossible to ignore.",
     image: img3,
+    button: "View work",
     featured: true,
   },
   {
     id: "02",
-    title: "Acrylic Signboards",
-    desc: "Crystal-clear, premium finish that elevates any storefront.",
+    title: "Acrylic Signboard Design",
+    desc: "Crystal-clear acrylic signage with a premium finish that elevates any storefront or office space.",
     image: img5,
+    button: "View work",
     featured: false,
   },
   {
     id: "03",
-    title: "ACP Signboards",
-    desc: "Durable aluminum panels with a sharp professional look.",
+    title: "ACP Signage Solutions",
+    desc: "Durable ACP (aluminum composite panel) signboards built for a sharp, professional, long-lasting look.",
     image: img2,
+    button: "View work",
     featured: false,
   },
   {
     id: "04",
-    title: "Neon Signs",
-    desc: "Custom neon lighting that turns your space into a statement.",
+    title: "Custom Neon Signs",
+    desc: "Custom-designed neon lighting and LED neon signs that turn your storefront into a statement.",
     image: img6,
+    button: "View work",
     featured: true,
   },
   {
     id: "05",
-    title: "3D Letter Signs",
-    desc: "Bold dimensional lettering that commands attention.",
+    title: "3D Letter Signage",
+    desc: "Bold dimensional acrylic and metal letter signs that command attention on any storefront or building.",
     image: img1,
+    button: "View work",
     featured: false,
   },
   {
     id: "06",
-    title: "Corporate Branding",
-    desc: "End-to-end identity systems — signage, print, and digital.",
+    title: "Corporate Branding & Identity Design",
+    desc: "End-to-end brand identity systems — logo design, signage, print, and digital branding for growing businesses.",
     image: img4,
+    button: "View work",
     featured: false,
   },
 ];
@@ -108,7 +116,7 @@ const Service = () => {
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-white/70 sm:text-base">
-              We turn bold signage concepts into high-impact visual experiences that feel as premium as the brands they represent.
+              From LED sign boards to ACP signage, logo design, and complete brand identity — we deliver premium signage and branding solutions for businesses across Surat and Dindoli.
             </p>
 
             <div className="mt-8 h-px w-24 bg-white/15" />
@@ -145,16 +153,17 @@ const Service = () => {
                       </span>
                     )}
                   </div>
-                  <h3 className="mt-4 text-2xl font-semibold uppercase leading-tight tracking-[0.16em] text-white sm:text-3xl font-poppins transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
+                  <h3 className="mt-4 text-2xl uppercase leading-tight tracking-[0.16em] text-white sm:text-3xl font-poppins transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
                     {svc.title}
                   </h3>
                 </div>
               </div>
 
-              <div className="px-6 py-6 sm:px-8 sm:py-7">
-                <p className="max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+              <div className="px-6 py-6 sm:px-8 sm:py-7 flex justify-between">
+                <p className="max-w-2xl text-sm leading-7 text-white/70 sm:text-base max-w-xl">
                   {svc.desc}
                 </p>
+                <button className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-bold hover:underline transition-all duration-300">{svc.button} <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></button>
               </div>
             </article>
           ))}

@@ -4,6 +4,8 @@ import img1 from "../assets/Projects/img1.png"
 import img2 from "../assets/Projects/img2.png"
 import img3 from "../assets/Projects/img3.png"
 import img4 from "../assets/Projects/img4.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const PROJECTS = [
   { id: "01", title: "Hotel Signage", category: "LED Display & Illumination", location: "Indore", year: "2024", image: img1 },
@@ -166,6 +168,10 @@ export default function FeaturedProjects() {
 
           <div className="w-full h-[2px] bg-white/10 relative rounded overflow-hidden">
             <div className="absolute top-0 left-0 h-full bg-white transition-all duration-700 ease-out" style={{ width: `${((activeIndex + 1) / total) * 100}%` }} />
+
+          </div>
+          <div className="flex justify-end gap-5">
+            <p className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-semibold hover:underline transition-all duration-300">View All Projects <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></p>
           </div>
         </div>
 
