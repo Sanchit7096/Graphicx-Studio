@@ -1,5 +1,9 @@
-import React from 'react';
+
 import logoImg from '../assets/Logo/Image_from_iOS__2_-removebg-preview.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
   return (
@@ -9,9 +13,9 @@ const Footer = () => {
     >
       {/* ── FOOTER MAIN SECTION ── */}
       <div className="max-w-screen-4xl ">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-20">
           {/* Column 1: Logo & Description */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8">
             <div className="h-16 w-auto">
               <img
                 src={logoImg}
@@ -22,16 +26,43 @@ const Footer = () => {
               />
             </div>
             <p className="text-base leading-relaxed text-white/70">
-              A premier signage and branding studio in Surat, helping businesses create stronger first impressions through premium signboards, visual identity, and strategic design.
+              Signage & branding agency in Surat, Gujarat. LED sign boards, ACP signage, logo design & visual identity for businesses in Surat & Dindoli.
             </p>
           </div>
 
           {/* Column 2: Company */}
           <div className="flex flex-col gap-6">
             <h4 className="text-xl font-semibold uppercase tracking-[0.24em] text-white font-poppins">
+              Services
+            </h4>
+            <div className="flex flex-col gap-3.5 text-base">
+              <a href="#LED Sign Boards" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
+                LED Sign Boards
+              </a>
+              <a href="#Digital Signages" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
+                Digital Signages
+              </a>
+              <a href="#Installation" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
+                Installation & Maintenance
+              </a>
+              <a href="#Custom Design" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
+                Custom Design
+              </a>
+              <a href="#24/7 Support" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
+                24/7 Support
+              </a>
+
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <h4 className="text-xl font-semibold uppercase tracking-[0.24em] text-white font-poppins">
               Company
             </h4>
             <div className="flex flex-col gap-3.5 text-base">
+              <a href="#home" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
+                Home
+              </a>
               <a href="#about" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
                 About Us
               </a>
@@ -46,6 +77,8 @@ const Footer = () => {
               </a>
             </div>
           </div>
+
+
 
           {/* Column 3: Contact Us */}
           <div className="flex flex-col gap-6">
@@ -69,13 +102,19 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="w-fit rounded-full border border-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#2edcc3] transition hover:border-[#2edcc3]/50 hover:bg-[#2edcc3]/10"
                 >
-                  WhatsApp
+                  <FontAwesomeIcon icon={faWhatsapp} style={{ color: "rgb(99, 230, 190)", }} />
                 </a>
                 <a
                   href="mailto:graphicxstudio18@gmail.com"
                   className="w-fit rounded-full border border-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-white/80 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
                 >
-                  Email
+                  <FontAwesomeIcon icon={faEnvelope} style={{ color: "rgb(255, 255, 255)", }} />
+                </a>
+                <a
+                  href="https://www.instagram.com/graphicxstudio18/"
+                  className="w-fit rounded-full border border-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-white/80 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
+                >
+                  <FontAwesomeIcon icon={faInstagram} style={{ color: "rgb(255, 255, 255)", }} />
                 </a>
               </div>
             </div>
