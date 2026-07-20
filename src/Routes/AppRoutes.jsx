@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import Projects from "../pages/Projects";
-import Services from "../pages/Services";
-import ServiceDetail from "../pages/ServiceDetail";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
+import Home from "../Pages/Home.jsx";
+import Projects from "../Pages/Projects.jsx";
+import Services from "../Pages/Services.jsx";
+import ServiceDetail from "../Pages/ServiceDetail.jsx";
+import About from "../Pages/About.jsx";
+import Contact from "../Pages/Contact.jsx";
 
 function AppRoutes() {
   return (
