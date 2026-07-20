@@ -1,9 +1,10 @@
 
-import logoImg from '../assets/Logo/Image_from_iOS__2_-removebg-preview.png';
+import logoImg from '../../assets/Logo/Image_from_iOS__2_-removebg-preview.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { contactInfo } from '../../data/siteContent';
 
 const Footer = () => {
   return (
@@ -86,18 +87,18 @@ const Footer = () => {
               Contact Us
             </h4>
             <div className="flex flex-col gap-3.5 text-base">
-              <a href="tel:+918707862783" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
-                +91 87078 62783
+              <a href={`tel:${contactInfo.phone}`} className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
+                {contactInfo.phoneDisplay}
               </a>
-              <a href="mailto:graphicxstudio18@gmail.com" className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
-                graphicxstudio18@gmail.com
+              <a href={`mailto:${contactInfo.email}`} className="w-fit text-white/70 transition-colors duration-200 hover:text-[#2edcc3]">
+                {contactInfo.email}
               </a>
               <p className="pr-4 leading-relaxed text-white/70">
-                2nd Floor, Dream Shoppers, Nr. Police Station, Dindoli, Surat, Gujarat 394210
+                {contactInfo.address.full}
               </p>
               <div className="mt-2 flex flex-wrap gap-3">
                 <a
-                  href="https://wa.me/918707862783?text=Hi%20GraphicX%20Studio!%20I'm%20interested%20in%20getting%20a%20quote."
+                  href={contactInfo.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-fit rounded-full border border-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#2edcc3] transition hover:border-[#2edcc3]/50 hover:bg-[#2edcc3]/10"
@@ -105,13 +106,13 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faWhatsapp} style={{ color: "rgb(99, 230, 190)", }} />
                 </a>
                 <a
-                  href="mailto:graphicxstudio18@gmail.com"
+                  href={`mailto:${contactInfo.email}`}
                   className="w-fit rounded-full border border-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-white/80 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
                 >
                   <FontAwesomeIcon icon={faEnvelope} style={{ color: "rgb(255, 255, 255)", }} />
                 </a>
                 <a
-                  href="https://www.instagram.com/graphicxstudio18/"
+                  href={contactInfo.instagramUrl}
                   className="w-fit rounded-full border border-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-white/80 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
                 >
                   <FontAwesomeIcon icon={faInstagram} style={{ color: "rgb(255, 255, 255)", }} />
@@ -149,4 +150,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

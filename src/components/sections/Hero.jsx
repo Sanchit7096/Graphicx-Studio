@@ -1,7 +1,7 @@
 import React from 'react';
-import BgVideo from './BgVideo';
-import Navbar from './Navbar';
-import HeroContent from './HeroContent';
+import BgVideo from '../common/BgVideo';
+import Navbar from '../layout/Navbar';
+import HeroContent from '../common/HeroContent';
 
 const Hero = () => {
   return (
@@ -21,4 +21,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

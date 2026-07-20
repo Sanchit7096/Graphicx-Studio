@@ -1,69 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import img1 from "../assets/OurService/img-1.jpeg";
-import img2 from "../assets/OurService/image.png";
-import img3 from "../assets/OurService/img-3.jpeg";
-import img4 from "../assets/OurService/img-1.jpeg"; // TODO: duplicate of img1 — replace with a real Corporate Branding photo
-import img5 from "../assets/OurService/img-5.jpeg";
-import img6 from "../assets/OurService/Neon-Sign-Board3.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import services from '../../data/services';
+import { serviceSectionIntro } from '../../data/siteContent';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const services = [
-  {
-    id: "01",
-    title: "LED Sign Board Manufacturer in Surat",
-    desc: "Custom illuminated LED signboards designed and installed to make your storefront impossible to ignore.",
-    image: img3,
-    button: "View work",
-    featured: true,
-  },
-  {
-    id: "02",
-    title: "Acrylic Signboard Design",
-    desc: "Crystal-clear acrylic signage with a premium finish that elevates any storefront or office space.",
-    image: img5,
-    button: "View work",
-    featured: false,
-  },
-  {
-    id: "03",
-    title: "ACP Signage Solutions",
-    desc: "Durable ACP (aluminum composite panel) signboards built for a sharp, professional, long-lasting look.",
-    image: img2,
-    button: "View work",
-    featured: false,
-  },
-  {
-    id: "04",
-    title: "Custom Neon Signs",
-    desc: "Custom-designed neon lighting and LED neon signs that turn your storefront into a statement.",
-    image: img6,
-    button: "View work",
-    featured: true,
-  },
-  {
-    id: "05",
-    title: "3D Letter Signage",
-    desc: "Bold dimensional acrylic and metal letter signs that command attention on any storefront or building.",
-    image: img1,
-    button: "View work",
-    featured: false,
-  },
-  {
-    id: "06",
-    title: "Corporate Branding & Identity Design",
-    desc: "End-to-end brand identity systems — logo design, signage, print, and digital branding for growing businesses.",
-    image: img4,
-    button: "View work",
-    featured: false,
-  },
-];
+// Show only first 3 services as teaser
+const previewServices = services.slice(0, 3);
 
-const Service = () => {
+const ServiceSection = () => {
   const sectionRef = useRef(null);
   const cardRefs = useRef([]);
 
@@ -107,27 +56,41 @@ const Service = () => {
             <div className="flex items-center gap-3 mb-6">
               <span className="h-[1px] w-8 bg-[#D6D6D6]" />
               <span className="text-[10px] font-semibold uppercase tracking-[0.36em] text-[#D6D6D6]">
-                Our Expertise
+                {serviceSectionIntro.tagline}
               </span>
             </div>
 
             <h2 className="text-4xl font-semibold uppercase leading-[0.88] tracking-[0.2em] text-white sm:text-5xl font-poppins">
-              Our Services
+              {serviceSectionIntro.heading}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-white/70 sm:text-base">
-              From LED sign boards to ACP signage, logo design, and complete brand identity — we deliver premium signage and branding solutions for businesses across Surat and Dindoli.
+              {serviceSectionIntro.description}
             </p>
 
             <div className="mt-8 h-px w-24 bg-white/15" />
-            <p className="mt-5 text-[11px] uppercase tracking-[0.38em] text-white/45">
-              Selected work
-            </p>
-          </div>
+    <div className="mt-10">
+  <Link
+    to="/services"
+    className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-poppins text-sm uppercase tracking-[0.18em] text-white transition-all duration-300 "
+  >
+    <span>View All Services</span>
+
+    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-current transition-transform duration-300 group-hover:translate-x-1">
+      <FontAwesomeIcon
+        icon={faChevronDown}
+        rotation={270}
+        size="sm"
+      />
+    </span>
+  </Link>
+</div>      
+          
+                    </div>
         </div>
 
         <div className="flex flex-col gap-6 md:gap-8">
-          {services.map((svc, index) => (
+          {previewServices.map((svc, index) => (
             <article
               key={svc.id}
               ref={(el) => (cardRefs.current[index] = el)}
@@ -137,7 +100,7 @@ const Service = () => {
               <div className="relative h-[320px] sm:h-[420px] lg:h-[350px] overflow-hidden">
                 <img
                   src={svc.image}
-                  alt={svc.title}
+                  alt={svc.sectionTitle}
                   className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
@@ -154,16 +117,16 @@ const Service = () => {
                     )}
                   </div>
                   <h3 className="mt-4 text-2xl uppercase leading-tight tracking-[0.16em] text-white sm:text-3xl font-poppins transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
-                    {svc.title}
+                    {svc.sectionTitle}
                   </h3>
                 </div>
               </div>
 
               <div className="px-6 py-6 sm:px-8 sm:py-7 flex justify-between">
                 <p className="max-w-2xl text-sm leading-7 text-white/70 sm:text-base max-w-xl">
-                  {svc.desc}
+                  {svc.shortDesc}
                 </p>
-                <button className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-bold hover:underline transition-all duration-300">{svc.button} <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></button>
+                <button className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-bold hover:underline transition-all duration-300">View work <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></button>
               </div>
             </article>
           ))}
@@ -173,4 +136,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default ServiceSection;

@@ -1,18 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import img1 from "../assets/Projects/img1.png"
-import img2 from "../assets/Projects/img2.png"
-import img3 from "../assets/Projects/img3.png"
-import img4 from "../assets/Projects/img4.png"
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { projects } from "../../data/projects";
+import { featuredProjectsContent } from "../../data/siteContent";
 
-const PROJECTS = [
-  { id: "01", title: "Hotel Signage", category: "LED Display & Illumination", location: "Indore", year: "2024", image: img1 },
-  { id: "02", title: "Hospital Branding", category: "Billboard & Facade", location: "Bhopal", year: "2023", image: img2 },
-  { id: "03", title: "Dance Studio", category: "Interior & Spatial", location: "Indore", year: "2024", image: img3 },
-  { id: "04", title: "Clothing Boutique", category: "Vehicle & Retail Branding", location: "Ujjain", year: "2023", image: img4 },
-];
+const PROJECTS = projects;
 
 export default function FeaturedProjects() {
   const containerRef = useRef(null);
@@ -21,6 +15,7 @@ export default function FeaturedProjects() {
   const [activeIndex, setActiveIndex] = useState(0);
   const total = PROJECTS.length;
   const isAnimating = useRef(false);
+  const routerNavigate = useNavigate();
 
   // Coverflow Animation
   useEffect(() => {
@@ -111,11 +106,11 @@ export default function FeaturedProjects() {
         <div className="relative z-10 mb-8 pointer-events-none max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="w-12 h-[1px] bg-[#D6D6D6]/30"></span>
-            <span className="text-[#D6D6D6]/50 text-xs font-bold tracking-widest uppercase">Featured Projects</span>
+            <span className="text-[#D6D6D6]/50 text-xs font-bold tracking-widest uppercase">{featuredProjectsContent.tagline}</span>
             <span className="w-12 h-[1px] bg-[#D6D6D6]/30"></span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase tracking-wider font-poppins text-center mb-2">
-            Selected Work
+            {featuredProjectsContent.heading}
           </h2>
         </div>
 
@@ -171,7 +166,7 @@ export default function FeaturedProjects() {
 
           </div>
           <div className="flex justify-end gap-5">
-            <p className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-semibold hover:underline transition-all duration-300">View All Projects <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></p>
+            <p onClick={() => routerNavigate("/projects")} className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-semibold hover:underline transition-all duration-300">View All Projects <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></p>
           </div>
         </div>
 

@@ -1,32 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import image1 from "../assets/Feature/img-1.jpeg";
-import image2 from "../assets/Feature/img-2.jpeg";
-import image4 from "../assets/Feature/img-4.png";
-import image5 from "../assets/Feature/img-5.png";
-
-
-
+import { featureProjects } from '../../data/projects';
+import { featureSectionContent } from '../../data/siteContent';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projects = [
-  {
-    id: 1,
-    title: "Corporate Branding",
-    beforeImage: image1,
-    afterImage: image2,
-    desc: "Modern acrylic logo installation that creates a clean, professional, and memorable workspace identity.."
-  },
-  {
-    id: 2,
-    title: "Ak fitness",
-    beforeImage: image5,
-    afterImage: image4,
-    desc: "Transforming a fitness space with custom LED channel letters that command attention both day and night."
-  }
-];
+const projects = featureProjects;
 
 // Reusable Image Slider Component
 const ImageComparisonSlider = ({ before, after }) => {
@@ -85,7 +65,7 @@ const ImageComparisonSlider = ({ before, after }) => {
   );
 };
 
-const Feature = () => {
+const FeatureSection = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -133,16 +113,16 @@ const Feature = () => {
       <div className="feature-header max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">
         <div className="flex items-center justify-center gap-4 mb-6">
           <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
-          <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">Transformations</span>
+          <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">{featureSectionContent.tagline}</span>
           <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
         </div>
         <h2
           className="text-4xl md:text-4xl font-semibold text-white uppercase leading-[0.9] tracking-wider font-poppins"
         >
-          From Vision to Reality
+          {featureSectionContent.heading}
         </h2>
         <p className="mt-6 text-white/50 text-base md:text-lg font-light max-w-3xl mx-auto">
-          Drag the sliders to witness the incredible visual impact of premium signage.
+          {featureSectionContent.description}
         </p>
       </div>
 
@@ -178,5 +158,4 @@ const Feature = () => {
   );
 };
 
-export default Feature;
-
+export default FeatureSection;

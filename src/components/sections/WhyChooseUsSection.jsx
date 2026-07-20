@@ -1,49 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { testimonials } from '../../data/siteContent';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const testimonials = [
-  {
-    id: 1,
-    quote: "Great graphic designer! Very creative and deliver work on time. Highly recommend.",
-    author: "NR World",
-    rating: 5
-  },
-  {
-    id: 2,
-    quote: "Very nice and creative pamphlet design. Fast service and good communication. Highly recommended.",
-    author: "Rajpurohit Green Energy",
-    rating: 5
-  },
-  {
-    id: 3,
-    quote: "Excellent work on our company catalog. Creative, professional design that perfectly represents our brand. Impressive presentation and timely delivery.",
-    author: "Swati Patil",
-    rating: 5
-  },
-  {
-    id: 4,
-    quote: "Absolute pleasure from start to finish. Creativity, attention to detail, and deep understanding of visual communication set them apart. Top-notch quality every time.",
-    author: "Sushant",
-    rating: 5
-  },
-  {
-    id: 5,
-    quote: "Really great experience. Much better than expected. The staff was very polite & helpful.",
-    author: "Infinity Mobile",
-    rating: 5
-  },
-  {
-    id: 6,
-    quote: "Very good service provider and their creative designs is really appreciated. Must go with them for designing and advertisement.",
-    author: "Vardan Ethnic",
-    rating: 5
-  }
-];
-
-const WhyChooseUs = () => {
+const WhyChooseUsSection = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const containerRef = useRef(null);
@@ -192,7 +154,7 @@ const WhyChooseUs = () => {
                 </div>
 
                 <p className="mt-6 text-white/80 leading-8">
-                  “{testimonial.quote}”
+                  "{testimonial.quote}"
                 </p>
               </article>
             ))}
@@ -203,4 +165,4 @@ const WhyChooseUs = () => {
   );
 };
 
-export default WhyChooseUs;
+export default WhyChooseUsSection;

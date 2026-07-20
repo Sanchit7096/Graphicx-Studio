@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { heroContent } from '../../data/siteContent';
 
 const HeroContent = () => {
   const containerRef = useRef(null);
@@ -82,34 +83,34 @@ const HeroContent = () => {
           className="flex items-center gap-3 mb-8 text-[10px] font-semibold  uppercase tracking-[0.45em] text-white"
         >
           <span className="inline-block w-8  bg-[#D6D6D6]" />
-          GraphicX Studio — Premium Branding
+          {heroContent.tagline}
         </div>
 
         {/* Headline */}
         <h1 className="m-0">
           <span
             ref={line1Ref}
-            data-text="We Create"
+            data-text={heroContent.headline.line1}
             className="block overflow-hidden uppercase font-semibold leading-[0.88] tracking-wider text-white font-poppins"
             style={{ fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em' }}
           >
-            We Create
+            {heroContent.headline.line1}
           </span>
           <span
             ref={line2Ref}
-            data-text="Brand Identity"
+            data-text={heroContent.headline.line2}
             className="block overflow-hidden uppercase tracking-wider font-black leading-[0.88] italic text-transparent pl-2 md:pl-[clamp(16px,3vw,60px)] md:mt-0 mt-2 font-poppins"
             style={{ fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.5px rgba(255,255,255,0.3)' }}
           >
-            Brand Identity
+            {heroContent.headline.line2}
           </span>
           <span
             ref={line3Ref}
-            data-text='Not Just "Sign Board"'
+            data-text={heroContent.headline.line3}
             className="block overflow-hidden uppercase font-semibold leading-[0.88] tracking-wider text-white mt-2 font-poppins"
             style={{ fontSize: 'clamp(34px, 3.8vw, 80px)', letterSpacing: '-0.02em' }}
           >
-            Not Just "Sign Board"
+            {heroContent.headline.line3}
           </span>
         </h1>
 
@@ -126,8 +127,7 @@ const HeroContent = () => {
             className="font-light leading-[1.8] tracking-wide text-white/85 "
             style={{ fontSize: 'clamp(18px, 1.2vw, 18px)' }}
           >
-            From iconic logo design to high-impact LED storefronts and shop banners,
-            GraphicX Studio bridges the gap between creative design and physical reality.
+           {heroContent.body}
           </p>
         </div>
       </div>
@@ -143,10 +143,10 @@ const HeroContent = () => {
             className="font-black leading-none text-white"
             style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(44px, 4.5vw, 42px)' }}
           >
-            4k+
+            {heroContent.stats[0].value}
           </div>
           <div className="mt-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">
-            Projects Done
+            {heroContent.stats[0].label}
           </div>
         </div>
 
@@ -158,10 +158,10 @@ const HeroContent = () => {
             className="font-black leading-none text-white font-manrope"
             style={{ fontSize: 'clamp(44px, 4.5vw, 42px)' }}
           >
-            8<span className="text-[#ff4d6d]">yr</span>
+            {heroContent.stats[1].value}<span className="text-[#ff4d6d]">{heroContent.stats[1].valueSuffix}</span>
           </div>
           <div className="mt-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">
-            Experience
+            {heroContent.stats[1].label}
           </div>
         </div>
 
@@ -173,10 +173,10 @@ const HeroContent = () => {
             className="font-black leading-none text-white font-manrope"
             style={{ fontSize: 'clamp(44px, 4.5vw, 42px)' }}
           >
-            100<span className="text-[#7b61ff]">%</span>
+            {heroContent.stats[2].value}<span className="text-[#7b61ff]">{heroContent.stats[2].valueSuffix}</span>
           </div>
           <div className="mt-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">
-            Satisfaction
+            {heroContent.stats[2].label}
           </div>
         </div>
       </div>
@@ -185,4 +185,3 @@ const HeroContent = () => {
 };
 
 export default HeroContent;
-
