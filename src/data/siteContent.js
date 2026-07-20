@@ -249,7 +249,7 @@ export const contactInfo = {
   email: "graphicxstudio18@gmail.com",
   whatsappUrl:
     "https://wa.me/918707862783?text=Hi%20GraphicX%20Studio!%20I'm%20interested%20in%20getting%20a%20quote.",
-  instagramUrl: "https://www.instagram.com/graphicxstudio18/",
+  instagramUrl: "https://www.instagram.com/graphicxstudio6/",
   contactIntro:
     "Ready to transform your business with premium signage and branding solutions? Contact us today and let's discuss how we can help you stand out.",
 };
