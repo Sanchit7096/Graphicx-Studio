@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import { contactInfo } from "../data/siteContent";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const phoneNumber = contactInfo.phone.replace(/\D/g, "");
+    const text = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`;
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <>
       <Navbar />
@@ -85,11 +105,15 @@ function Contact() {
                 <h2 className="text-white text-3xl font-bold mb-6 font-poppins">
                   Send Us a Message
                 </h2>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <label className="block text-white/80 mb-2">Name</label>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
                       className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors"
                       placeholder="Your name"
                     />
@@ -98,6 +122,9 @@ function Contact() {
                     <label className="block text-white/80 mb-2">Email</label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors"
                       placeholder="your@email.com"
                     />
@@ -106,6 +133,10 @@ function Contact() {
                     <label className="block text-white/80 mb-2">Phone</label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
                       className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors"
                       placeholder="+91 XXXXX XXXXX"
                     />
@@ -113,6 +144,10 @@ function Contact() {
                   <div>
                     <label className="block text-white/80 mb-2">Message</label>
                     <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                       rows={4}
                       className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors resize-none"
                       placeholder="Tell us about your project..."
