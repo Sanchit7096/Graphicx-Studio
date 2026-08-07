@@ -54,7 +54,7 @@ function Projects() {
       <Navbar />
 
       <main className="pt-24 min-h-screen bg-[#0a0a0a]">
-        <section className="px-6 md:px-12 lg:px-24 py-16 max-w-screen-2xl mx-auto">
+        <section className="px-6 md:px-12 lg:px-24 py-16 max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto">
           {/* Header */}
           <div className="mb-12">
             <h3 className="text-orange-500 font-semibold mb-4 text-sm tracking-wider uppercase">
@@ -90,7 +90,7 @@ function Projects() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-6">
             {displayedProjects.map((project, i) => (
               <div
                 key={project.id}

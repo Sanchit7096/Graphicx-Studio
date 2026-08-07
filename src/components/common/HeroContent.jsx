@@ -72,7 +72,7 @@ const HeroContent = () => {
   return (
     <div
       ref={containerRef}
-      className="relative z-10 w-full h-full flex items-center gap-0 px-8 md:px-16 lg:px-24 mt-20 font-poppins"
+      className="relative z-10 w-full h-full max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto flex items-center gap-0 px-8 md:px-16 lg:px-24 2xl:px-32 mt-20 font-poppins"
     >
       {/* ── LEFT: Main content ── */}
       <div className="flex flex-col items-start flex-1 min-w-0">

@@ -13,7 +13,7 @@ const Footer = () => {
       className="w-full bg-[#0a0a0a] py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 border-t border-white/5 font-manrope"
     >
       {/* ── FOOTER MAIN SECTION ── */}
-      <div className="max-w-screen-4xl ">
+      <div className="max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-20">
           {/* Column 1: Logo & Description */}
           <div className="flex flex-col gap-8">

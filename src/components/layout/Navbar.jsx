@@ -40,7 +40,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "bg-black/70 backdrop-blur-xl py-4" : "bg-transparent py-6"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-white">
+      <div className="max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto px-6 lg:px-12 2xl:px-16 flex items-center justify-between text-white">
         <Link to="/">
           <img src={logoImg} className="h-12" alt="Logo" />
         </Link>

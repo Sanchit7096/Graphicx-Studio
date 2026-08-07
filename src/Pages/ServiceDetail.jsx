@@ -60,7 +60,7 @@ function ServiceDetail() {
 
         {/* Content Section */}
         <section className="w-full bg-black py-16 px-6 md:px-12 lg:px-24">
-          <div className="max-w-screen-2xl mx-auto">
+          <div className="max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto">
             <button
               onClick={() => navigate("/services")}
               className="flex items-center gap-2 text-white/70 hover:text-white mb-8 transition-colors"

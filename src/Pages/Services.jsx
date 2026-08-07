@@ -48,8 +48,8 @@ function Services() {
 
         {/* Services Grid Section */}
         <section className="w-full min-h-screen bg-black py-16 px-6 md:px-12 lg:px-24">
-          <div className="max-w-screen-2xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 gap-6">
               {services.slice(0, visibleCount).map((service) => {
                 return (
                   <div

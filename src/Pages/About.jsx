@@ -24,7 +24,7 @@ function About() {
       <main className="pt-20 font-poppins">
         {/* Hero Section */}
         <section className="w-full bg-black py-24 md:py-32 px-6 md:px-12 lg:px-24">
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl  text-white mb-8  leading-tight">
               {aboutContent.hero.heading}
             </h1>
@@ -36,7 +36,7 @@ function About() {
 
         {/* Intro Section */}
         <section className="w-full bg-zinc-950 py-24 px-6 md:px-12 lg:px-24">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl  text-white mb-8 font-poppins leading-tight">
@@ -57,11 +57,11 @@ function About() {
 
         {/* What We Do Section */}
         <section className="w-full bg-black py-24 px-6 md:px-12 lg:px-24">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto">
             <h2 className="text-3xl md:text-4xl  text-white mb-16  text-center leading-tight">
               {aboutContent.whatWeDo.heading}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-6 gap-8">
               {aboutContent.whatWeDo.services.map((service, index) => (
                 <div
                   key={index}
@@ -87,7 +87,7 @@ function About() {
 
         {/* Visit Us Section */}
         <section className="w-full bg-zinc-950 py-24 px-6 md:px-12 lg:px-24">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div className="bg-zinc-900 rounded-2xl overflow-hidden">
                 <img
