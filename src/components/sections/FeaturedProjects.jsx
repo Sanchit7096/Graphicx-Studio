@@ -6,7 +6,8 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { projects } from "../../data/projects";
 import { featuredProjectsContent } from "../../data/siteContent";
 
-const PROJECTS = projects;
+const indices = [39, 42, 57,  59, 16, 52];
+const PROJECTS = projects.filter((_, index) => indices.includes(index));
 
 export default function FeaturedProjects() {
   const containerRef = useRef(null);
@@ -166,7 +167,7 @@ export default function FeaturedProjects() {
 
           </div>
           <div className="flex justify-end gap-5">
-            <p onClick={() => routerNavigate("/projects")} className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-semibold hover:underline transition-all duration-300">View All Projects <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></p>
+            <p onClick={() => routerNavigate("/projects")} className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-semibold hover:underline transition-all duration-300">View All Work <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></p>
           </div>
         </div>
 

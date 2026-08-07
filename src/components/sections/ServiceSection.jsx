@@ -9,8 +9,7 @@ import { serviceSectionIntro } from '../../data/siteContent';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Show only first 3 services as teaser
-const previewServices = services.slice(0, 3);
+const previewServices = services.slice(0, 4);
 
 const ServiceSection = () => {
   const sectionRef = useRef(null);
@@ -69,24 +68,24 @@ const ServiceSection = () => {
             </p>
 
             <div className="mt-8 h-px w-24 bg-white/15" />
-    <div className="mt-10">
-  <Link
-    to="/services"
-    className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-poppins text-sm uppercase tracking-[0.18em] text-white transition-all duration-300 "
-  >
-    <span>View All Services</span>
+            <div className="mt-10">
+              <Link
+                to="/services"
+                className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-poppins text-sm uppercase tracking-[0.18em] text-white transition-all duration-300 "
+              >
+                <span>View All Services</span>
 
-    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-current transition-transform duration-300 group-hover:translate-x-1">
-      <FontAwesomeIcon
-        icon={faChevronDown}
-        rotation={270}
-        size="sm"
-      />
-    </span>
-  </Link>
-</div>      
-          
-                    </div>
+                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-current transition-transform duration-300 group-hover:translate-x-1">
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    rotation={270}
+                    size="sm"
+                  />
+                </span>
+              </Link>
+            </div>
+
+          </div>
         </div>
 
         <div className="flex flex-col gap-6 md:gap-8">

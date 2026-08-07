@@ -85,13 +85,13 @@ export const aboutContent = {
   },
 
   hero: {
-    heading: "Sign Boards & Signage, Made Right Here in Dindoli",
+    heading: "Sign Boards & Signage, Made Right Here in surat",
     subheading:
-      "6+ years designing, building, and installing signage for shops and businesses across Surat. Rated 4.9★ by local customers.",
+      "6+ years designing, building, and installing signage for shops and businesses across Surat. Rated 4.9 ★ by local customers.",
   },
 
   intro: {
-    heading: "Looking for a Sign Board Maker Near You in Dindoli?",
+    heading: "Looking for a Sign Board Maker Near You in Surat?",
     image: About1,
     paragraphs: [
       "Graphicx Studio is a local signage and printing workshop on the 2nd Floor of Dream Shoppers, near Dindoli Police Station. If you're searching for someone to design, build, and fit a shop sign in Surat, this is the place — we do the whole job ourselves, so you're not chasing three different vendors.",

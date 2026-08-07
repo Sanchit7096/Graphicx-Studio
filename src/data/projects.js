@@ -8,41 +8,77 @@ import featureImg2 from "../assets/Feature/img-2.jpeg";
 import featureImg4 from "../assets/Feature/img-4.png";
 import featureImg5 from "../assets/Feature/img-5.png";
 
-/** Featured projects shown in the coverflow carousel */
-export const projects = [
-  {
-    id: "01",
-    title: "Hotel Signage",
-    category: "LED Display & Illumination",
-    location: "Indore",
+// Dynamically import all images from the All Works directory
+const allWorksImages = import.meta.glob("../assets/All Works/**/*.{png,jpg,jpeg,jfif,webp,svg}", { eager: true });
+
+// Folder to Service Slugs Mapping (supports single string or array of slugs)
+const folderToServiceSlugs = {
+  "Acylic": ["acrylic-signboard", "3d-letter-signage", "3d-sign-boards"],
+  "BANNER": ["vinyl-printing-and-branding", "shop-branding"],
+  "BackLightLogo": ["led-sign-board", "reception-signage", "3d-letter-signage"],
+  "ExivisionWork": ["exhibition-stall-branding"],
+  "LOLIPOP": ["led-sign-board", "glow-sign-boards"],
+  "LedBoard": ["led-sign-board", "3d-sign-boards", "glow-sign-boards"],
+  "StandiBoard": ["led-sign-board", "shop-branding"],
+  "Vinyl": ["vinyl-printing-and-branding", "shop-branding", "office-branding", "wall-branding", "vehicle-branding", "one-way-vision-film", "frosted-glass-film", "custom-stickers"],
+  "backlitBoard": ["led-sign-board", "acp-signage", "glow-sign-boards"],
+};
+
+export const projects = Object.entries(allWorksImages).map(([path, module], index) => {
+  // Extract category and filename from the path
+  const parts = path.split("/");
+  const categoryFolder = parts[parts.length - 2]; // e.g. "Acylic"
+  const filename = parts[parts.length - 1];
+
+  // Clean up the filename to use as a title
+  const rawTitle = filename.split(".")[0];
+  const title = rawTitle
+    .replace(/[-_]/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+
+  // Clean up the category name for better display
+  const category = categoryFolder
+    .replace(/([A-Z])/g, ' $1') // Add space before capital letters (for CamelCase)
+    .trim()
+    .replace(/^./, (str) => str.toUpperCase()); // Capitalize first letter
+
+  // Map folder to service slugs
+  const serviceSlugs = folderToServiceSlugs[categoryFolder] || [];
+  const primarySlug = Array.isArray(serviceSlugs) ? serviceSlugs[0] : serviceSlugs;
+
+  return {
+    id: `pw-${index + 1}`,
+    title: title,
+    category: category,
+    categoryFolder: categoryFolder,
+    serviceSlug: primarySlug,
+    serviceSlugs: Array.isArray(serviceSlugs) ? serviceSlugs : [serviceSlugs],
+    location: "Surat",
     year: "2024",
-    image: img1,
-  },
-  {
-    id: "02",
-    title: "Hospital Branding",
-    category: "Billboard & Facade",
-    location: "Bhopal",
-    year: "2023",
-    image: img2,
-  },
-  {
-    id: "03",
-    title: "Dance Studio",
-    category: "Interior & Spatial",
-    location: "Indore",
-    year: "2024",
-    image: img3,
-  },
-  {
-    id: "04",
-    title: "Clothing Boutique",
-    category: "Vehicle & Retail Branding",
-    location: "Ujjain",
-    year: "2023",
-    image: img4,
-  },
-];
+    image: module.default,
+  };
+});
+
+// Helper function to get projects by service slug
+export const getProjectsByServiceSlug = (serviceSlug) => {
+  const matched = projects.filter(p => {
+    if (p.serviceSlugs && Array.isArray(p.serviceSlugs)) {
+      return p.serviceSlugs.includes(serviceSlug);
+    }
+    return p.serviceSlug === serviceSlug;
+  });
+  
+  // If exact matching projects exist, return them
+  if (matched.length > 0) return matched;
+
+  // Fallback: Return a sample of general projects so every service displays work samples
+  return projects.slice(0, 12);
+};
+
+// Helper function to get project by ID
+export const getProjectById = (projectId) => {
+  return projects.find(p => p.id === projectId);
+};
 
 /** Before / after comparison projects shown on the Feature section */
 export const featureProjects = [

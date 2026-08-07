@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import services from "../data/services";
 
 function ServiceDetail() {
@@ -15,12 +15,14 @@ function ServiceDetail() {
       <>
         <Navbar />
         <main className="pt-20 min-h-screen bg-black flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-white text-3xl font-bold mb-4">Service Not Found</h1>
+          <div className="text-center px-6">
+            <h1 className="text-white text-3xl font-bold mb-4 font-poppins">Service Not Found</h1>
+            <p className="text-white/60 mb-6">The requested service page does not exist or has been moved.</p>
             <button
               onClick={() => navigate("/services")}
-              className="text-orange-500 hover:text-orange-400 font-semibold"
+              className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-colors inline-flex items-center gap-2"
             >
+              <ArrowLeft size={18} />
               Back to Services
             </button>
           </div>
@@ -34,14 +36,16 @@ function ServiceDetail() {
     <>
       <Navbar />
 
-      <main className="pt-20">
+      <main className="pt-20 bg-black min-h-screen">
         {/* Hero Section */}
         <section className="relative w-full h-96 overflow-hidden">
-          <img
-            src={service.image}
-            alt={service.title}
-            className="w-full h-full object-cover"
-          />
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px]">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
             <div className="text-center px-6">
               <h1 className="text-white text-5xl md:text-6xl font-bold mb-4 font-poppins">
@@ -83,14 +87,14 @@ function ServiceDetail() {
                       key={index}
                       className="flex items-center gap-3 text-white/80"
                     >
-                      <div className="w-2 h-2 bg-orange-500 rounded-full" />
+                      <CheckCircle2 size={18} className="text-orange-500 shrink-0" />
                       {feature}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="relative rounded-3xl overflow-hidden">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px]">
                 <img
                   src={service.image}
                   alt={service.title}

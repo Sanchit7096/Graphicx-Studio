@@ -49,7 +49,7 @@ function About() {
                 </div>
               </div>
               <div className="bg-zinc-900 rounded-2xl h-96 flex items-center justify-center">
-                <img src={aboutContent.intro.image} alt="About Graphicx Studio" className="w-full h-full object-cover" />
+                <span className="text-white/30 text-6xl">🖼️</span>
               </div>
             </div>
           </div>
