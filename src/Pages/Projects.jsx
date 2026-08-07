@@ -60,7 +60,7 @@ function Projects() {
             <h3 className="text-orange-500 font-semibold mb-4 text-sm tracking-wider uppercase">
               Our work
             </h3>
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-poppins leading-tight">
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl  mb-6 font-poppins leading-tight">
               Projects on the ground, <br className="hidden md:block" /> not just on screen
             </h1>
             <p className="text-white/60 max-w-2xl text-lg">
