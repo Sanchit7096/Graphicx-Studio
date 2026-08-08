@@ -34,7 +34,7 @@ const AboutSection = () => {
             id="about"
             className="w-full bg-black  min-h-[75vh] py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 font-manrope"
         >
-            <div className="max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
+            <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
 
                 {/* Left Column - Heading & Stats */}
                 <div className="lg:w-1/3 flex flex-col justify-start">

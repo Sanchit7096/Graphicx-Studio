@@ -1,22 +1,33 @@
 
-const allWorksImages = import.meta.glob("../assets/All Works/**/*.{png,jpg,jpeg,jfif,webp,svg}", { eager: true });
+import { projects } from "./projects.js";
 
-// Get all image URLs from the All Works folder
-const workImages = Object.values(allWorksImages).map(module => module.default);
-
-// Helper function to get an image by index (with wrap-around)
-const getImage = (index) => workImages[index % workImages.length];
+// Import images from OurService folders
+import acrylicLedBoard from "../assets/OurService/AcrylicLedBoard/AcrylicLedBoard06.jfif";
+import vinylPrinting from "../assets/OurService/VinylPrintingAndBranding/Vinyl11.jfif";
+import threeDLetter from "../assets/OurService/3dLetterSignBoard/AcrylicLedBoard0.jfif";
+import corporateBranding from "../assets/OurService/CorporateBranding/img-1.jpeg";
+import premiumVisitingCards from "../assets/OurService/PremiumVisitingCards/Business-Card-Design.jpg";
+import customStickers from "../assets/OurService/CustomStickers/IN_Custom-Stickers_Category-Page_Mobile.jfif";
+import exhibitionStall from "../assets/OurService/ExhibitionStallBranding/Exhibition02.jfif";
+import frostedGlass from "../assets/OurService/FrostedGlassFilm/FrostedGlassFilm.png";
+import namePlates from "../assets/OurService/NamePlates/guptas-cutout-steel-name-plate-2.jpg";
+import neonSign from "../assets/OurService/NeonSignBoard/03_0b44d30a-0049-411c-9e1b-7306ee907446.webp";
+import oneWayVision from "../assets/OurService/OneWayVisionFilm/a272bce9-7514-489e-9b31-dff5565ec495.jpg";
+import photoFrames from "../assets/OurService/PhotoFrames/PhotoFrame1.jpg";
+import receptionSignage from "../assets/OurService/ReceptionSignage/AcrylicLogo5.jfif";
+import vehicleBranding from "../assets/OurService/VehicleBranding/8821712c-0a3d-400d-9bdd-a48d36cb02ff.jpg";
+import wallBranding from "../assets/OurService/WallBranding/a0cc109b-35b4-47fa-8be6-17f510275e20.jpg";
 
 const services = [
   {
     slug: "led-sign-board",
     id: "01",
-    title: "LED Sign Board",
+    title: "LED Acrylic Sign Board",
     shortDesc:
       "Custom illuminated LED signboards designed and installed to make your storefront impossible to ignore.",
     fullDesc:
       "Our LED sign boards are crafted with precision to ensure maximum visibility and durability. We use high-quality LEDs that provide brilliant illumination while being energy-efficient. Perfect for retail stores, restaurants, offices, and any business that wants to stand out.",
-    image: getImage(56),
+    image: acrylicLedBoard,
     features: [
       "Energy Efficient",
       "Weather Resistant",
@@ -29,55 +40,34 @@ const services = [
     sectionTitle: "LED Sign Board Manufacturer in Surat",
   },
   {
-    slug: "acrylic-signboard",
+    slug: "vinyl-printing-and-branding",
     id: "02",
-    title: "Acrylic Signboard",
+    title: "Vinyl Printing & Branding",
     shortDesc:
-      "Crystal-clear acrylic signage with a premium finish that elevates any storefront or office space.",
+      "Premium vinyl printing and branding solutions for vehicles, walls, and promotional materials.",
     fullDesc:
-      "Acrylic signboards offer a sleek, modern look with exceptional clarity. Our acrylic signs are laser-cut for precision and available in various thicknesses and finishes. Ideal for indoor and outdoor use, providing a professional appearance that lasts.",
-    image: getImage(51),
+      "Our vinyl printing services offer high-quality, durable graphics for vehicles, walls, windows, and promotional materials. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
+    image: vinylPrinting,
     features: [
-      "Crystal Clear",
-      "UV Resistant",
-      "Custom Shapes",
-      "Easy Maintenance",
-      "Premium Finish",
+      "High Quality Print",
+      "Weather Resistant",
+      "Custom Designs",
+      "Durable Material",
+      "Professional Finish",
     ],
     featured: false,
     size: "medium",
-    sectionTitle: "Acrylic Signboard Design",
+    sectionTitle: "Vinyl Printing & Branding Services",
   },
-  {
-    slug: "acp-signage",
-    id: "03",
-    title: "ACP Signage",
-    shortDesc:
-      "Durable ACP (aluminum composite panel) signboards built for a sharp, professional, long-lasting look.",
-    fullDesc:
-      "ACP (Aluminum Composite Panel) signage combines durability with aesthetic appeal. These signboards are weather-resistant, fire-retardant, and maintain their appearance for years. Perfect for building facades, shop fronts, and corporate signage.",
-    image: getImage(50),
-    features: [
-      "Weather Proof",
-      "Fire Retardant",
-      "Lightweight",
-      "Cost Effective",
-      "Modern Look",
-    ],
-    featured: false,
-    size: "medium",
-    sectionTitle: "ACP Signage Solutions",
-  },
-
   {
     slug: "3d-letter-signage",
-    id: "05",
-    title: "3D Letter Signage",
+    id: "03",
+    title: "3D Letter Sign Board",
     shortDesc:
       "Bold dimensional acrylic and metal letter signs that command attention on any storefront or building.",
     fullDesc:
       "3D letter signage adds depth and dimension to your brand identity. Available in acrylic, metal, and illuminated options, these letters create a professional, premium appearance. Perfect for corporate offices, retail stores, and building exteriors.",
-    image: getImage(43),
+    image: threeDLetter,
     features: [
       "Dimensional Look",
       "Multiple Materials",
@@ -91,13 +81,13 @@ const services = [
   },
   {
     slug: "corporate-branding",
-    id: "06",
+    id: "04",
     title: "Corporate Branding",
     shortDesc:
       "End-to-end brand identity systems — logo design, signage, print, and digital branding for growing businesses.",
     fullDesc:
       "Our corporate branding services provide comprehensive brand identity solutions. From logo design to complete signage systems, we ensure your brand communicates consistently across all touchpoints. Perfect for businesses looking to establish or refresh their brand identity.",
-    image: getImage(4),
+    image: corporateBranding,
     features: [
       "Logo Design",
       "Brand Guidelines",
@@ -111,11 +101,11 @@ const services = [
   },
   {
     slug: "premium-visiting-card",
-    id: "25",
-    title: "Premium Visiting Card",
+    id: "05",
+    title: "Premium Visiting Cards",
     shortDesc: "Elegantly crafted visiting cards for a polished first impression and professional brand appeal.",
     fullDesc: "Our premium visiting cards are designed to deliver a strong and memorable first impression. We offer rich finishes, crisp printing, and custom layouts that reflect your brand identity. Perfect for business networking, corporate profiles, and personal branding.",
-    image: "https://images.pexels.com/photos/296878/pexels-photo-296878.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: premiumVisitingCards,
     features: [
       "Premium Paper Stock",
       "Custom Finishes",
@@ -129,11 +119,11 @@ const services = [
   },
   {
     slug: "glow-sign-boards",
-    id: "07",
-    title: "Glow Sign Boards",
+    id: "06",
+    title: "Glow Sign Board",
     shortDesc: "Premium glow sign boards solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our glow sign boards services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(5),
+    image: acrylicLedBoard,
     features: [
       "Custom Design",
       "High Quality",
@@ -146,30 +136,12 @@ const services = [
     sectionTitle: "Glow Sign Boards Services",
   },
   {
-    slug: "3d-sign-boards",
-    id: "08",
-    title: "3D Sign Boards",
-    shortDesc: "Premium 3d sign boards solutions designed to elevate your brand visibility and aesthetics.",
-    fullDesc: "Our 3d sign boards services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(6),
-    features: [
-      "Custom Design",
-      "High Quality",
-      "Durable Material",
-      "Professional Finish",
-      "Cost Effective"
-    ],
-    featured: false,
-    size: "medium",
-    sectionTitle: "3D Sign Boards Services",
-  },
-  {
     slug: "neon-sign-boards",
-    id: "09",
-    title: "Neon Sign Boards",
+    id: "07",
+    title: "Neon Sign Board",
     shortDesc: "Premium neon sign boards solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our neon sign boards services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(7),
+    image: neonSign,
     features: [
       "Custom Design",
       "High Quality",
@@ -182,30 +154,12 @@ const services = [
     sectionTitle: "Neon Sign Boards Services",
   },
   {
-    slug: "vinyl-printing-and-branding",
-    id: "10",
-    title: "Vinyl Printing & Branding",
-    shortDesc: "Premium vinyl printing & branding solutions designed to elevate your brand visibility and aesthetics.",
-    fullDesc: "Our vinyl printing & branding services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(8),
-    features: [
-      "Custom Design",
-      "High Quality",
-      "Durable Material",
-      "Professional Finish",
-      "Cost Effective"
-    ],
-    featured: false,
-    size: "wide",
-    sectionTitle: "Vinyl Printing & Branding Services",
-  },
-  {
     slug: "one-way-vision-film",
-    id: "11",
-    title: "One Way Vision Film",
+    id: "08",
+    title: "One-Way Vision Film",
     shortDesc: "Premium one way vision film solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our one way vision film services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(9),
+    image: oneWayVision,
     features: [
       "Custom Design",
       "High Quality",
@@ -219,11 +173,11 @@ const services = [
   },
   {
     slug: "frosted-glass-film",
-    id: "12",
+    id: "09",
     title: "Frosted Glass Film",
     shortDesc: "Premium frosted glass film solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our frosted glass film services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(10),
+    image: frostedGlass,
     features: [
       "Custom Design",
       "High Quality",
@@ -236,48 +190,12 @@ const services = [
     sectionTitle: "Frosted Glass Film Services",
   },
   {
-    slug: "shop-branding",
-    id: "13",
-    title: "Shop Branding",
-    shortDesc: "Premium shop branding solutions designed to elevate your brand visibility and aesthetics.",
-    fullDesc: "Our shop branding services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(11),
-    features: [
-      "Custom Design",
-      "High Quality",
-      "Durable Material",
-      "Professional Finish",
-      "Cost Effective"
-    ],
-    featured: false,
-    size: "medium",
-    sectionTitle: "Shop Branding Services",
-  },
-  {
-    slug: "office-branding",
-    id: "14",
-    title: "Office Branding",
-    shortDesc: "Premium office branding solutions designed to elevate your brand visibility and aesthetics.",
-    fullDesc: "Our office branding services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(12),
-    features: [
-      "Custom Design",
-      "High Quality",
-      "Durable Material",
-      "Professional Finish",
-      "Cost Effective"
-    ],
-    featured: false,
-    size: "medium",
-    sectionTitle: "Office Branding Services",
-  },
-  {
     slug: "vehicle-branding",
-    id: "15",
+    id: "10",
     title: "Vehicle Branding",
     shortDesc: "Premium vehicle branding solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our vehicle branding services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(13),
+    image: vehicleBranding,
     features: [
       "Custom Design",
       "High Quality",
@@ -289,14 +207,13 @@ const services = [
     size: "medium",
     sectionTitle: "Vehicle Branding Services",
   },
-
   {
     slug: "photo-frames",
-    id: "18",
+    id: "11",
     title: "Photo Frames",
     shortDesc: "Premium photo frames solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our photo frames services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(14),
+    image: photoFrames,
     features: [
       "Custom Design",
       "High Quality",
@@ -308,14 +225,13 @@ const services = [
     size: "wide",
     sectionTitle: "Photo Frames Services",
   },
-
   {
     slug: "name-plates",
-    id: "20",
+    id: "12",
     title: "Name Plates",
     shortDesc: "Premium name plates solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our name plates services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(15),
+    image: namePlates,
     features: [
       "Custom Design",
       "High Quality",
@@ -329,11 +245,11 @@ const services = [
   },
   {
     slug: "reception-signage",
-    id: "21",
+    id: "13",
     title: "Reception Signage",
     shortDesc: "Premium reception signage solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our reception signage services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(16),
+    image: receptionSignage,
     features: [
       "Custom Design",
       "High Quality",
@@ -347,11 +263,11 @@ const services = [
   },
   {
     slug: "wall-branding",
-    id: "22",
+    id: "14",
     title: "Wall Branding",
     shortDesc: "Premium wall branding solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our wall branding services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(17),
+    image: wallBranding,
     features: [
       "Custom Design",
       "High Quality",
@@ -363,14 +279,13 @@ const services = [
     size: "medium",
     sectionTitle: "Wall Branding Services",
   },
-
   {
     slug: "custom-stickers",
-    id: "24",
+    id: "15",
     title: "Custom Stickers",
     shortDesc: "Premium custom stickers solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our custom stickers services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(18),
+    image: customStickers,
     features: [
       "Custom Design",
       "High Quality",
@@ -384,11 +299,11 @@ const services = [
   },
   {
     slug: "exhibition-stall-branding",
-    id: "26",
+    id: "16",
     title: "Exhibition Stall Branding",
     shortDesc: "Premium exhibition stall branding solutions designed to elevate your brand visibility and aesthetics.",
     fullDesc: "Our exhibition stall branding services offer top-notch quality and durability. Perfect for businesses looking to make a strong visual impact with custom-tailored designs.",
-    image: getImage(19),
+    image: exhibitionStall,
     features: [
       "Custom Design",
       "High Quality",
@@ -402,8 +317,40 @@ const services = [
   },
 ];
 
-// Post-process: Import projects and populate projectIds
-import { projects } from "./projects.js";
+// Service Categories
+export const serviceCategories = {
+  SIGNAGE: {
+    id: "signage",
+    title: "SIGNAGE",
+    description: "Illuminated and dimensional signage that makes your brand visible day and night",
+    services: ["led-sign-board", "3d-letter-signage", "glow-sign-boards", "neon-sign-boards", "reception-signage", "name-plates"]
+  },
+  BRANDING: {
+    id: "branding",
+    title: "VINYL PRINTING",
+    description: "Complete brand identity systems from vinyl to vehicle and exhibition branding",
+    services: ["vinyl-printing-and-branding", "corporate-branding", "wall-branding", "vehicle-branding", "exhibition-stall-branding", "custom-stickers"]
+  },
+  FILMS: {
+    id: "films",
+    title: "FILMS & GLASS",
+    description: "Premium glass films for privacy, branding, and architectural enhancement",
+    services: ["one-way-vision-film", "frosted-glass-film"]
+  },
+  PRINT: {
+    id: "print",
+    title: "PRINT & CUSTOM",
+    description: "Premium printing solutions for business cards, photo frames, and custom materials",
+    services: ["premium-visiting-card", "photo-frames"]
+  }
+};
+
+// Helper to get services by category
+export const getServicesByCategory = (categoryId) => {
+  const category = Object.values(serviceCategories).find(cat => cat.id === categoryId);
+  if (!category) return [];
+  return services.filter(service => category.services.includes(service.slug));
+};
 
 // Populate projectIds for each service based on serviceSlug
 services.forEach(service => {

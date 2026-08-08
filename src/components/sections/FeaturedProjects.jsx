@@ -6,7 +6,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { projects } from "../../data/projects";
 import { featuredProjectsContent } from "../../data/siteContent";
 
-const indices = [39, 42, 57,  59, 16, 52];
+const indices = [10, 12, 15,  26, 14, 8];
 const PROJECTS = projects.filter((_, index) => indices.includes(index));
 
 export default function FeaturedProjects() {

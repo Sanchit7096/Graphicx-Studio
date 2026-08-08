@@ -8,9 +8,9 @@ function FAQSection({ faqContent }) {
   };
 
   return (
-    <section className="w-full bg-black py-24 px-6 md:px-12 lg:px-24">
+    <section className="w-full  py-8 md:py-12 lg:py-16 px-5 sm:px-6 lg:px-8 xl:px-10 -mt-20 ">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-16 font-poppins text-center leading-tight">
+        <h2 className="text-3xl md:text-4xl  text-white mb-16 font-poppins text-center leading-tight">
           {faqContent.heading}
         </h2>
         <div className="max-w-6xl mx-auto space-y-4">
@@ -23,7 +23,7 @@ function FAQSection({ faqContent }) {
                 onClick={() => toggleFaq(index)}
                 className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-zinc-900/80 transition-colors duration-300"
               >
-                <span className="text-white font-semibold text-xl font-poppins leading-tight">
+                <span className="text-white text-xl font-poppins leading-tight">
                   {item.question}
                 </span>
                 <span className="text-orange-500 text-3xl transform transition-transform duration-300">

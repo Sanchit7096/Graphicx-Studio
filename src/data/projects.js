@@ -13,14 +13,14 @@ const allWorksImages = import.meta.glob("../assets/All Works/**/*.{png,jpg,jpeg,
 
 // Folder to Service Slugs Mapping (supports single string or array of slugs)
 const folderToServiceSlugs = {
+  "AcrylicLedBoard": ["led-sign-board", "acrylic-signboard", "3d-letter-signage", "glow-sign-boards", "3d-sign-boards", "neon-sign-boards", "name-plates", "reception-signage"],
+  "AcrylicLogo": ["acrylic-signboard", "3d-letter-signage", "corporate-branding"],
   "Acylic": ["acrylic-signboard", "3d-letter-signage", "3d-sign-boards"],
-  "BANNER": ["vinyl-printing-and-branding", "shop-branding"],
-  "BackLightLogo": ["led-sign-board", "reception-signage", "3d-letter-signage"],
-  "ExivisionWork": ["exhibition-stall-branding"],
+  "BANNER": ["vinyl-printing-and-branding", "shop-branding", "wall-branding"],
+  "Exhibition": ["exhibition-stall-branding"],
   "LOLIPOP": ["led-sign-board", "glow-sign-boards"],
-  "LedBoard": ["led-sign-board", "3d-sign-boards", "glow-sign-boards"],
-  "StandiBoard": ["led-sign-board", "shop-branding"],
-  "Vinyl": ["vinyl-printing-and-branding", "shop-branding", "office-branding", "wall-branding", "vehicle-branding", "one-way-vision-film", "frosted-glass-film", "custom-stickers"],
+  "StandiBoard": ["led-sign-board", "shop-branding", "acp-signage"],
+  "Vinyl": ["vinyl-printing-and-branding", "shop-branding", "office-branding", "wall-branding", "vehicle-branding", "one-way-vision-film", "frosted-glass-film", "custom-stickers", "corporate-branding"],
   "backlitBoard": ["led-sign-board", "acp-signage", "glow-sign-boards"],
 };
 
