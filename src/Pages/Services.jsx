@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import services, { serviceCategories, getServicesByCategory } from "../data/services";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import serviceVideo from "../assets/OurService/FittingVideo/Service.mp4";
+const serviceVideo = "https://res.cloudinary.com/fj3hcwbi/video/upload/v1786515602/hvworuglhtogci6pk28z.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 

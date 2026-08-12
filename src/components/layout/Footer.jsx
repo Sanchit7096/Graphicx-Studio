@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, ExternalLink } from 'lucide-react';
-import logoImg from '../../assets/Logo/Image_from_iOS__2_-removebg-preview.png';
+const logoImg = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515589/s9lcorpviydi4q5wk34e.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';

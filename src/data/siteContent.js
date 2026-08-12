@@ -1,67 +1,67 @@
 // ─── Brand Logos ────────────────────────────────────────────────
-import acBanner from "../assets/BrandLogo/ACBANNER.png";
-import aksharClasses from "../assets/BrandLogo/AKSHARCLASSES.png";
-import arnavSolar from "../assets/BrandLogo/arnavsolar.png";
-import backupBrochureFinal from "../assets/BrandLogo/Backup_of_BROUCHER FINAL.png";
+const acBanner = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/vnzp3txbyoeqsf8rzkkl.png";
+const aksharClasses = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515583/fx2tu3rmj5nkjbbepfsh.png";
+const arnavSolar = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/ui8uphcnqs1qhlugvxa8.png";
+const backupBrochureFinal = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/iyiko8nfzwsmmuodcu66.png";
 
-import balaji from "../assets/BrandLogo/BALAJI.png";
-import banner from "../assets/BrandLogo/BANNER.png";
-import bowling from "../assets/BrandLogo/bowling.png";
-import chatpataOpening from "../assets/BrandLogo/CHATPATAOPENING.png";
+const balaji = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/ikuwd1insu1kgvsigmvl.png";
+const banner = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515583/pm99w79h8brh93zzp1fs.png";
+const bowling = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/kfscwrtleluwgkepzcpq.png";
+const chatpataOpening = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/xwtctf2gjsofqpehodmo.png";
 
-import coopan from "../assets/BrandLogo/COOPAN.png";
-import deepDarsan from "../assets/BrandLogo/DEEPDARSAN.jpg";
-import dkComputer from "../assets/BrandLogo/DkComputer.png";
-import fabritoBillBook from "../assets/BrandLogo/FABRITOBILLBOOK.png";
+const coopan = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/xswt0oco7kqmaraiv2n0.png";
+const deepDarsan = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515591/owd8te8uyvdtfnp3vtue.jpg";
+const dkComputer = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515592/v6eru7egjqlopphpo50p.png";
+const fabritoBillBook = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/ytfohwuiu50dziigpkwh.png";
 
-import finnRoot from "../assets/BrandLogo/FINRROOT.png";
-import futureKids from "../assets/BrandLogo/FUTUREKIDS.png";
-import g9 from "../assets/BrandLogo/G9.png";
-import g9Logo from "../assets/BrandLogo/G9Logo.png";
+const finnRoot = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/ltxgobqtlbjs110ot2gb.png";
+const futureKids = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/nmyrd2p9wxqhypuhlqni.png";
+const g9 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515589/t5w5inpafssugcgbgplj.png";
+const g9Logo = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/iv69assjdppbipzdbte3.png";
 
-import gateBanner from "../assets/BrandLogo/GATE BANNER.png";
-import guruKripaMobileVisiting from "../assets/BrandLogo/GURUKRIPAMOBILEVISITING.png";
-import jupisolDataPamplate from "../assets/BrandLogo/JUPISOLTATAPAMPLATE.png";
+const gateBanner = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/eixixsafsdnjewotegkc.png";
+const guruKripaMobileVisiting = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/lezjrh72ynz4hlegesyu.png";
+const jupisolDataPamplate = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/r321hksbbmztnup6l2s8.png";
 
-import kidsTime from "../assets/BrandLogo/KIDS TIME.png";
-import kigsGym from "../assets/BrandLogo/KigsGym.png";
-import kings from "../assets/BrandLogo/KINGS.png";
-import leelabaa from "../assets/BrandLogo/LEELABAA.png";
+const kidsTime = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/oiizjddsylep7dj7anoj.png";
+const kigsGym = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515586/lnnaxwxsb8mfo5wahmgw.png";
+const kings = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515589/r7prchlqufv24sbdnigl.png";
+const leelabaa = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/b3q1zhy5vgq9ult1yqnj.png";
 
-import lettleStar from "../assets/BrandLogo/LETTLE STAR.png";
-import logo1 from "../assets/BrandLogo/LOGO 1.png";
-import logo2 from "../assets/BrandLogo/LOGO 2.png";
-import logo3 from "../assets/BrandLogo/LOGO3.png";
+const lettleStar = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/lpxlcbksrzsl9byxzjhm.png";
+const logo1 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/cmwqodrbafr9hmvyz4nf.png";
+const logo2 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/gg99hgtdt4juqeuxeygt.png";
+const logo3 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515590/cf4tkpptsaak6jrpivi3.png";
 
-import logo4 from "../assets/BrandLogo/LOGO 4.png";
-import logo5 from "../assets/BrandLogo/LOGO 5.png";
-import logo6 from "../assets/BrandLogo/LOGO 6.png";
-import logo from "../assets/BrandLogo/LOGO.png";
+const logo4 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515584/pxnk1didwjzi7e6tib5y.png";
+const logo5 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/ru2mdusxuc2xcoi6p2aa.png";
+const logo6 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/yjkdqnmtdtbcgv2xbt1w.png";
+const logo = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/e5cnwrlrsng595vhr35q.png";
 
-import logo04 from "../assets/BrandLogo/LOGO4.png";
-import logo8 from "../assets/BrandLogo/LOGO8.png";
-import mahabali from "../assets/BrandLogo/Mahabali.png";
-import mainBoard from "../assets/BrandLogo/MAINBOARD.png";
+const logo04 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515592/jgn79b1cxdecrgp1tji5.png";
+const logo8 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515587/szfa5lvjhfybvvnwzfdb.png";
+const mahabali = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515589/pu6jn5jqnjeacxdetlz8.png";
+const mainBoard = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/yc100go6shfaeovjqttk.png";
 
-import mang from "../assets/BrandLogo/MANG.png";
-import mobileSansar from "../assets/BrandLogo/MOBILESANSAR.png";
-import myChhota from "../assets/BrandLogo/MY CHHOTA.png";
-import rajPurohitSolar from "../assets/BrandLogo/RAJPUROHITSOLAR.png";
+const mang = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/e3njlfqc5juzsbhmbecj.png";
+const mobileSansar = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/qayets1niiefbwk2dinx.png";
+const myChhota = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/wxrc12hmwpvcjbxq1fcb.png";
+const rajPurohitSolar = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/nedcxb0tsbltwany0ect.png";
 
-import sand from "../assets/BrandLogo/SAND.png";
-import shubhamMobileLogo from "../assets/BrandLogo/SHUBHAMMOBILELOGO.png";
-import sideAcrylicAkFitness from "../assets/BrandLogo/SIDEACRYLICAKFITNESS.png";
-import socialBudies from "../assets/BrandLogo/SociaLBudies.png";
+const sand = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515586/pdycukq0kor3lhtuz7s7.png";
+const shubhamMobileLogo = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/iewi1tcb1pfhoujgjofv.png";
+const sideAcrylicAkFitness = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/j5awcth69w2acjwsd8la.png";
+const socialBudies = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/if6mx14vwesyjk5bslyu.png";
 
-import spicyOfPunjab from "../assets/BrandLogo/SPICYOFPANJAB.png";
-import studyPoint from "../assets/BrandLogo/STUDYPOINT.png";
-import tvs from "../assets/BrandLogo/TVS.png";
-import vedant from "../assets/BrandLogo/VEDANT.jpg";
+const spicyOfPunjab = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515587/jze85jyql2ps0grhtbgu.png";
+const studyPoint = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515585/a60vmaiyfccvqr5icv2p.png";
+const tvs = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515586/qspg22dzas2u8sghxoue.png";
+const vedant = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515587/zhwremjnpy2fxdaphddt.jpg";
 
-import veriYog from "../assets/BrandLogo/VERIYOG.png";
-import visitingCard from "../assets/BrandLogo/VISITINGCARD.png";
-import ShopImage from "../assets/Logo/ShopImage.png";
-import About1 from "../assets/Logo/About1.jpeg";
+const veriYog = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/t92t1lzp4dcawvekf7ya.png";
+const visitingCard = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515586/z9cbsbdntmxwo7h7qgts.png";
+const ShopImage = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515598/drcmkz4uhcyqqth2imiy.png";
+const About1 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515589/eyzc3obnhn9afbjkiozn.jpg";
 
 // ─── About Section Content ──────────────────────────────────────
 export const aboutContent = {

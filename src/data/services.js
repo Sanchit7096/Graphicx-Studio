@@ -1,22 +1,22 @@
 
 import { projects } from "./projects.js";
 
-// Import images from OurService folders
-import acrylicLedBoard from "../assets/OurService/AcrylicLedBoard/AcrylicLedBoard06.jfif";
-import vinylPrinting from "../assets/OurService/VinylPrintingAndBranding/Vinyl11.jfif";
-import threeDLetter from "../assets/OurService/3dLetterSignBoard/AcrylicLedBoard0.jfif";
-import corporateBranding from "../assets/OurService/CorporateBranding/img-1.jpeg";
-import premiumVisitingCards from "../assets/OurService/PremiumVisitingCards/Business-Card-Design.jpg";
-import customStickers from "../assets/OurService/CustomStickers/IN_Custom-Stickers_Category-Page_Mobile.jfif";
-import exhibitionStall from "../assets/OurService/ExhibitionStallBranding/Exhibition02.jfif";
-import frostedGlass from "../assets/OurService/FrostedGlassFilm/FrostedGlassFilm.png";
-import namePlates from "../assets/OurService/NamePlates/guptas-cutout-steel-name-plate-2.jpg";
-import neonSign from "../assets/OurService/NeonSignBoard/03_0b44d30a-0049-411c-9e1b-7306ee907446.webp";
-import oneWayVision from "../assets/OurService/OneWayVisionFilm/a272bce9-7514-489e-9b31-dff5565ec495.jpg";
-import photoFrames from "../assets/OurService/PhotoFrames/PhotoFrame1.jpg";
-import receptionSignage from "../assets/OurService/ReceptionSignage/AcrylicLogo5.jfif";
-import vehicleBranding from "../assets/OurService/VehicleBranding/8821712c-0a3d-400d-9bdd-a48d36cb02ff.jpg";
-import wallBranding from "../assets/OurService/WallBranding/a0cc109b-35b4-47fa-8be6-17f510275e20.jpg";
+// Cloudinary URLs for OurService images
+const acrylicLedBoard = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515589/ii6i8djyocwju1smrmd8.jpg";
+const vinylPrinting = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515591/ww5hpaz3rv0mw0lmr4x0.jpg";
+const threeDLetter = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515601/dx2wdgx4sk2m3z1s5wqj.jpg";
+const corporateBranding = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515592/whv9dti1wjtjwsmfgrw9.jpg";
+const premiumVisitingCards = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515587/ucrnjjjy6woznrb6otjt.jpg";
+const customStickers = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515590/mqqecbcbqkggkyb2cbvm.jpg";
+const exhibitionStall = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515591/ksfkmkm20r8lt8hcdplt.jpg";
+const frostedGlass = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515607/exwesvql0f88qp9aflgw.png";
+const namePlates = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/syzc5jjjiaupw2qczyqn.jpg";
+const neonSign = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515587/u8rk0kmhaakagttpzlv0.webp";
+const oneWayVision = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/gbdwvrde8hzpb9wgr9yo.jpg";
+const photoFrames = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515587/ybqxbbhv7js1bktahfow.jpg";
+const receptionSignage = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/idxufaxcg0warvrpxamc.jpg";
+const vehicleBranding = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515589/kubeqwyxnp0fry7z6fnf.jpg";
+const wallBranding = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515590/fnz1xzxitm66zh8gpi5i.jpg";
 
 const services = [
   {

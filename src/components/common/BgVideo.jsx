@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import video1 from '../../assets/Video/Banner nahibusiness ki pehli impression hai.Want your brand to stand outcall for Advertisement -.mp4';
-import video2 from '../../assets/Video/GYM SIGN BOARD INSTALLATIONPremium Gym Board Installed! 💡🔥High Quality • Sharp Finishing • Per.mp4';
+
+const video1 = "https://res.cloudinary.com/fj3hcwbi/video/upload/v1786515602/f11nywlt1am5l8xcg5c7.mp4";
+const video2 = "https://res.cloudinary.com/fj3hcwbi/video/upload/v1786515607/si0pyichbdgbpaddzqk7.mp4";
 
 const BgVideo = () => {
     const [currentVideo, setCurrentVideo] = useState(0);
