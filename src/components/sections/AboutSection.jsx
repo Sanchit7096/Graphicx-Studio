@@ -10,7 +10,7 @@ import { contactInfo } from '../../data/siteContent';
 gsap.registerPlugin(ScrollTrigger);
 
 // High quality real completed project image
-const projectShowcaseImg = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1787065548/kingsGYm_bd4nvc.jpg";
+const projectShowcaseImg = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1787071916/kingsGYm_q3xr0c.jpg";
 const googleMapsReviewUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Graphicx Studio, Dream Shoppers, Dindoli, Surat")}`;
 
 const AboutSection = () => {
@@ -121,7 +121,7 @@ const AboutSection = () => {
                             <img
                                 src={projectShowcaseImg}
                                 alt="GraphicX Studio Premium 3D Acrylic & LED Signage Showcase in Surat"
-                                className="w-full h-[420px] sm:h-[480px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+                                className="w-full h-[420px]  sm:h-[480px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                             />
                             
                             {/* Dark gradient overlay */}
