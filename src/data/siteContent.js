@@ -66,119 +66,145 @@ const About1 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515589/eyz
 // ─── About Section Content ──────────────────────────────────────
 export const aboutContent = {
   seo: {
-    title: "Sign Board Manufacturer in Dindoli, Surat | Graphicx Studio",
+    title: "Premium Signage Company in Surat | GraphicX Studio",
     metaDescription:
-      "Need a sign board maker near Dindoli, Surat? Graphicx Studio designs and installs LED acrylic signs, ACP storefronts, neon boards & flex printing. 6+ years, 4.9★ rated. Free site visit.",
+      "Looking for a premium signage company in Surat? GraphicX Studio specializes in custom sign boards, LED signage, ACP facades, acrylic letters, 3D signage & complete shop-front branding. 6+ years experience, in-house manufacturing, professional installation.",
     keywords: [
-      "sign board maker near me Dindoli",
+      "Premium Signage Company in Surat",
       "sign board manufacturer Surat",
-      "LED acrylic sign board price Surat",
-      "ACP sheet storefront design Dindoli",
-      "flex banner printing near Dindoli",
-      "neon sign board shop Surat",
+      "custom sign boards Surat",
+      "LED signage Surat",
+      "ACP facades Surat",
+      "acrylic letters Surat",
+      "3D signage Surat",
+      "shop front branding Surat",
+      "sign board maker near me Dindoli",
       "storefront elevation contractor Surat",
-      "acrylic letter sign board cost",
-      "visiting card printing Dindoli",
-      "best signage company near Dream Shoppers Surat",
     ],
     canonicalPath: "/about",
   },
 
+  tagline: "Design • Manufacture • Install",
+  headline: "Looking for a Premium Signage Company in Surat?",
+
   hero: {
-    heading: "Sign Boards & Signage, Made Right Here in surat",
+    heading: "Looking for a Premium Signage Company in Surat?",
     subheading:
-      "6+ years designing, building, and installing signage for shops and businesses across Surat. Rated 4.9 ★ by local customers.",
+      "GraphicX Studio is a premium signage and branding company in Surat, specializing in custom sign boards, LED signage, ACP facades, acrylic letters, 3D signage and complete shop-front branding.",
+    tagline: "Design • Manufacture • Install",
   },
 
   intro: {
-    heading: "Looking for a Sign Board Maker Near You in Surat?",
+    heading: "Complete Shop-Front Branding Under One Roof",
     image: About1,
+    leadParagraph:
+      "GraphicX Studio is a premium signage and branding company in Surat, specializing in custom sign boards, LED signage, ACP facades, acrylic letters, 3D signage and complete shop-front branding.",
     paragraphs: [
-      "Graphicx Studio is a local signage and printing workshop on the 2nd Floor of Dream Shoppers, near Dindoli Police Station. If you're searching for someone to design, build, and fit a shop sign in Surat, this is the place — we do the whole job ourselves, so you're not chasing three different vendors.",
-      "The studio was started by Nihit Chaurasiya and has been running for 6+ years, working with everything from first-time shop owners to established brands doing a rebrand.",
-      "Most people come to us wanting one of three things: a new sign board for a shop opening, an old sign replaced or repaired, or printing for an event or sale. All three, we handle end to end — design, fabrication, and on-site installation.",
+      "GraphicX Studio is a premium signage and branding company in Surat, specializing in custom sign boards, LED signage, ACP facades, acrylic letters, 3D signage and complete shop-front branding.",
+      "From design and 3D visualization to in-house manufacturing and professional installation, we manage the complete signage process under one roof.",
+      "Whether you're opening a new business, upgrading your existing storefront or giving your brand a complete makeover, we create signage designed to make your business stand out.",
     ],
   },
 
+  highlights: [
+    { title: "6+ Years Experience", subtitle: "Over 6 years of expertise delivering custom signage across Surat." },
+    { title: "In-House Manufacturing", subtitle: "Full control over quality, materials, and turnaround with no middlemen." },
+    { title: "Premium Materials", subtitle: "Top-grade acrylics, weather-resistant ACP panels, & durable LED modules." },
+    { title: "Professional Installation", subtitle: "Skilled technicians ensuring safe, precise on-site fitting." },
+  ],
+
+  processPillars: [
+    "Design & 3D Visualization",
+    "In-House Manufacturing",
+    "Professional Installation",
+  ],
+
+  ctas: {
+    consultationText: "Get a Free Design Consultation →",
+    whatsappText: "WhatsApp Us",
+    whatsappUrl:
+      "https://wa.me/918707862783?text=Hi%20GraphicX%20Studio!%20I'm%20looking%20for%20a%20premium%20signage%20solution%20and%20would%20like%20a%20free%20design%20consultation.",
+  },
+
   whatWeDo: {
-    heading: "What Can We Make For You?",
-    subheading: "Jump to what you're actually looking for:",
+    heading: "What We Design, Manufacture & Install",
+    subheading: "Complete shop-front branding & signage solutions tailored for your business:",
     services: [
       {
-        title: "LED & Acrylic Sign Boards",
+        title: "LED & 3D Acrylic Sign Boards",
         description:
-          "The classic glowing shop sign — 3D acrylic letters with LED lighting, so your shop name is visible day and night.",
+          "Energy-efficient 3D acrylic letters with high-lumen LED backlighting for maximum visibility day and night.",
         searchIntent: "led acrylic sign board price",
         icon: "led",
       },
       {
-        title: "Storefront Elevation (ACP Panels)",
+        title: "ACP Facades & Storefront Cladding",
         description:
-          "Redoing your shop front? We design and fit ACP panel facades that give the whole storefront a modern look.",
+          "Transform your building exterior with durable, weather-resistant Aluminium Composite Panel (ACP) facades.",
         icon: "storefront",
       },
       {
-        title: "Neon Signage",
+        title: "Custom Neon Signage",
         description:
-          "Custom neon and LED-neon signs for a bold, modern storefront statement that draws customers in after dark.",
+          "Eye-catching neon and LED-flex signs designed to make retail stores, cafes, and showrooms pop.",
         icon: "neon",
       },
       {
-        title: "Flex Banners & Vinyl Boards",
+        title: "Flex Banners & Large Format Boards",
         description:
-          "Cost-effective, vibrant, large-format printing for promotional events, sales, and grand openings.",
+          "Vibrant, cost-effective printing for outdoor advertising, event banners, and promotional grand openings.",
         icon: "banner",
       },
       {
-        title: "Indoor & Outdoor Signage",
+        title: "Indoor & Outdoor Directional Signage",
         description:
-          "Durable directional signs, reception logos, safety signage, and structural outdoor boards built to last.",
+          "Durable directional signs, lobby reception logos, and outdoor structural sign boards built to last.",
         icon: "signage",
       },
       {
-        title: "Bulk Business Printing",
+        title: "Complete Shop-Front Branding",
         description:
-          "High-quality visiting cards, corporate stationery, pamphlets, and promotional stickers for everyday business needs.",
+          "End-to-end commercial exterior design, 3D visualization, material selection, fabrication, and installation.",
         icon: "print",
       },
     ],
   },
 
   whyChooseUs: {
-    heading: "Why Choose Graphicx Studio?",
+    heading: "Why Choose GraphicX Studio?",
     points: [
       {
-        title: "Turnkey Fabrication",
+        title: "6+ Years Experience",
         description:
-          "From initial design concept to final on-site structural installation, we handle everything in-house.",
+          "Founded by Nihit Chaurasiya, GraphicX Studio has over 6 years of proven excellence crafting business signage in Surat.",
+      },
+      {
+        title: "In-House Manufacturing",
+        description:
+          "We manufacture everything directly in our facility for seamless quality control and cost efficiency.",
       },
       {
         title: "Premium Materials",
         description:
-          "Top-tier acrylics, rust-resistant metals, and fade-resistant UV inks for long-lasting durability.",
+          "We use weather-proof ACP sheets, high-grade acrylics, and long-life LEDs for maximum longevity.",
       },
       {
-        title: "Fast Turnaround Times",
+        title: "Professional Installation",
         description:
-          "Our in-house production hub ensures quick processing and delivery to keep your business timeline on track.",
+          "Our trained technical crew handles safe, secure, and clean structural fitting on-site.",
       },
       {
-        title: "Top-Rated Local Service",
+        title: "End-to-End Execution",
         description:
-          "Backed by a 4.9-star rating from satisfied clients across Dindoli and Surat, we pride ourselves on precision and customer satisfaction.",
-      },
-      {
-        title: "6+ Years of Experience",
-        description:
-          "Founded by Nihit Chaurasiya, Graphicx Studio has spent over 6 years perfecting signage that performs — visually and structurally.",
+          "From 3D design visualization to fabrication and final fitting — we manage the full process under one roof.",
       },
     ],
   },
 
   visitUs: {
-    heading: "Visit Our Graphicx Studio",
+    heading: "Visit GraphicX Studio",
     description:
-      "Stop by our office to view material samples, browse our portfolio, and discuss your branding requirements with our design experts.",
+      "Stop by our workshop to view material samples, discuss custom 3D designs, and consult with our branding specialists.",
     image: ShopImage,
     address: {
       line1: "Shop No. 205, 2nd Floor, Dream Shoppers",
@@ -190,10 +216,10 @@ export const aboutContent = {
   },
 
   imageAltText: {
-    hero: "Graphicx Studio signage manufacturing unit in Dindoli Surat",
-    ledSign: "LED acrylic sign board manufactured by Graphicx Studio Dindoli",
-    storefront: "storefront elevation ACP panel design by Graphicx Studio Surat",
-    neon: "custom neon sign board Graphicx Studio Dindoli Surat",
+    hero: "GraphicX Studio signage manufacturing unit in Surat",
+    ledSign: "LED acrylic sign board manufactured by GraphicX Studio Surat",
+    storefront: "storefront elevation ACP panel design by GraphicX Studio Surat",
+    neon: "custom neon sign board GraphicX Studio Surat",
     location: "graphicx-studio-dream-shoppers-dindoli-surat",
   },
 
@@ -201,39 +227,38 @@ export const aboutContent = {
     heading: "Frequently Asked Questions",
     items: [
       {
-        question: "How long does it take to make a sign board?",
-        answer: "Typically 3-7 days depending on the complexity and size of the sign. We can provide rush orders for urgent needs."
+        question: "Why choose GraphicX Studio as your signage company in Surat?",
+        answer: "We offer end-to-end signage services — from design and 3D visualization to in-house manufacturing and professional installation — with 6+ years experience, premium materials, and a 4.9★ rating."
       },
       {
-        question: "Do you provide on-site installation?",
-        answer: "Yes, we provide complete on-site installation services for all our signage products across Surat and nearby areas."
+        question: "What types of sign boards do you manufacture?",
+        answer: "We manufacture custom sign boards, LED signage, ACP facades, acrylic letters, 3D signage, neon signs, flex banners, and complete shop-front branding."
       },
       {
-        question: "What materials do you use for sign boards?",
-        answer: "We use premium quality acrylic, ACP panels, LED modules, and UV-resistant materials to ensure durability and longevity."
+        question: "Do you handle installation on-site?",
+        answer: "Yes, our team provides professional on-site installation across Surat and surrounding regions to ensure structural safety and flawless aesthetics."
       },
       {
-        question: "Do you offer design services?",
-        answer: "Yes, we have in-house designers who can create custom designs for your signage, storefront, and printing needs."
+        question: "How can I get a free design consultation?",
+        answer: "Click the 'Get a Free Design Consultation' button or contact us directly on WhatsApp for immediate assistance and customized quotes."
       },
       {
-        question: "What is your pricing?",
-        answer: "Our pricing varies based on the size, materials, and complexity of the project. Contact us for a free quote tailored to your needs."
+        question: "Where is GraphicX Studio located?",
+        answer: "Our workshop and office are located at Shop No. 205, 2nd Floor, Dream Shoppers, near Dindoli Police Station, Dindoli, Surat."
       },
     ],
   },
 
-  // Legacy fields for backward compatibility with existing components
-  tagline: "Who We Are",
-  heading: "GraphicX Studio",
+  // Legacy fields for backward compatibility
   stats: [
-    { value: "6+", label: "Years of Experience" },
+    { value: "6+", label: "Years Experience" },
+    { value: "100%", label: "In-House Manufacturing" },
     { value: "4.9", label: "Client Star Rating" },
   ],
   paragraphs: [
-    "Graphicx Studio is a local signage and printing workshop on the 2nd Floor of Dream Shoppers, near Dindoli Police Station. If you're searching for someone to design, build, and fit a shop sign in Surat, this is the place — we do the whole job ourselves, so you're not chasing three different vendors.",
-    "The studio was started by Nihit Chaurasiya and has been running for 6+ years, working with everything from first-time shop owners to established brands doing a rebrand.",
-    "Most people come to us wanting one of three things: a new sign board for a shop opening, an old sign replaced or repaired, or printing for an event or sale. All three, we handle end to end — design, fabrication, and on-site installation.",
+    "GraphicX Studio is a premium signage and branding company in Surat, specializing in custom sign boards, LED signage, ACP facades, acrylic letters, 3D signage and complete shop-front branding.",
+    "From design and 3D visualization to in-house manufacturing and professional installation, we manage the complete signage process under one roof.",
+    "Whether you're opening a new business, upgrading your existing storefront or giving your brand a complete makeover, we create signage designed to make your business stand out.",
   ],
 };
 

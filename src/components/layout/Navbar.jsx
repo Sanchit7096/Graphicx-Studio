@@ -76,16 +76,16 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`lg:hidden fixed inset-0 z-[60] bg-black/40 transition-opacity duration-300 ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`lg:hidden fixed inset-0 z-[9999] bg-black/40 transition-opacity duration-300 ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         onClick={closeMobileMenu}
       >
         <div
-          className={`absolute top-0 right-0 h-full w-full max-w-sm bg-black text-white shadow-2xl transition-transform duration-300 flex flex-col ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+          className={`fixed top-0 right-0 h-full w-full max-w-sm bg-black text-white shadow-2xl transition-transform duration-300 flex flex-col z-[10000] overflow-visible ${isMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex items-center justify-between px-6 py-5 border-b border-gray-800">
+          <div className="flex items-center justify-between px-6 py-5 border-b border-gray-800 bg-black relative z-[102]">
             <Link to="/" onClick={closeMobileMenu}>
               <img src={logoImg} className="h-9" alt="Logo" />
             </Link>
@@ -98,7 +98,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="flex-1 overflow-y-auto px-6 py-4">
+          <div className="flex-1 overflow-y-auto px-6 py-4 relative z-[102] bg-black">
             <Link
               to="/services"
               onClick={closeMobileMenu}
@@ -132,7 +132,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <div className="px-6 py-5 border-t border-gray-800">
+          <div className="px-6 py-5 border-t border-gray-800 relative z-[102] bg-black">
             <a
               href="https://wa.me/918707862783?text=Hi%20GraphicX%20Studio!%20I'm%20interested%20in%20getting%20a%20quote."
               target="_blank"
