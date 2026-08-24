@@ -129,16 +129,16 @@ const HeroContent = () => {
             className="font-light leading-[1.6] sm:leading-[1.7] tracking-wide text-white/85"
             style={{ fontSize: 'clamp(13px, 1.1vw, 16px)' }}
           >
-           {heroContent.body}
+            {heroContent.body}
           </p>
 
-          <div ref={btnRef} className="mt-2 sm:mt-4">
+          <div ref={btnRef} className="mt-1 sm:mt-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2.5 sm:gap-3 bg-amber-500 hover:bg-amber-600 text-black text-xs sm:text-sm font-bold px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl shadow-lg shadow-amber-500/10 hover:shadow-amber-500/25 transition-all duration-300 transform hover:-translate-y-0.5 group"
+              className="inline-flex items-center gap-2 sm:gap-3 bg-orange-500  hover:bg-amber-600 text-black text-[11px] sm:text-sm font-bold tracking-wide px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg shadow-amber-500/10 hover:shadow-amber-500/25 transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
             >
-              <span>Get a Free Design Consultation</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <span>Get Free Consultation</span>
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>

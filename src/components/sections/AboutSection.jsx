@@ -138,7 +138,7 @@ const AboutSection = () => {
                                         <FontAwesomeIcon icon={faGoogle} className="text-amber-400 text-lg" />
                                     </div>
                                     <div>
-                                        <div className="flex items-center gap-1.5 text-amber-400 text-sm font-bold">
+                                        <div className="flex items-center gap-1.5 text-orange-500  text-sm font-bold">
                                             <span>⭐ 4.9/5 Google Rating</span>
                                         </div>
                                         <p className="text-white/60 text-xs font-medium group-hover/rating:text-white/90 transition-colors">
@@ -147,7 +147,7 @@ const AboutSection = () => {
                                     </div>
                                 </div>
 
-                                <span className="text-xs text-amber-400 font-semibold uppercase tracking-wider underline underline-offset-4 group-hover/rating:text-amber-300">
+                                <span className="text-xs text-orange-500  font-semibold uppercase tracking-wider underline underline-offset-4 group-hover/rating:text-amber-300">
                                     Read Reviews →
                                 </span>
                             </a>

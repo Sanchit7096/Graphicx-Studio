@@ -8,9 +8,9 @@ function FAQSection({ faqContent }) {
   };
 
   return (
-    <section className="w-full  py-8 md:py-12 lg:py-16 px-5 sm:px-6 lg:px-8 xl:px-10 -mt-20 ">
+    <section className="w-full py-10 md:py-16 px-5 sm:px-6 lg:px-8 xl:px-10 font-poppins">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl  text-white mb-16 font-poppins text-center leading-tight">
+        <h2 className="text-3xl md:text-4xl text-white mb-10 md:mb-12 font-poppins text-center leading-tight">
           {faqContent.heading}
         </h2>
         <div className="max-w-6xl mx-auto space-y-4">
