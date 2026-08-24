@@ -59,7 +59,7 @@ const ServiceSection = () => {
               </span>
             </div>
 
-            <h2 className="text-4xl font-semibold uppercase leading-[0.88] tracking-[0.2em] text-white sm:text-5xl font-poppins">
+            <h2 className="text-4xl  text-white sm:text-5xl font-poppins">
               {serviceSectionIntro.heading}
             </h2>
 
@@ -125,7 +125,7 @@ const ServiceSection = () => {
                 <p className="max-w-2xl text-sm leading-7 text-white/70 sm:text-base max-w-xl">
                   {svc.shortDesc}
                 </p>
-                <button className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-bold hover:underline transition-all duration-300">View work <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></button>
+
               </div>
             </article>
           ))}

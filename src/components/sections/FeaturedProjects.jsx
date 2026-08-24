@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { projects } from "../../data/projects";
 import { featuredProjectsContent } from "../../data/siteContent";
 
-const indices = [10, 12, 15,  26, 14, 8];
+const indices = [10, 12, 15, 26, 14, 8];
 const PROJECTS = projects.filter((_, index) => indices.includes(index));
 
 export default function FeaturedProjects() {
@@ -18,28 +18,63 @@ export default function FeaturedProjects() {
   const isAnimating = useRef(false);
   const routerNavigate = useNavigate();
 
-  // Coverflow Animation
+  // Coverflow Animation with smooth GSAP calculations
   useEffect(() => {
     const cards = cardsRef.current;
     if (!cards || cards.length === 0) return;
-    const ease = "power3.out";
-    const duration = 0.8;
+    const ease = "power2.out";
+    const duration = 0.6;
 
     cards.forEach((card, i) => {
       if (!card) return;
-      if (i === activeIndex) {
-        gsap.to(card, { x: "0%", z: 0, rotationY: 0, scale: 1, opacity: 1, filter: "blur(0px)", zIndex: 10, duration, ease, overwrite: true });
-      } else if (i < activeIndex) {
-        gsap.to(card, { x: "-65%", z: -150, rotationY: 25, scale: 0.8, opacity: 0.4, filter: "blur(8px)", zIndex: i, duration, ease, overwrite: true });
+      const offset = i - activeIndex;
+      const absOffset = Math.abs(offset);
+
+      if (absOffset > 2) {
+        gsap.to(card, {
+          x: offset > 0 ? "140%" : "-140%",
+          z: -300,
+          rotationY: offset > 0 ? -40 : 40,
+          scale: 0.6,
+          opacity: 0,
+          pointerEvents: "none",
+          zIndex: 1,
+          duration,
+          ease,
+          force3D: true,
+          overwrite: "auto",
+        });
       } else {
-        gsap.to(card, { x: "65%", z: -150, rotationY: -25, scale: 0.8, opacity: 0.4, filter: "blur(8px)", zIndex: total - i, duration, ease, overwrite: true });
+        const xPos = `${offset * 58}%`;
+        const zPos = -absOffset * 130;
+        const rotY = offset * -22;
+        const scaleVal = 1 - absOffset * 0.15;
+        const opacityVal = 1 - absOffset * 0.45;
+        const zIdx = 20 - absOffset;
+
+        gsap.to(card, {
+          x: xPos,
+          z: zPos,
+          rotationY: rotY,
+          scale: scaleVal,
+          opacity: opacityVal,
+          pointerEvents: "auto",
+          zIndex: zIdx,
+          duration,
+          ease,
+          force3D: true,
+          overwrite: "auto",
+        });
       }
     });
 
     bgNumbersRef.current.forEach((num, i) => {
       if (!num) return;
-      if (i === activeIndex) gsap.to(num, { opacity: 0.03, y: 0, scale: 1, duration: 1.5, ease: "power3.out", overwrite: true });
-      else gsap.to(num, { opacity: 0, y: 30, scale: 0.95, duration: 1.0, ease: "power3.out", overwrite: true });
+      if (i === activeIndex) {
+        gsap.to(num, { opacity: 0.03, y: 0, scale: 1, duration: 0.8, ease: "power2.out", overwrite: "auto" });
+      } else {
+        gsap.to(num, { opacity: 0, y: 20, scale: 0.95, duration: 0.5, ease: "power2.out", overwrite: "auto" });
+      }
     });
   }, [activeIndex, total]);
 
@@ -48,24 +83,36 @@ export default function FeaturedProjects() {
 
   const navigate = (dir, targetIndex = null) => {
     if (isAnimating.current) return;
+    isAnimating.current = true;
+
     if (targetIndex !== null) {
-      if (targetIndex === activeIndex) return;
-      isAnimating.current = true;
-      setActiveIndex(targetIndex);
-      setTimeout(() => { isAnimating.current = false; }, 300);
+      if (targetIndex !== activeIndex) {
+        setActiveIndex(targetIndex);
+      } else {
+        isAnimating.current = false;
+        return;
+      }
     } else {
-      isAnimating.current = true;
-      setActiveIndex(prev => dir > 0 ? (prev + 1) % total : (prev - 1 + total) % total);
-      setTimeout(() => { isAnimating.current = false; }, 200);
+      setActiveIndex(prev => (dir > 0 ? (prev + 1) % total : (prev - 1 + total) % total));
     }
+
+    setTimeout(() => {
+      isAnimating.current = false;
+    }, 500);
   };
 
-  const handlePointerDown = (e) => dragStartX.current = e.clientX;
-  const handlePointerUp = () => dragStartX.current = null;
+  const handlePointerDown = (e) => {
+    dragStartX.current = e.clientX;
+  };
+
+  const handlePointerUp = () => {
+    dragStartX.current = null;
+  };
+
   const handlePointerMove = (e) => {
     if (dragStartX.current === null) return;
     const diff = dragStartX.current - e.clientX;
-    if (Math.abs(diff) > 50) {
+    if (Math.abs(diff) > 40) {
       navigate(diff > 0 ? 1 : -1);
       dragStartX.current = null;
     }
@@ -73,18 +120,18 @@ export default function FeaturedProjects() {
 
   const handleWheel = (e) => {
     if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-      e.preventDefault();
       if (e.deltaX > 25) navigate(1);
       else if (e.deltaX < -25) navigate(-1);
     }
   };
-  // Auto-advance every 3 seconds
+
+  // Auto-advance
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex(prev => (prev + 1) % total);
     }, 5000);
     return () => clearInterval(interval);
-  }, [activeIndex, total]);
+  }, [total]);
 
   return (
     <>
@@ -125,23 +172,23 @@ export default function FeaturedProjects() {
           onPointerLeave={handlePointerUp}
           onWheel={handleWheel}
         >
-          <div className="relative flex items-center justify-center w-[75vw] md:w-[clamp(320px,45vw,800px)] h-[50vh] md:h-[clamp(400px,60vh,700px)]" style={{ perspective: '1500px', transformStyle: 'preserve-3d' }}>
+          <div className="relative flex items-center justify-center w-[75vw] md:w-[clamp(320px,45vw,800px)] h-[50vh] md:h-[clamp(400px,60vh,700px)]" style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}>
             {PROJECTS.map((project, i) => (
               <div
                 key={project.id}
                 ref={el => cardsRef.current[i] = el}
-                className="absolute w-full h-full rounded-2xl overflow-hidden origin-center shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.06)] transition-all duration-500 cursor-pointer group hover:shadow-[0_40px_100px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.2)] hover:-translate-y-2"
+                className="absolute w-full h-full rounded-2xl overflow-hidden origin-center shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.06)] cursor-pointer group hover:shadow-[0_40px_100px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.2)]"
                 onClick={() => {
                   if (i === activeIndex) {
-                    navigate(0, activeIndex < total - 1 ? activeIndex + 1 : 0);
+                    navigate(0, (activeIndex + 1) % total);
                   } else {
                     navigate(0, i);
                   }
                 }}
               >
                 <div className="relative w-full h-full">
-                  <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105" draggable={false} />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+                  <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" draggable={false} />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
                 </div>
               </div>
             ))}
@@ -154,7 +201,7 @@ export default function FeaturedProjects() {
             {PROJECTS.map((project, i) => (
               <div
                 key={project.id}
-                className={`w-16 h-10 rounded overflow-hidden cursor-pointer transition-all duration-500 ease-out border ${activeIndex === i ? 'opacity-100 border-white/80 scale-110 shadow-[0_8px_20px_rgba(0,0,0,0.6)]' : 'opacity-30 hover:opacity-80 border-transparent'}`}
+                className={`w-16 h-10 rounded overflow-hidden cursor-pointer transition-all duration-300 ease-out border ${activeIndex === i ? 'opacity-100 border-white/80 scale-110 shadow-[0_8px_20px_rgba(0,0,0,0.6)]' : 'opacity-30 hover:opacity-80 border-transparent'}`}
                 onClick={() => navigate(0, i)}
               >
                 <img src={project.image} alt="thumb" className="w-full h-full object-cover" draggable={false} />
@@ -163,9 +210,9 @@ export default function FeaturedProjects() {
           </div>
 
           <div className="w-full h-[2px] bg-white/10 relative rounded overflow-hidden">
-            <div className="absolute top-0 left-0 h-full bg-white transition-all duration-700 ease-out" style={{ width: `${((activeIndex + 1) / total) * 100}%` }} />
-
+            <div className="absolute top-0 left-0 h-full bg-white transition-all duration-500 ease-out" style={{ width: `${((activeIndex + 1) / total) * 100}%` }} />
           </div>
+
           <div className="flex justify-end gap-5">
             <p onClick={() => routerNavigate("/projects")} className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-semibold hover:underline transition-all duration-300">View All Work <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></p>
           </div>
