@@ -36,11 +36,17 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "bg-black/70 backdrop-blur-xl py-4" : "bg-transparent py-6"
-        }`}
-    >
-      <div className="max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto px-6 lg:px-12 2xl:px-16 flex items-center justify-between text-white">
+    <nav className="fixed top-0 left-0 w-full z-50">
+      {/* Navbar background layer */}
+      <div
+        className={`absolute inset-0 transition-all duration-500 pointer-events-none ${isScrolled ? "bg-black/70 backdrop-blur-xl" : "bg-transparent"
+          }`}
+      />
+
+      <div
+        className={`relative z-10 max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto px-6 lg:px-12 2xl:px-16 flex items-center justify-between text-white transition-all duration-500 ${isScrolled ? "py-4" : "py-6"
+          }`}
+      >
         <Link to="/">
           <img src={logoImg} className="h-12" alt="Logo" />
         </Link>
