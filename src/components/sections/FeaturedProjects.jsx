@@ -197,14 +197,14 @@ export default function FeaturedProjects() {
 
         {/* Bottom Navigation */}
         <div className="relative z-10 w-full max-w-[800px] mx-auto flex flex-col items-center gap-8 px-8 mt-4 md:mt-0">
-          <div className="flex gap-4">
+          <div className="flex gap-3 sm:gap-4 overflow-x-auto py-2">
             {PROJECTS.map((project, i) => (
               <div
                 key={project.id}
-                className={`w-16 h-10 rounded overflow-hidden cursor-pointer transition-all duration-300 ease-out border ${activeIndex === i ? 'opacity-100 border-white/80 scale-110 shadow-[0_8px_20px_rgba(0,0,0,0.6)]' : 'opacity-30 hover:opacity-80 border-transparent'}`}
+                className={`w-20 h-14 sm:w-24 sm:h-16 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 ease-out border shrink-0 ${activeIndex === i ? 'opacity-100 border-white/80 scale-105 shadow-[0_8px_20px_rgba(0,0,0,0.6)]' : 'opacity-40 hover:opacity-90 border-transparent'}`}
                 onClick={() => navigate(0, i)}
               >
-                <img src={project.image} alt="thumb" className="w-full h-full object-cover" draggable={false} />
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover" draggable={false} />
               </div>
             ))}
           </div>

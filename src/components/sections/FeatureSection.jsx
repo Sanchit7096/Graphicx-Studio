@@ -55,10 +55,10 @@ const ImageComparisonSlider = ({ before, after }) => {
       />
 
       {/* Labels */}
-      <div className="absolute top-4 left-4 z-10 bg-black/50 backdrop-blur-md border border-white/10 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full pointer-events-none">
+      <div className="absolute top-4 left-4 z-10 bg-black/75 backdrop-blur-md border border-white/30 text-white text-xs font-bold tracking-wider px-3.5 py-1.5 rounded-full pointer-events-none shadow-md">
         Before
       </div>
-      <div className="absolute top-4 right-4 z-10 bg-[#2edcc3]/90 text-black text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full pointer-events-none shadow-lg">
+      <div className="absolute top-4 right-4 z-10 bg-orange-500 text-black text-xs font-bold tracking-wider px-3.5 py-1.5 rounded-full pointer-events-none shadow-lg">
         After
       </div>
     </div>
@@ -113,11 +113,11 @@ const FeatureSection = () => {
       <div className="feature-header max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 mb-16 text-center">
         <div className="flex items-center justify-center gap-4 mb-6">
           <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
-          <span className="text-[#D6D6D6] text-sm font-bold tracking-widest uppercase">{featureSectionContent.tagline}</span>
+          <span className="text-[#D6D6D6] text-xs font-semibold tracking-widest uppercase">{featureSectionContent.tagline}</span>
           <span className="w-12 h-[1px] bg-[#D6D6D6]"></span>
         </div>
         <h2
-          className="text-4xl md:text-4xl font-semibold text-white uppercase leading-[0.9] tracking-wider font-poppins"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wider font-poppins"
         >
           {featureSectionContent.heading}
         </h2>

@@ -63,9 +63,9 @@ const Footer = () => {
 
           {/* Column 2: Popular Services */}
           <div className="flex flex-col gap-5">
-            <h4 className="text-lg font-semibold uppercase tracking-[0.24em] text-white font-poppins">
+            <h3 className="text-base font-semibold tracking-wider text-white font-poppins">
               Services
-            </h4>
+            </h3>
             <div className="flex flex-col gap-3 text-sm">
               <Link to="/services/led-sign-board" className="w-fit text-white/70 transition-colors duration-200 hover:text-orange-400">
                 LED Sign Boards
@@ -87,9 +87,9 @@ const Footer = () => {
 
           {/* Column 3: Quick Links */}
           <div className="flex flex-col gap-5">
-            <h4 className="text-lg font-semibold uppercase tracking-[0.24em] text-white font-poppins">
+            <h3 className="text-base font-semibold tracking-wider text-white font-poppins">
               Company
-            </h4>
+            </h3>
             <div className="flex flex-col gap-3 text-sm">
               <Link to="/" className="w-fit text-white/70 transition-colors duration-200 hover:text-orange-400">
                 Home
@@ -111,9 +111,9 @@ const Footer = () => {
 
           {/* Column 4: Contact & Location */}
           <div className="flex flex-col gap-5">
-            <h4 className="text-lg font-semibold uppercase tracking-[0.24em] text-white font-poppins">
+            <h3 className="text-base font-semibold tracking-wider text-white font-poppins">
               Contact & Location
-            </h4>
+            </h3>
             <div className="flex flex-col gap-2.5 text-sm">
               <a href={`tel:${contactInfo.phone}`} className="w-fit text-white/70 transition-colors duration-200 hover:text-orange-400">
                 {contactInfo.phoneDisplay}
@@ -154,7 +154,7 @@ const Footer = () => {
 
       {/* ── BOTTOM BAR (Centered Copyright) ── */}
       <div className="border-t border-white/5 mt-16 pt-8 text-center">
-        <p className="text-white/30 text-xs tracking-widest uppercase">
+        <p className="text-white/40 text-xs tracking-wider font-medium">
           Copyright © {new Date().getFullYear()} GraphicX Studio. All rights reserved.
         </p>
       </div>

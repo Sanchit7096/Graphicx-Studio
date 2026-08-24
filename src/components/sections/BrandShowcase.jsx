@@ -35,9 +35,9 @@ const BrandShowcase = () => {
     >
       <div className="max-w-screen-2xl mx-auto">
         <div className="mb-8 md:mb-10 text-center">
-          <h3 className="text-white/40 text-[11px] font-bold tracking-[0.3em] uppercase">
+          <p className="text-white/50 text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase">
             Trusted By Innovative Brands
-          </h3>
+          </p>
         </div>
       </div>
 

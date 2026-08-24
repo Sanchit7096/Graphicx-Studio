@@ -50,9 +50,9 @@ const AboutSection = () => {
                     <div className="lg:col-span-7 flex flex-col justify-start">
 
                         {/* Tagline Badge */}
-                        <div className="animate-fade mb-6 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs md:text-sm  tracking-widest uppercase w-fit">
+                        <div className="animate-fade mb-6 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs md:text-sm tracking-widest uppercase w-fit">
                             <Sparkles className="w-4 h-4 text-amber-400" />
-                            <span>DESIGN • MANUFACTURE • INSTALL</span>
+                            <span className="capitalize tracking-wider font-semibold">Design • Manufacture • Install</span>
                         </div>
 
                         {/* Heading */}
