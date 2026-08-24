@@ -45,19 +45,19 @@ const AboutSection = () => {
 
             <div className="max-w-screen-2xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                    
+
                     {/* Left Column - Content */}
                     <div className="lg:col-span-7 flex flex-col justify-start">
-                        
+
                         {/* Tagline Badge */}
-                        <div className="animate-fade mb-6 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs md:text-sm font-bold tracking-widest uppercase w-fit">
+                        <div className="animate-fade mb-6 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs md:text-sm  tracking-widest uppercase w-fit">
                             <Sparkles className="w-4 h-4 text-amber-400" />
                             <span>DESIGN • MANUFACTURE • INSTALL</span>
                         </div>
 
                         {/* Heading */}
-                        <h2 className="animate-fade text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                            Looking for a <span className="text-white underline decoration-amber-500/60 underline-offset-8">Premium Signage Company</span> in Surat?
+                        <h2 className="animate-fade text-3xl sm:text-4xl md:text-4xl  text-white mb-6 leading-tight">
+                            Looking for a <span className="text-white">Premium Signage Company</span> in Surat?
                         </h2>
 
                         {/* 2 Short & High-Impact Paragraphs */}
@@ -72,14 +72,6 @@ const AboutSection = () => {
 
                         {/* Primary & Secondary CTAs */}
                         <div className="animate-fade flex flex-wrap gap-4 items-center mb-10">
-                            <Link
-                                to="/contact"
-                                className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-black text-sm md:text-base font-bold px-7 py-4 rounded-xl shadow-lg shadow-amber-500/10 hover:shadow-amber-500/25 transition-all duration-300 transform hover:-translate-y-0.5 group"
-                            >
-                                <span>Get a Free Design Consultation</span>
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-
                             <a
                                 href={contactInfo.whatsappUrl}
                                 target="_blank"
@@ -123,7 +115,7 @@ const AboutSection = () => {
                                 alt="GraphicX Studio Premium 3D Acrylic & LED Signage Showcase in Surat"
                                 className="w-full h-[420px]  sm:h-[480px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                             />
-                            
+
                             {/* Dark gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30 pointer-events-none"></div>
 
