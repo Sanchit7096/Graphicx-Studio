@@ -18,7 +18,7 @@ const WhyChooseUsSection = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         containerRef.current,
-        { opacity: 0, y: 40 },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
@@ -48,7 +48,7 @@ const WhyChooseUsSection = () => {
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight">
                 Customer Feedback
               </h2>
-              <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed">
+              <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed">
                 See why our clients love working with us.
               </p>
             </div>
@@ -78,7 +78,7 @@ const WhyChooseUsSection = () => {
                           <h3 className="text-base font-semibold text-white">
                             {testimonial.author}
                           </h3>
-                          <p className="text-xs text-white/60">Verified Client</p>
+                          <p className="text-xs text-zinc-300">Verified Client</p>
                         </div>
                       </div>
 
@@ -94,7 +94,7 @@ const WhyChooseUsSection = () => {
                       </div>
                     </div>
 
-                    <p className="mt-4 text-white/80 text-sm sm:text-base leading-relaxed italic">
+                    <p className="mt-4 text-white/85 text-sm sm:text-base leading-relaxed italic">
                       "{testimonial.quote}"
                     </p>
                   </div>
@@ -115,7 +115,7 @@ const WhyChooseUsSection = () => {
                 className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition hover:border-[#2edcc3] hover:bg-[#2edcc3]/15 hover:text-white active:scale-95"
                 aria-label="Previous testimonial"
               >
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -124,7 +124,7 @@ const WhyChooseUsSection = () => {
                 className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition hover:border-[#2edcc3] hover:bg-[#2edcc3]/15 hover:text-white active:scale-95"
                 aria-label="Next testimonial"
               >
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -136,4 +136,4 @@ const WhyChooseUsSection = () => {
   );
 };
 
-export default WhyChooseUsSection;
+export default React.memo(WhyChooseUsSection);

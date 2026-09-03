@@ -1,7 +1,3 @@
-const img1 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515589/g6daptzmciq3pz6v6imk.png";
-const img2 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515593/yyrvpjptxlrwx8unth13.png";
-const img3 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515590/dcpe2chpdy3tftzpa7hx.png";
-const img4 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515592/icyu48kgt0dlv2z6g809.png";
 
 const featureImg1 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515592/whv9dti1wjtjwsmfgrw9.jpg";
 const featureImg2 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/wjcqgfzad6vjfe9ug35v.jpg";

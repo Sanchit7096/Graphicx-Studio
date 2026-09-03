@@ -5,7 +5,7 @@ export default function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // If there is a hash (e.g., #services) in the URL, scroll to that element
+   
     if (hash) {
       // We use a slight timeout to ensure the page has rendered before trying to scroll
       setTimeout(() => {
@@ -13,7 +13,7 @@ export default function ScrollToTop() {
         const element = document.getElementById(id);
         
         if (element) {
-          // Adjust this offset based on your fixed navbar's height
+         
           const yOffset = -96; // ~24 units of spacing (e.g., pt-24 is 96px)
           const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
           window.scrollTo({ top: y, behavior: "smooth" });

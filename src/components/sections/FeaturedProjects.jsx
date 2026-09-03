@@ -1,22 +1,33 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { projects } from "../../data/projects";
 import { featuredProjectsContent } from "../../data/siteContent";
+import { optimizeCloudinaryUrl } from "../../utils/cloudinary";
 
 const indices = [10, 12, 15, 26, 14, 8];
-const PROJECTS = projects.filter((_, index) => indices.includes(index));
 
 export default function FeaturedProjects() {
   const containerRef = useRef(null);
   const cardsRef = useRef([]);
   const bgNumbersRef = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
-  const total = PROJECTS.length;
   const isAnimating = useRef(false);
   const routerNavigate = useNavigate();
+
+  const PROJECTS = useMemo(() => {
+    return projects
+      .filter((_, index) => indices.includes(index))
+      .map((p) => ({
+        ...p,
+        cardImage: optimizeCloudinaryUrl(p.image, { width: 800 }),
+        thumbImage: optimizeCloudinaryUrl(p.image, { width: 200 }),
+      }));
+  }, []);
+
+  const total = PROJECTS.length;
 
   // Coverflow Animation with smooth GSAP calculations
   useEffect(() => {
@@ -93,7 +104,7 @@ export default function FeaturedProjects() {
         return;
       }
     } else {
-      setActiveIndex(prev => (dir > 0 ? (prev + 1) % total : (prev - 1 + total) % total));
+      setActiveIndex((prev) => (dir > 0 ? (prev + 1) % total : (prev - 1 + total) % total));
     }
 
     setTimeout(() => {
@@ -128,97 +139,131 @@ export default function FeaturedProjects() {
   // Auto-advance
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex(prev => (prev + 1) % total);
+      setActiveIndex((prev) => (prev + 1) % total);
     }, 5000);
     return () => clearInterval(interval);
   }, [total]);
 
   return (
-    <>
-      <section className="relative w-full bg-[#080808] flex flex-col overflow-hidden py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 select-none min-h-[75vh]">
+    <section className="relative w-full bg-[#080808] flex flex-col overflow-hidden py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8 xl:px-10 select-none min-h-[75vh]">
+      {/* Background Grain & Numbers */}
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none z-0"
+        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")` }}
+      />
+      <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden pointer-events-none">
+        {PROJECTS.map((proj, i) => (
+          <div key={proj.id} ref={(el) => (bgNumbersRef.current[i] = el)} className="absolute font-poppins text-[clamp(15rem,45vw,50rem)] font-semibold text-white leading-none opacity-0">
+            {proj.id}
+          </div>
+        ))}
+      </div>
 
-        {/* Background Grain & Numbers */}
-        <div
-          className="absolute inset-0 opacity-5 pointer-events-none z-0"
-          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")` }}
-        />
-        <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden pointer-events-none">
-          {PROJECTS.map((proj, i) => (
-            <div key={proj.id} ref={el => bgNumbersRef.current[i] = el} className="absolute font-poppins text-[clamp(15rem,45vw,50rem)] font-extrabold text-white leading-none opacity-0">
-              {proj.id}
+      {/* Header */}
+      <div className="relative z-10 mb-8 pointer-events-none max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
+        <div className="flex items-center justify-center gap-4 mb-4">
+          <span className="w-12 h-[1px] bg-[#D6D6D6]/30"></span>
+          <span className="text-zinc-400 text-xs font-semibold tracking-widest uppercase">{featuredProjectsContent.tagline}</span>
+          <span className="w-12 h-[1px] bg-[#D6D6D6]/30"></span>
+        </div>
+        <h2 className="text-3xl md:text-5xl font-semibold text-white uppercase tracking-wider font-poppins text-center mb-2">
+          {featuredProjectsContent.heading}
+        </h2>
+      </div>
+
+      {/* 3D Coverflow Container */}
+      <div
+        ref={containerRef}
+        className="relative flex-1 flex items-center justify-center z-10 touch-pan-y"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerLeave={handlePointerUp}
+        onWheel={handleWheel}
+      >
+        <div className="relative flex items-center justify-center w-[75vw] md:w-[clamp(320px,45vw,800px)] h-[50vh] md:h-[clamp(400px,60vh,700px)]" style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}>
+          {PROJECTS.map((project, i) => (
+            <div
+              key={project.id}
+              ref={(el) => (cardsRef.current[i] = el)}
+              className="absolute w-full h-full rounded-2xl overflow-hidden origin-center shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.06)] cursor-pointer group hover:shadow-[0_40px_100px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.2)]"
+              onClick={() => {
+                if (i === activeIndex) {
+                  navigate(0, (activeIndex + 1) % total);
+                } else {
+                  navigate(0, i);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              aria-label={`View project: ${project.title}`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  navigate(0, i);
+                }
+              }}
+            >
+              <div className="relative w-full h-full">
+                <img
+                  src={project.cardImage}
+                  alt={project.title}
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  draggable={false}
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
+              </div>
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Header */}
-        <div className="relative z-10 mb-8 pointer-events-none max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <span className="w-12 h-[1px] bg-[#D6D6D6]/30"></span>
-            <span className="text-[#D6D6D6]/50 text-xs font-bold tracking-widest uppercase">{featuredProjectsContent.tagline}</span>
-            <span className="w-12 h-[1px] bg-[#D6D6D6]/30"></span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white uppercase tracking-wider font-poppins text-center mb-2">
-            {featuredProjectsContent.heading}
-          </h2>
+      {/* Bottom Navigation */}
+      <div className="relative z-10 w-full max-w-[800px] mx-auto flex flex-col items-center gap-8 px-8 mt-4 md:mt-0">
+        <div className="flex gap-3 sm:gap-4 overflow-x-auto py-2" role="tablist" aria-label="Featured projects carousel">
+          {PROJECTS.map((project, i) => (
+            <button
+              key={project.id}
+              role="tab"
+              aria-selected={activeIndex === i}
+              aria-label={`Slide ${i + 1}: ${project.title}`}
+              className={`w-20 h-14 sm:w-24 sm:h-16 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 ease-out border shrink-0 ${activeIndex === i
+                  ? 'opacity-100 border-white/80 scale-105 shadow-[0_8px_20px_rgba(0,0,0,0.6)]'
+                  : 'opacity-40 hover:opacity-90 border-transparent'
+                }`}
+              onClick={() => navigate(0, i)}
+            >
+              <img
+                src={project.thumbImage}
+                alt={project.title}
+                width="96"
+                height="64"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+                draggable={false}
+              />
+            </button>
+          ))}
         </div>
 
-        {/* 3D Coverflow Container */}
-        <div
-          ref={containerRef}
-          className="relative flex-1 flex items-center justify-center z-10 touch-pan-y"
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerLeave={handlePointerUp}
-          onWheel={handleWheel}
-        >
-          <div className="relative flex items-center justify-center w-[75vw] md:w-[clamp(320px,45vw,800px)] h-[50vh] md:h-[clamp(400px,60vh,700px)]" style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}>
-            {PROJECTS.map((project, i) => (
-              <div
-                key={project.id}
-                ref={el => cardsRef.current[i] = el}
-                className="absolute w-full h-full rounded-2xl overflow-hidden origin-center shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.06)] cursor-pointer group hover:shadow-[0_40px_100px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.2)]"
-                onClick={() => {
-                  if (i === activeIndex) {
-                    navigate(0, (activeIndex + 1) % total);
-                  } else {
-                    navigate(0, i);
-                  }
-                }}
-              >
-                <div className="relative w-full h-full">
-                  <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" draggable={false} />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="w-full h-[2px] bg-white/10 relative rounded overflow-hidden">
+          <div className="absolute top-0 left-0 h-full bg-white transition-all duration-500 ease-out" style={{ width: `${((activeIndex + 1) / total) * 100}%` }} />
         </div>
 
-        {/* Bottom Navigation */}
-        <div className="relative z-10 w-full max-w-[800px] mx-auto flex flex-col items-center gap-8 px-8 mt-4 md:mt-0">
-          <div className="flex gap-3 sm:gap-4 overflow-x-auto py-2">
-            {PROJECTS.map((project, i) => (
-              <div
-                key={project.id}
-                className={`w-20 h-14 sm:w-24 sm:h-16 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 ease-out border shrink-0 ${activeIndex === i ? 'opacity-100 border-white/80 scale-105 shadow-[0_8px_20px_rgba(0,0,0,0.6)]' : 'opacity-40 hover:opacity-90 border-transparent'}`}
-                onClick={() => navigate(0, i)}
-              >
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover" draggable={false} />
-              </div>
-            ))}
-          </div>
-
-          <div className="w-full h-[2px] bg-white/10 relative rounded overflow-hidden">
-            <div className="absolute top-0 left-0 h-full bg-white transition-all duration-500 ease-out" style={{ width: `${((activeIndex + 1) / total) * 100}%` }} />
-          </div>
-
-          <div className="flex justify-end gap-5">
-            <p onClick={() => routerNavigate("/projects")} className="text-white/80 cursor-pointer font-poppins flex items-center gap-2 text-xl tracking-wider font-semibold hover:underline transition-all duration-300">View All Work <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" /></p>
-          </div>
+        <div className="flex justify-end gap-5 w-full">
+          <button
+            onClick={() => routerNavigate("/projects")}
+            className="text-white/85 cursor-pointer font-poppins flex items-center gap-2 text-lg sm:text-xl tracking-wider font-semibold hover:text-orange-400 hover:underline transition-all duration-300 bg-transparent border-none p-0"
+          >
+            <span>View All Work</span>
+            <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" />
+          </button>
         </div>
-
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

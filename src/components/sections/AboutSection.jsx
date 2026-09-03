@@ -1,16 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Sparkles, CheckCircle2 } from 'lucide-react';
 import { contactInfo } from '../../data/siteContent';
+import { optimizeCloudinaryUrl } from '../../utils/cloudinary';
 
 gsap.registerPlugin(ScrollTrigger);
 
 // High quality real completed project image
-const projectShowcaseImg = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1787071916/kingsGYm_q3xr0c.jpg";
+const rawProjectShowcaseImg = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1787071916/kingsGYm_q3xr0c.jpg";
+const projectShowcaseImg = optimizeCloudinaryUrl(rawProjectShowcaseImg, { width: 800 });
 const googleMapsReviewUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Graphicx Studio, Dream Shoppers, Dindoli, Surat")}`;
 
 const AboutSection = () => {
@@ -56,12 +57,12 @@ const AboutSection = () => {
                         </div>
 
                         {/* Heading */}
-                        <h2 className="animate-fade text-3xl sm:text-4xl md:text-4xl  text-white mb-6 leading-tight">
+                        <h2 className="animate-fade text-3xl sm:text-4xl md:text-4xl text-white mb-6 leading-tight">
                             Looking for a <span className="text-white">Premium Signage Company</span> in Surat?
                         </h2>
 
                         {/* 2 Short & High-Impact Paragraphs */}
-                        <div className="space-y-5 text-white/80 text-base md:text-lg leading-relaxed mb-8">
+                        <div className="space-y-5 text-white/85 text-base md:text-lg leading-relaxed mb-8">
                             <p className="animate-fade">
                                 <strong className="text-white font-semibold">GraphicX Studio</strong> is a premium signage and branding company in Surat, specializing in custom sign boards, LED signage, ACP facades, acrylic letters, 3D signage and complete shop-front branding.
                             </p>
@@ -76,6 +77,7 @@ const AboutSection = () => {
                                 href={contactInfo.whatsappUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="Chat with GraphicX Studio on WhatsApp"
                                 className="inline-flex items-center gap-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-emerald-500/50 text-emerald-400 font-semibold px-6 py-4 rounded-xl text-sm md:text-base transition-all duration-300 transform hover:-translate-y-0.5"
                             >
                                 <FontAwesomeIcon icon={faWhatsapp} className="text-lg text-emerald-400" />
@@ -84,7 +86,7 @@ const AboutSection = () => {
                         </div>
 
                         {/* 3 Key Trust Highlights Pill Line */}
-                        <div className="animate-fade flex flex-wrap items-center gap-y-3 gap-x-6 pt-6 border-t border-zinc-800/80 text-white/75 text-xs md:text-sm font-medium">
+                        <div className="animate-fade flex flex-wrap items-center gap-y-3 gap-x-6 pt-6 border-t border-zinc-800/80 text-white/80 text-xs md:text-sm font-medium">
                             <div className="flex items-center gap-2">
                                 <CheckCircle2 className="w-4 h-4 text-amber-400" />
                                 <span>6+ Years Experience</span>
@@ -113,19 +115,23 @@ const AboutSection = () => {
                             <img
                                 src={projectShowcaseImg}
                                 alt="GraphicX Studio Premium 3D Acrylic & LED Signage Showcase in Surat"
-                                className="w-full h-[420px]  sm:h-[480px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+                                width="600"
+                                height="480"
+                                loading="lazy"
+                                decoding="async"
+                                className="w-full h-[420px] sm:h-[480px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                             />
 
                             {/* Dark gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30 pointer-events-none"></div>
 
-                            {/* Floating Top Badge: DESIGNED → MANUFACTURED → INSTALLED */}
+                            {/* Floating Top Badge */}
                             <div className="absolute top-4 left-4 right-4 sm:right-auto bg-black/80 backdrop-blur-md border border-zinc-700 px-4 py-2.5 rounded-xl flex items-center gap-2 text-xs font-semibold tracking-wider text-zinc-200 uppercase shadow-lg">
                                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                                 <span>DESIGNED → MANUFACTURED → INSTALLED</span>
                             </div>
 
-                            {/* Floating Bottom Card: Clickable Google Rating Proof */}
+                            {/* Floating Bottom Card */}
                             <a
                                 href={googleMapsReviewUrl}
                                 target="_blank"
@@ -138,16 +144,16 @@ const AboutSection = () => {
                                         <FontAwesomeIcon icon={faGoogle} className="text-amber-400 text-lg" />
                                     </div>
                                     <div>
-                                        <div className="flex items-center gap-1.5 text-orange-500  text-sm font-bold">
+                                        <div className="flex items-center gap-1.5 text-orange-400 text-sm font-semibold">
                                             <span>⭐ 4.9/5 Google Rating</span>
                                         </div>
-                                        <p className="text-white/60 text-xs font-medium group-hover/rating:text-white/90 transition-colors">
+                                        <p className="text-zinc-300 text-xs font-medium group-hover/rating:text-white transition-colors">
                                             50+ Google Reviews
                                         </p>
                                     </div>
                                 </div>
 
-                                <span className="text-xs text-orange-500  font-semibold uppercase tracking-wider underline underline-offset-4 group-hover/rating:text-amber-300">
+                                <span className="text-xs text-orange-400 font-semibold uppercase tracking-wider underline underline-offset-4 group-hover/rating:text-amber-300">
                                     Read Reviews →
                                 </span>
                             </a>
@@ -160,4 +166,4 @@ const AboutSection = () => {
     );
 };
 
-export default AboutSection;
+export default React.memo(AboutSection);

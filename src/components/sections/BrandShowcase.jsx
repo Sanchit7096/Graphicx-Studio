@@ -1,8 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { brandLogos } from "../../data/siteContent";
+import { optimizeCloudinaryUrl } from "../../utils/cloudinary";
 
-const LOGOS = brandLogos;
+const LOGOS = brandLogos.map((logo) => ({
+  ...logo,
+  src: optimizeCloudinaryUrl(logo.src, { width: 320 }),
+}));
 
 const BrandShowcase = () => {
   const containerRef = useRef(null);
@@ -10,19 +14,26 @@ const BrandShowcase = () => {
   const tweenRef = useRef(null);
 
   useEffect(() => {
+    let animFrameId;
     const ctx = gsap.context(() => {
-      const totalWidth = marqueeRef.current.scrollWidth;
-      const distance = totalWidth / 2;
+      animFrameId = requestAnimationFrame(() => {
+        if (!marqueeRef.current) return;
+        const totalWidth = marqueeRef.current.scrollWidth;
+        const distance = totalWidth / 2;
 
-      tweenRef.current = gsap.to(marqueeRef.current, {
-        x: -distance,
-        duration: 50,
-        ease: "none",
-        repeat: -1,
+        tweenRef.current = gsap.to(marqueeRef.current, {
+          x: -distance,
+          duration: 50,
+          ease: "none",
+          repeat: -1,
+        });
       });
     }, containerRef);
 
-    return () => ctx.revert();
+    return () => {
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+      ctx.revert();
+    };
   }, []);
 
   const handleMouseEnter = () => tweenRef.current?.pause();
@@ -35,7 +46,7 @@ const BrandShowcase = () => {
     >
       <div className="max-w-screen-2xl mx-auto">
         <div className="mb-8 md:mb-10 text-center">
-          <p className="text-white/50 text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase">
+          <p className="text-zinc-400 text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase font-poppins">
             Trusted By Innovative Brands
           </p>
         </div>
@@ -59,9 +70,12 @@ const BrandShowcase = () => {
               <div className="bg-white p-4 md:p-5 rounded-2xl flex items-center justify-center h-20 md:h-28 w-40 md:w-48 transition-transform duration-500 hover:scale-105">
                 <img
                   src={logo.src}
-                  alt={logo.alt}
+                  alt={logo.alt || "Client Brand Logo"}
+                  width="160"
+                  height="80"
                   className="w-full h-full object-contain"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -72,4 +86,4 @@ const BrandShowcase = () => {
   );
 };
 
-export default BrandShowcase;
+export default React.memo(BrandShowcase);

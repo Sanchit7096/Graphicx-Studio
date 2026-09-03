@@ -2,10 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import services from '../../data/services';
 import { serviceSectionIntro } from '../../data/siteContent';
+import { optimizeCloudinaryUrl } from '../../utils/cloudinary';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,15 +25,15 @@ const ServiceSection = () => {
       cards,
       {
         opacity: 0,
-        y: 70,
-        scale: 0.97,
+        y: 60,
+        scale: 0.98,
       },
       {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 1,
-        stagger: 0.14,
+        duration: 0.8,
+        stagger: 0.12,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -59,11 +60,11 @@ const ServiceSection = () => {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white font-poppins">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white font-poppins">
               {serviceSectionIntro.heading}
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-zinc-300 sm:text-base">
               {serviceSectionIntro.description}
             </p>
 
@@ -96,15 +97,19 @@ const ServiceSection = () => {
             >
               <div className="relative h-[280px] sm:h-[360px] lg:h-[320px] overflow-hidden">
                 <img
-                  src={svc.image}
+                  src={optimizeCloudinaryUrl(svc.image, { width: 800 })}
                   alt={svc.sectionTitle}
+                  width="640"
+                  height="360"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
 
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-white/70">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
                       {svc.id}
                     </span>
                     {svc.featured && (
@@ -113,14 +118,14 @@ const ServiceSection = () => {
                       </span>
                     )}
                   </div>
-                  <h3 className="mt-3 text-xl sm:text-2xl font-bold leading-tight text-white font-poppins transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
+                  <h3 className="mt-3 text-xl sm:text-2xl font-semibold leading-tight text-white font-poppins transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
                     {svc.sectionTitle}
                   </h3>
                 </div>
               </div>
 
               <div className="px-6 py-5 sm:px-8 sm:py-6 flex justify-between">
-                <p className="max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
+                <p className="max-w-2xl text-sm leading-relaxed text-zinc-300 sm:text-base">
                   {svc.shortDesc}
                 </p>
               </div>
@@ -145,4 +150,4 @@ const ServiceSection = () => {
   );
 };
 
-export default ServiceSection;
+export default React.memo(ServiceSection);

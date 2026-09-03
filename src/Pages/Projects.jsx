@@ -97,13 +97,15 @@ const allWorksImages = {
   "Vinyl/Vinyl14.jfif": "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515583/wjyt8q1fdxlalkpzif83.jpg"
 };
 
+import { optimizeCloudinaryUrl } from "../utils/cloudinary";
+
 const projects = Object.entries(allWorksImages).map(([path, imageUrl], index) => {
   const parts = path.split('/');
   const categoryFolder = parts[0];
-  
+
   // Clean up folder names into nice categories
   let categoryName = categoryFolder.replace(/([A-Z])/g, ' $1').trim();
-  
+
   // Specific mappings for known folders
   if (categoryFolder === 'Acylic') categoryName = 'Acrylic Signage';
   if (categoryFolder === 'BackLightLogo') categoryName = 'Backlight Logo';
@@ -121,7 +123,7 @@ const projects = Object.entries(allWorksImages).map(([path, imageUrl], index) =>
     category: categoryName,
     location: "Surat",
     year: "2024",
-    image: imageUrl,
+    image: optimizeCloudinaryUrl(imageUrl, { width: 600 }),
   };
 });
 
@@ -138,8 +140,8 @@ function Projects() {
       ? projects
       : projects.filter((p) => p.category === activeFilter);
 
-  // Show only 5 projects initially, or all if showAll is true
-  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 5);
+  // Show only 6 projects initially, or all if showAll is true
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
   return (
     <>
@@ -149,20 +151,20 @@ function Projects() {
         <section className="px-6 md:px-12 lg:px-24 py-16 max-w-screen-2xl 2xl:max-w-[1800px] 3xl:max-w-[2200px] mx-auto">
           {/* Header */}
           <div className="mb-12">
-            <h3 className="text-orange-500 font-semibold mb-4 text-sm tracking-wider uppercase">
+            <h3 className="text-orange-400 font-semibold mb-4 text-sm tracking-wider uppercase">
               Our work
             </h3>
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl  mb-6 font-poppins leading-tight">
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl mb-6 font-poppins leading-tight">
               Projects on the ground, <br className="hidden md:block" /> not just on screen
             </h1>
-            <p className="text-white/60 max-w-2xl text-lg">
+            <p className="text-zinc-300 max-w-2xl text-lg font-manrope">
               A selection of sign boards, ACP facades, banners, and brand
               identities we've delivered across Surat and Dindoli.
             </p>
           </div>
 
           {/* Filters */}
-          <div className="flex flex-wrap gap-3 mb-12">
+          <div className="flex flex-wrap gap-3 mb-12" role="group" aria-label="Filter projects by category">
             {categories.map((category) => (
               <button
                 key={category}
@@ -170,11 +172,10 @@ function Projects() {
                   setActiveFilter(category);
                   setShowAll(false);
                 }}
-                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeFilter === category
-                    ? "border border-orange-500 text-orange-500 bg-orange-500/10"
-                    : "border border-white/20 text-white/70 hover:border-white/50 hover:text-white bg-transparent"
-                }`}
+                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === category
+                    ? "border border-orange-500 text-orange-400 bg-orange-500/10"
+                    : "border border-white/20 text-zinc-300 hover:border-white/50 hover:text-white bg-transparent"
+                  }`}
               >
                 {category}
               </button>
@@ -193,6 +194,10 @@ function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
+                    width="400"
+                    height="256"
+                    loading="lazy"
+                    decoding="async"
                     className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
@@ -200,13 +205,13 @@ function Projects() {
 
                 {/* Project Info */}
                 <div className="p-6">
-                  <p className="text-orange-500 text-xs font-bold uppercase tracking-wider mb-2">
+                  <p className="text-orange-400 text-xs font-semibold uppercase tracking-wider mb-2">
                     {project.category}
                   </p>
-                  <h3 className="text-white text-xl font-bold font-poppins mb-2">
+                  <h3 className="text-white text-xl font-semibold font-poppins mb-2">
                     {project.title} {i + 1}
                   </h3>
-                  <p className="text-white/50 text-sm">
+                  <p className="text-zinc-400 text-sm">
                     {project.location} · {project.year}
                   </p>
                 </div>
@@ -215,19 +220,19 @@ function Projects() {
           </div>
 
           {/* View All Button */}
-          {filteredProjects.length > 5 && (
+          {filteredProjects.length > 6 && (
             <div className="text-center mt-12">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-colors duration-300"
+                className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-full transition-colors duration-300 shadow-lg shadow-orange-500/20"
               >
                 {showAll ? "Show Less" : `View All ${filteredProjects.length} Projects`}
               </button>
             </div>
           )}
-          
+
           {filteredProjects.length === 0 && (
-            <div className="text-center py-20 text-white/50">
+            <div className="text-center py-20 text-zinc-400">
               No projects found in this category.
             </div>
           )}
@@ -240,3 +245,4 @@ function Projects() {
 }
 
 export default Projects;
+

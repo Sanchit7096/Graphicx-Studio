@@ -15,57 +15,18 @@ const HeroContent = () => {
   const tagRef = useRef(null);
 
   useEffect(() => {
-
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      const splitLine = (el) => {
-        if (!el) return [];
-        const text = el.dataset.text || el.textContent;
-        el.innerHTML = '';
-        el.dataset.text = text;
-
-        const words = text.split(' ');
-        const chars = [];
-
-        words.forEach((word, wordIndex) => {
-          const wordWrapper = document.createElement('span');
-          wordWrapper.style.cssText = 'display:inline-block; white-space:nowrap;';
-
-          [...word].forEach((ch) => {
-            const span = document.createElement('span');
-            span.textContent = ch;
-            span.style.cssText = 'display:inline-block;will-change:transform,opacity;';
-            wordWrapper.appendChild(span);
-            chars.push(span);
-          });
-
-          el.appendChild(wordWrapper);
-
-          if (wordIndex < words.length - 1) {
-            el.appendChild(document.createTextNode('\u00A0'));
-          }
-        });
-
-        return chars;
-      };
-
-      tl.from(tagRef.current, { y: 20, opacity: 0, duration: 0.8 }, 0.2);
-
-      const chars1 = splitLine(line1Ref.current);
-      const chars2 = splitLine(line2Ref.current);
-      const chars3 = splitLine(line3Ref.current);
-      tl.from(chars1, { y: '120%', opacity: 0, rotateX: -80, stagger: 0.03, duration: 1, ease: 'power4.out' }, 0.5);
-      tl.from(chars2, { y: '120%', opacity: 0, rotateX: -80, stagger: 0.03, duration: 1, ease: 'power4.out' }, 0.75);
-      tl.from(chars3, { y: '120%', opacity: 0, rotateX: -80, stagger: 0.03, duration: 1, ease: 'power4.out' }, 1.0);
-
-      tl.from(dividerRef.current, { scaleX: 0, transformOrigin: 'left', duration: 0.8, ease: 'power2.out' }, 1.4);
-      tl.from(bodyRef.current, { y: 30, opacity: 0, duration: 1 }, 1.5);
-      tl.from(btnRef.current, { y: 20, opacity: 0, duration: 0.8 }, 1.7);
-
-      gsap.to([line1Ref.current, line2Ref.current, line3Ref.current], {
-        y: -6, duration: 3.5, ease: 'sine.inOut', yoyo: true, repeat: -1, stagger: 0.5,
-      });
+      tl.fromTo(tagRef.current, { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, 0.1);
+      tl.fromTo([line1Ref.current, line2Ref.current, line3Ref.current], 
+        { y: 25, opacity: 0 }, 
+        { y: 0, opacity: 1, stagger: 0.12, duration: 0.7, ease: 'power3.out' }, 
+        0.2
+      );
+      tl.fromTo(dividerRef.current, { scaleX: 0, transformOrigin: 'left' }, { scaleX: 1, duration: 0.6, ease: 'power2.out' }, 0.5);
+      tl.fromTo(bodyRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.6);
+      tl.fromTo(btnRef.current, { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, 0.7);
     }, containerRef);
 
     return () => ctx.revert();
@@ -101,8 +62,8 @@ const HeroContent = () => {
           <span
             ref={line2Ref}
             data-text={heroContent.headline.line2}
-            className="block overflow-hidden uppercase tracking-wider font-black leading-[0.95] italic text-transparent pl-1.5 sm:pl-2 md:pl-[clamp(12px,2.5vw,48px)] mt-1 font-poppins"
-            style={{ fontSize: 'clamp(20px, 3.2vw, 56px)', letterSpacing: '-0.02em', WebkitTextStroke: '1px rgba(255,255,255,0.4)' }}
+            className="block overflow-hidden uppercase tracking-wider font-semibold leading-[0.95] italic text-transparent pl-1.5 sm:pl-2 md:pl-[clamp(12px,2.5vw,48px)] mt-1 font-poppins"
+            style={{ fontSize: 'clamp(20px, 3.2vw, 56px)', letterSpacing: '-0.02em', WebkitTextStroke: '1.2px rgba(255,255,255,0.75)' }}
           >
             {heroContent.headline.line2}
           </span>
@@ -135,7 +96,7 @@ const HeroContent = () => {
           <div ref={btnRef} className="mt-1 sm:mt-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 sm:gap-3 bg-orange-500  hover:bg-amber-600 text-black text-[11px] sm:text-sm font-bold tracking-wide px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg shadow-amber-500/10 hover:shadow-amber-500/25 transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
+              className="inline-flex items-center gap-2 sm:gap-3 bg-orange-500  hover:bg-amber-600 text-black text-[11px] sm:text-sm font-semibold tracking-wide px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg shadow-amber-500/10 hover:shadow-amber-500/25 transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
             >
               <span>Get Free Consultation</span>
               <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
