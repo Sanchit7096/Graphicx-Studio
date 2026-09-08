@@ -1,4 +1,9 @@
 
+import img1 from "../assets/Projects/img1.png";
+import img2 from "../assets/Projects/img2.png";
+import img3 from "../assets/Projects/img3.png";
+import img4 from "../assets/Projects/img4.png";
+
 const featureImg1 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515592/whv9dti1wjtjwsmfgrw9.jpg";
 const featureImg2 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/wjcqgfzad6vjfe9ug35v.jpg";
 const featureImg4 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515587/i3u24oxlmce0p5wjr5uf.png";
@@ -101,34 +106,136 @@ const allWorksImages = {
 
 // Folder to Service Slugs Mapping (supports single string or array of slugs)
 const folderToServiceSlugs = {
-  "AcrylicLedBoard": ["led-sign-board", "acrylic-signboard", "3d-letter-signage", "glow-sign-boards", "3d-sign-boards", "neon-sign-boards", "name-plates", "reception-signage"],
-  "AcrylicLogo": ["acrylic-signboard", "3d-letter-signage", "corporate-branding"],
-  "Acylic": ["acrylic-signboard", "3d-letter-signage", "3d-sign-boards"],
-  "BANNER": ["vinyl-printing-and-branding", "shop-branding", "wall-branding"],
-  "Exhibition": ["exhibition-stall-branding"],
-  "LOLIPOP": ["led-sign-board", "glow-sign-boards"],
-  "StandiBoard": ["led-sign-board", "shop-branding", "acp-signage"],
-  "Vinyl": ["vinyl-printing-and-branding", "shop-branding", "office-branding", "wall-branding", "vehicle-branding", "one-way-vision-film", "frosted-glass-film", "custom-stickers", "corporate-branding"],
-  "backlitBoard": ["led-sign-board", "acp-signage", "glow-sign-boards"],
+  "AcrylicLedBoard": [
+    "sign-board-surat", "led-sign-board-surat", "3d-letter-signage-surat", "acrylic-letter-signage-surat",
+    "led-sign-board", "acrylic-signboard", "3d-letter-signage", "glow-sign-boards", "3d-sign-boards", "neon-sign-boards", "name-plates", "reception-signage"
+  ],
+  "AcrylicLogo": [
+    "acrylic-letter-signage-surat", "corporate-branding-surat", "reception-signage", "acrylic-signboard", "3d-letter-signage", "corporate-branding"
+  ],
+  "Acylic": [
+    "acrylic-letter-signage-surat", "3d-letter-signage-surat", "sign-board-surat", "acrylic-signboard", "3d-letter-signage", "3d-sign-boards"
+  ],
+  "BANNER": [
+    "flex-banner-printing-surat", "banner-printing-surat", "vinyl-printing-surat", "shop-branding-surat", "school-branding-surat",
+    "vinyl-printing-and-branding", "shop-branding", "wall-branding"
+  ],
+  "Exhibition": [
+    "exhibition-stall-branding", "banner-printing-surat", "corporate-branding-surat"
+  ],
+  "LOLIPOP": [
+    "sign-board-surat", "led-sign-board-surat", "glow-sign-boards", "shop-branding-surat"
+  ],
+  "StandiBoard": [
+    "banner-printing-surat", "flex-banner-printing-surat", "shop-branding-surat", "acp-sign-board-surat", "led-sign-board-surat", "acp-signage"
+  ],
+  "Vinyl": [
+    "vinyl-printing-surat", "shop-branding-surat", "corporate-branding-surat", "hospital-branding-surat", "school-branding-surat",
+    "wall-branding", "vehicle-branding", "one-way-vision-film", "frosted-glass-film", "custom-stickers", "vinyl-printing-and-branding"
+  ],
+  "backlitBoard": [
+    "led-sign-board-surat", "acp-sign-board-surat", "sign-board-surat", "glow-sign-boards", "hospital-branding-surat", "acp-signage"
+  ],
 };
 
-export const projects = Object.entries(allWorksImages).map(([path, imageUrl], index) => {
+// Premier Completed Projects in Surat (Named & Verified)
+export const premierProjects = [
+  {
+    id: "pw-premier-1",
+    title: "Vatsalya Hospital & AK Fitness",
+    category: "Hospital & Healthcare",
+    categoryFolder: "Healthcare",
+    serviceSlug: "hospital-branding-surat",
+    serviceSlugs: ["hospital-branding-surat", "sign-board-surat", "led-sign-board-surat", "3d-letter-signage-surat"],
+    location: "Surat",
+    year: "2024",
+    image: img1,
+  },
+  {
+    id: "pw-premier-2",
+    title: "The Little Stars School",
+    category: "School & Education",
+    categoryFolder: "Education",
+    serviceSlug: "school-branding-surat",
+    serviceSlugs: ["school-branding-surat", "sign-board-surat", "acrylic-letter-signage-surat"],
+    location: "Surat",
+    year: "2024",
+    image: img2,
+  },
+  {
+    id: "pw-premier-3",
+    title: "Unique Urban Retreat",
+    category: "3D Architectural Signage",
+    categoryFolder: "Hospitality",
+    serviceSlug: "3d-letter-signage-surat",
+    serviceSlugs: ["3d-letter-signage-surat", "sign-board-surat", "led-sign-board-surat"],
+    location: "Surat",
+    year: "2024",
+    image: img3,
+  },
+  {
+    id: "pw-premier-4",
+    title: "Vista Office System",
+    category: "ACP Facade & Showroom",
+    categoryFolder: "Showroom",
+    serviceSlug: "acp-sign-board-surat",
+    serviceSlugs: ["acp-sign-board-surat", "shop-branding-surat", "sign-board-surat"],
+    location: "Surat",
+    year: "2024",
+    image: img4,
+  },
+  {
+    id: "pw-premier-5",
+    title: "Shree Saraswati Marble Signboard",
+    category: "Sign Board Installation",
+    categoryFolder: "Installation",
+    serviceSlug: "sign-board-surat",
+    serviceSlugs: ["sign-board-surat", "led-sign-board-surat"],
+    location: "Surat",
+    year: "2024",
+    image: "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515589/eyzc3obnhn9afbjkiozn.jpg",
+  },
+  {
+    id: "pw-premier-6",
+    title: "GraphicX Studio Showroom",
+    category: "Shopfront Branding",
+    categoryFolder: "Retail",
+    serviceSlug: "shop-branding-surat",
+    serviceSlugs: ["shop-branding-surat", "acp-sign-board-surat", "sign-board-surat"],
+    location: "Dream Shoppers, Surat",
+    year: "2024",
+    image: "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515598/drcmkz4uhcyqqth2imiy.png",
+  },
+];
+
+const mappedProjects = Object.entries(allWorksImages).map(([path, imageUrl], index) => {
   // Extract category and filename from the path
   const parts = path.split("/");
   const categoryFolder = parts[parts.length - 2]; // e.g. "Acylic"
   const filename = parts[parts.length - 1];
 
-  // Clean up the filename to use as a title
-  const rawTitle = filename.split(".")[0];
-  const title = rawTitle
-    .replace(/[-_]/g, " ")
-    .replace(/\b\w/g, (char) => char.toUpperCase());
-
   // Clean up the category name for better display
-  const category = categoryFolder
-    .replace(/([A-Z])/g, ' $1') // Add space before capital letters (for CamelCase)
+  let category = categoryFolder
+    .replace(/([A-Z])/g, ' $1')
     .trim()
-    .replace(/^./, (str) => str.toUpperCase()); // Capitalize first letter
+    .replace(/^./, (str) => str.toUpperCase());
+  if (category === "Acylic") category = "Acrylic Signage";
+  if (category === "Standi Board") category = "Standee Board";
+  if (category === "Backlit Board") category = "Backlit Glow Sign";
+
+  // Clean up the filename to use as a descriptive title
+  const rawTitle = filename.split(".")[0];
+  let title = rawTitle
+    .replace(/[-_]/g, " ")
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/([a-zA-Z])(\d)/g, '$1 $2')
+    .replace(/\b\w/g, (char) => char.toUpperCase())
+    .trim();
+
+  // If title is just digits (e.g. "37", "12", "04"), prepend descriptive category
+  if (/^\d+$/.test(title)) {
+    title = `${category} Design #${title}`;
+  }
 
   // Map folder to service slugs
   const serviceSlugs = folderToServiceSlugs[categoryFolder] || [];
@@ -146,6 +253,8 @@ export const projects = Object.entries(allWorksImages).map(([path, imageUrl], in
     image: imageUrl,
   };
 });
+
+export const projects = [...premierProjects, ...mappedProjects];
 
 // Helper function to get projects by service slug
 export const getProjectsByServiceSlug = (serviceSlug) => {

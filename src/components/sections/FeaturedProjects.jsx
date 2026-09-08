@@ -7,7 +7,7 @@ import { projects } from "../../data/projects";
 import { featuredProjectsContent } from "../../data/siteContent";
 import { optimizeCloudinaryUrl } from "../../utils/cloudinary";
 
-const indices = [10, 12, 15, 26, 14, 8];
+const indices = [0, 1, 2, 3, 4, 5];
 
 export default function FeaturedProjects() {
   const containerRef = useRef(null);
@@ -215,6 +215,14 @@ export default function FeaturedProjects() {
                   draggable={false}
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
+                <div className="absolute bottom-0 inset-x-0 p-5 md:p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none">
+                  <span className="text-orange-400 text-xs font-semibold uppercase tracking-wider block mb-1">
+                    {project.category}
+                  </span>
+                  <h3 className="text-white text-base sm:text-lg md:text-xl font-semibold font-poppins drop-shadow-md">
+                    {project.title}
+                  </h3>
+                </div>
               </div>
             </div>
           ))}

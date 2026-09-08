@@ -1,37 +1,33 @@
 import { useEffect } from 'react';
+import { 
+  defaultOgImage, 
+  getCanonicalUrl, 
+  getLocalBusinessSchema, 
+  getFaqSchema, 
+  getBreadcrumbSchema 
+} from '../../utils/seoSchemas';
 
-const siteTitle = 'GraphicX Studio | LED Sign Board, ACP Signage & Branding Company in Surat & Dindoli';
-const siteDescription = 'GraphicX Studio is a LED Sign Board, ACP Signage & Branding Company in Surat & Dindoli, Gujarat, creating premium signboards, branding, and visual identity for local businesses.';
-const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://graphicxstudio.com';
+const defaultSiteTitle = 'GraphicX Studio | Sign Board Maker & LED Signage Manufacturer in Surat';
+const defaultDescription = 'GraphicX Studio is Surat\'s premier signage and branding company. Custom LED sign boards, ACP elevations, acrylic letters, 3D signs, flex banners & shop branding in Surat, Gujarat.';
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'GraphicX Studio',
-  image: `${siteUrl}/Icon.svg`,
-  url: siteUrl,
-  telephone: '+91-87078-62783',
-  email: 'graphicxstudio18@gmail.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '2nd Floor, Dream Shoppers, Nr. Police Station',
-    addressLocality: 'Dindoli',
-    addressRegion: 'Gujarat',
-    postalCode: '394210',
-    addressCountry: 'IN',
-  },
-  areaServed: [
-    { '@type': 'City', name: 'Surat' },
-    { '@type': 'Place', name: 'Dindoli' },
-  ],
-  description: siteDescription,
-  priceRange: '$$-$$$',
-  sameAs: ['https://wa.me/918707862783'],
-  keywords: ['signage agency Surat', 'branding agency Surat', 'LED signboards Surat', 'shop branding Gujarat'],
-};
+function DocumentHead({
+  title = defaultSiteTitle,
+  description = defaultDescription,
+  canonicalPath = '',
+  ogImage = defaultOgImage,
+  ogType = 'website',
+  robots = 'index, follow',
+  schema = null,
+  faqs = null,
+  breadcrumbs = null,
+}) {
+  const canonicalUrl = getCanonicalUrl(canonicalPath);
 
-function DocumentHead() {
   useEffect(() => {
+    // 1. Update document title
+    document.title = title;
+
+    // 2. Helper to set or update meta tag
     const setMeta = (name, content, attr = 'name') => {
       let tag = document.querySelector(`meta[${attr}="${name}"]`);
       if (!tag) {
@@ -42,37 +38,78 @@ function DocumentHead() {
       tag.setAttribute('content', content);
     };
 
-    document.title = siteTitle;
-    setMeta('description', siteDescription);
-    setMeta('robots', 'index, follow');
+    // Standard Meta
+    setMeta('description', description);
+    setMeta('robots', robots);
     setMeta('theme-color', '#050505');
-    setMeta('og:title', siteTitle, 'property');
-    setMeta('og:description', siteDescription, 'property');
-    setMeta('og:type', 'website', 'property');
-    setMeta('og:url', siteUrl, 'property');
-    setMeta('og:image', `${siteUrl}/Icon.svg`, 'property');
+
+    // OpenGraph
+    setMeta('og:title', title, 'property');
+    setMeta('og:description', description, 'property');
+    setMeta('og:type', ogType, 'property');
+    setMeta('og:url', canonicalUrl, 'property');
+    setMeta('og:image', ogImage, 'property');
+    setMeta('og:site_name', 'GraphicX Studio', 'property');
+    setMeta('og:locale', 'en_IN', 'property');
+
+    // Twitter Card
     setMeta('twitter:card', 'summary_large_image');
-    setMeta('twitter:title', siteTitle);
-    setMeta('twitter:description', siteDescription);
-    setMeta('twitter:image', `${siteUrl}/Icon.svg`);
+    setMeta('twitter:title', title);
+    setMeta('twitter:description', description);
+    setMeta('twitter:image', ogImage);
 
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
+    // 3. Dynamic Canonical Link
+    let canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (!canonicalTag) {
+      canonicalTag = document.createElement('link');
+      canonicalTag.rel = 'canonical';
+      document.head.appendChild(canonicalTag);
     }
-    canonical.href = siteUrl;
+    canonicalTag.href = canonicalUrl;
 
-    let scriptTag = document.getElementById('graphicx-local-business');
-    if (!scriptTag) {
-      scriptTag = document.createElement('script');
-      scriptTag.id = 'graphicx-local-business';
-      scriptTag.type = 'application/ld+json';
-      document.head.appendChild(scriptTag);
+    // 4. Structured Data (JSON-LD)
+    const injectScript = (id, data) => {
+      if (!data) return;
+      let el = document.getElementById(id);
+      if (!el) {
+        el = document.createElement('script');
+        el.id = id;
+        el.type = 'application/ld+json';
+        document.head.appendChild(el);
+      }
+      el.textContent = JSON.stringify(data);
+    };
+
+    // Inject LocalBusiness schema on every page
+    injectScript('gx-schema-local-business', getLocalBusinessSchema());
+
+    // Inject Custom Schema if passed
+    if (schema) {
+      injectScript('gx-schema-custom', schema);
     }
-    scriptTag.textContent = JSON.stringify(schema);
-  }, []);
+
+    // Inject FAQs schema if passed
+    if (faqs && faqs.length > 0) {
+      injectScript('gx-schema-faqs', getFaqSchema(faqs));
+    } else {
+      const existingFaq = document.getElementById('gx-schema-faqs');
+      if (existingFaq) existingFaq.remove();
+    }
+
+    // Inject Breadcrumbs schema if passed
+    if (breadcrumbs && breadcrumbs.length > 0) {
+      injectScript('gx-schema-breadcrumbs', getBreadcrumbSchema(breadcrumbs));
+    } else {
+      const existingCrumb = document.getElementById('gx-schema-breadcrumbs');
+      if (existingCrumb) existingCrumb.remove();
+    }
+
+    return () => {
+      // Clean up custom scripts on unmount if moving between pages
+      const customScript = document.getElementById('gx-schema-custom');
+      if (customScript) customScript.remove();
+    };
+  }, [title, description, canonicalUrl, ogImage, ogType, robots, schema, faqs, breadcrumbs]);
 
   return null;
 }

@@ -96,7 +96,7 @@ export const aboutContent = {
 
   intro: {
     heading: "Complete Shop-Front Branding Under One Roof",
-    image: About1,
+    image: ShopImage,
     leadParagraph:
       "GraphicX Studio is a premium signage and branding company in Surat, specializing in custom sign boards, LED signage, ACP facades, acrylic letters, 3D signage and complete shop-front branding.",
     paragraphs: [
@@ -216,11 +216,11 @@ export const aboutContent = {
   },
 
   imageAltText: {
-    hero: "GraphicX Studio signage manufacturing unit in Surat",
+    hero: "GraphicX Studio in-house signage manufacturing unit at Dream Shoppers Dindoli Surat",
     ledSign: "LED acrylic sign board manufactured by GraphicX Studio Surat",
     storefront: "storefront elevation ACP panel design by GraphicX Studio Surat",
     neon: "custom neon sign board GraphicX Studio Surat",
-    location: "graphicx-studio-dream-shoppers-dindoli-surat",
+    location: "GraphicX Studio office and workshop at Dream Shoppers Dindoli Surat",
   },
 
   faq: {
@@ -264,10 +264,20 @@ export const aboutContent = {
 
 // ─── Contact Info ───────────────────────────────────────────────
 export const contactInfo = {
+  name: "GraphicX Studio",
+  legalName: "GraphicX Studio Signage & Branding",
   address: {
     line1: "2nd Floor, Dream Shoppers, Nr. Police Station",
     line2: "Dindoli, Gujarat 394210",
+    city: "Surat",
+    state: "Gujarat",
+    postalCode: "394210",
+    country: "IN",
     full: "2nd Floor, Dream Shoppers, Nr. Police Station, Dindoli, Surat, Gujarat 394210",
+  },
+  geo: {
+    latitude: "21.1442",
+    longitude: "72.8871",
   },
   phone: "+91-87078-62783",
   phoneDisplay: "+91 87078 62783",
@@ -275,8 +285,28 @@ export const contactInfo = {
   whatsappUrl:
     "https://wa.me/918707862783?text=Hi%20GraphicX%20Studio!%20I'm%20interested%20in%20getting%20a%20quote.",
   instagramUrl: "https://www.instagram.com/graphicxstudio6/",
+  googleMapsUrl: "https://maps.google.com/?q=GraphicX+Studio+Dream+Shoppers+Dindoli+Surat",
+  openingHours: "Mo-Sa 09:30-20:30",
+  openingHoursDisplay: "Mon - Sat: 9:30 AM - 8:30 PM",
+  priceRange: "₹₹",
+  areasServed: [
+    "Surat",
+    "Dindoli",
+    "Varachha",
+    "Vesu",
+    "Adajan",
+    "Pal",
+    "City Light",
+    "Ring Road",
+    "Katargam",
+    "Althan",
+    "Piplod",
+    "Udhna",
+    "Sachin GIDC",
+    "Hazira",
+  ],
   contactIntro:
-    "Ready to transform your business with premium signage and branding solutions? Contact us today and let's discuss how we can help you stand out.",
+    "Ready to transform your business with premium signage and branding solutions in Surat? Contact us today for free site measurements, 3D mockups, and competitive quotations.",
 };
 
 // ─── Navbar Service Dropdown ────────────────────────────────────
@@ -383,13 +413,13 @@ export const testimonials = [
 
 // ─── Hero Content ───────────────────────────────────────────────
 export const heroContent = {
-  tagline: "GraphicX Studio — Premium Branding",
+  tagline: "GraphicX Studio — Sign Board Maker & Branding in Surat",
   headline: {
     line1: "We Create",
     line2: "Brand Identity",
     line3: 'Not Just "Sign Board"',
   },
-  body: "From logo design to high-impact LED signboards, ACP signage, and shop banners, GraphicX Studio bridges the gap between creative design and physical reality — for businesses across Surat, Gujarat.",
+  body: "From custom LED sign boards and architectural ACP elevations to flex banner printing and turnkey shop branding, GraphicX Studio delivers in-house precision manufacturing and flawless installation for businesses across Surat, Gujarat.",
   stats: [
     { value: "4k+", label: "Projects Done", accent: null },
     { value: "6", valueSuffix: "yr", label: "Experience", accentColor: "#ff4d6d" },

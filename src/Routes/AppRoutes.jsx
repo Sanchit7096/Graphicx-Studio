@@ -8,6 +8,7 @@ const Services = lazy(() => import("../Pages/Services"));
 const ServiceDetail = lazy(() => import("../Pages/ServiceDetail"));
 const About = lazy(() => import("../Pages/About"));
 const Contact = lazy(() => import("../Pages/Contact"));
+const NotFound = lazy(() => import("../Pages/NotFound"));
 
 const PageFallback = () => (
   <div className="min-h-screen bg-black flex items-center justify-center">
@@ -27,6 +28,7 @@ function AppRoutes() {
           <Route path="/services/:serviceId" element={<ServiceDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

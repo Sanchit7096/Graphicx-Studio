@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import DocumentHead from "../components/layout/DocumentHead";
 import FAQSection from "../components/sections/FAQSection";
 import { aboutContent, contactInfo } from "../data/siteContent";
 import { Link } from "react-router-dom";
@@ -32,8 +33,20 @@ function About() {
   const optimizedIntroImg = optimizeCloudinaryUrl(aboutContent.intro.image, { width: 900 });
   const optimizedVisitUsImg = optimizeCloudinaryUrl(aboutContent.visitUs.image, { width: 900 });
 
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+  ];
+
   return (
     <>
+      <DocumentHead
+        title={aboutContent.seo.title}
+        description={aboutContent.seo.metaDescription}
+        canonicalPath="/about"
+        breadcrumbs={breadcrumbs}
+        faqs={aboutContent.faq}
+      />
       <Navbar />
 
       <main className="pt-20 font-poppins bg-black min-h-screen text-white">
@@ -165,7 +178,7 @@ function About() {
                 <div className="relative bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
                   <img
                     src={optimizedIntroImg}
-                    alt="GraphicX Studio Signboard Manufacturing Workshop"
+                    alt="GraphicX Studio In-House Manufacturing Unit - Dream Shoppers Dindoli Surat"
                     width="600"
                     height="450"
                     loading="lazy"

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import DocumentHead from "../components/layout/DocumentHead";
 import { contactInfo } from "../data/siteContent";
 
 function Contact() {
@@ -24,8 +25,19 @@ function Contact() {
     window.open(whatsappUrl, "_blank");
   };
 
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Contact Us", path: "/contact" },
+  ];
+
   return (
     <>
+      <DocumentHead
+        title="Contact GraphicX Studio | Sign Board Manufacturer in Surat"
+        description="Get in touch with GraphicX Studio Surat for free site measurements, 3D signboard mockups, and competitive rates. Located in Dindoli, Surat, Gujarat."
+        canonicalPath="/contact"
+        breadcrumbs={breadcrumbs}
+      />
       <Navbar />
 
       <main className="pt-20 bg-black min-h-screen">

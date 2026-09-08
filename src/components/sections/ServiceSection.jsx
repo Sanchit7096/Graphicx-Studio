@@ -89,11 +89,12 @@ const ServiceSection = () => {
 
         <div className="flex flex-col gap-6 md:gap-8">
           {previewServices.map((svc, index) => (
-            <article
+            <Link
               key={svc.id}
+              to={`/services/${svc.slug}`}
               ref={(el) => (cardRefs.current[index] = el)}
-              tabIndex={0}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b0b] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-white/20 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4"
+              aria-label={`View details about ${svc.sectionTitle}`}
+              className="group block overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b0b] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-orange-500/40 hover:shadow-[0_20px_60px_rgba(0,0,0,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4"
             >
               <div className="relative h-[280px] sm:h-[360px] lg:h-[320px] overflow-hidden">
                 <img
@@ -109,27 +110,31 @@ const ServiceSection = () => {
 
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
-                      {svc.id}
+                    <span className="text-xs font-semibold uppercase tracking-wider text-orange-400 font-poppins">
+                      {svc.id} • Surat Made
                     </span>
                     {svc.featured && (
-                      <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs tracking-wider text-white backdrop-blur-sm">
+                      <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-3 py-1 text-xs tracking-wider text-orange-300 backdrop-blur-sm font-poppins">
                         Featured
                       </span>
                     )}
                   </div>
-                  <h3 className="mt-3 text-xl sm:text-2xl font-semibold leading-tight text-white font-poppins transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
+                  <h3 className="mt-3 text-xl sm:text-2xl font-semibold leading-tight text-white font-poppins transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:text-orange-400 group-hover:-translate-y-1">
                     {svc.sectionTitle}
                   </h3>
                 </div>
               </div>
 
-              <div className="px-6 py-5 sm:px-8 sm:py-6 flex justify-between">
-                <p className="max-w-2xl text-sm leading-relaxed text-zinc-300 sm:text-base">
+              <div className="px-6 py-5 sm:px-8 sm:py-6 flex items-center justify-between">
+                <p className="max-w-2xl text-sm leading-relaxed text-zinc-300 sm:text-base font-light">
                   {svc.shortDesc}
                 </p>
+                <span className="hidden sm:flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-orange-400 font-poppins group-hover:translate-x-1 transition-transform shrink-0 ml-4">
+                  <span>Explore</span>
+                  <FontAwesomeIcon icon={faChevronDown} rotation={270} size="xs" />
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
 
           {/* Secondary Mobile & Bottom CTA */}

@@ -67,26 +67,32 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Popular Services */}
+          {/* Column 2: Popular Surat Services */}
           <div className="flex flex-col gap-5">
             <h3 className="text-base font-semibold tracking-wider text-white font-poppins">
-              Services
+              Signage in Surat
             </h3>
-            <div className="flex flex-col gap-3 text-sm">
-              <Link to="/services/led-sign-board" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
-                LED Sign Boards
+            <div className="flex flex-col gap-2.5 text-sm">
+              <Link to="/services/led-sign-board-surat" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
+                LED Sign Boards Surat
               </Link>
-              <Link to="/services/acrylic-signboard" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
-                Acrylic Signboards
+              <Link to="/services/acp-sign-board-surat" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
+                ACP Elevation & Cladding
               </Link>
-              <Link to="/services/acp-signage" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
-                ACP Signage
+              <Link to="/services/acrylic-letter-signage-surat" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
+                Acrylic Letter Signage
               </Link>
-              <Link to="/services/3d-letter-signage" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
-                3D Letter Signage
+              <Link to="/services/3d-letter-signage-surat" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
+                3D Letter Sign Boards
+              </Link>
+              <Link to="/services/shop-branding-surat" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
+                Turnkey Shop Branding
+              </Link>
+              <Link to="/services/flex-banner-printing-surat" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
+                Flex Banner Printing
               </Link>
               <Link to="/services/neon-sign-boards" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
-                Neon Sign Boards
+                Custom Neon Signs
               </Link>
             </div>
           </div>
@@ -96,7 +102,7 @@ const Footer = () => {
             <h3 className="text-base font-semibold tracking-wider text-white font-poppins">
               Company
             </h3>
-            <div className="flex flex-col gap-3 text-sm">
+            <div className="flex flex-col gap-2.5 text-sm">
               <Link to="/" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
                 Home
               </Link>
@@ -104,13 +110,13 @@ const Footer = () => {
                 About Us
               </Link>
               <Link to="/services" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
-                Our Services
+                All 20+ Services
               </Link>
               <Link to="/projects" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
-                Our Work
+                Our Work Portfolio
               </Link>
               <Link to="/contact" className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
-                Contact Us
+                Contact & Free Quote
               </Link>
             </div>
           </div>
@@ -118,10 +124,10 @@ const Footer = () => {
           {/* Column 4: Contact & Location */}
           <div className="flex flex-col gap-5">
             <h3 className="text-base font-semibold tracking-wider text-white font-poppins">
-              Contact & Location
+              Surat Workshop & Office
             </h3>
             <div className="flex flex-col gap-2.5 text-sm">
-              <a href={`tel:${contactInfo.phone}`} className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
+              <a href={`tel:${contactInfo.phone}`} className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400 font-medium">
                 {contactInfo.phoneDisplay}
               </a>
               <a href={`mailto:${contactInfo.email}`} className="w-fit text-zinc-300 transition-colors duration-200 hover:text-orange-400">
@@ -129,6 +135,9 @@ const Footer = () => {
               </a>
               <p className="text-xs text-zinc-400 leading-relaxed">
                 {contactInfo.address.full}
+              </p>
+              <p className="text-[11px] text-zinc-500">
+                Hours: {contactInfo.openingHoursDisplay}
               </p>
             </div>
 
@@ -156,12 +165,22 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        {/* ── Surat Areas Served Bar ── */}
+        <div className="border-t border-white/5 mt-12 pt-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-zinc-400">
+            <span className="font-semibold text-zinc-300 font-poppins shrink-0">Surat Locations Served:</span>
+            <p className="leading-relaxed font-light">
+              Dindoli, Varachha, Ring Road, Vesu, Adajan, Pal, City Light, Piplod, Althan, Katargam, Udhna, Pandesara, Sachin GIDC, Hazira, and surrounding South Gujarat regions.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* ── BOTTOM BAR (Centered Copyright) ── */}
-      <div className="border-t border-white/5 mt-16 pt-8 text-center">
+      <div className="border-t border-white/5 mt-8 pt-6 text-center">
         <p className="text-zinc-400 text-xs tracking-wider font-medium">
-          Copyright © {new Date().getFullYear()} GraphicX Studio. All rights reserved.
+          Copyright © {new Date().getFullYear()} GraphicX Studio Surat. All rights reserved. • ISO & BIS Compliant Signage Fabrication
         </p>
       </div>
     </footer>
