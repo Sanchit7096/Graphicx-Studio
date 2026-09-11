@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { 
   defaultOgImage, 
   getCanonicalUrl, 
@@ -23,95 +23,60 @@ function DocumentHead({
 }) {
   const canonicalUrl = getCanonicalUrl(canonicalPath);
 
-  useEffect(() => {
-    // 1. Update document title
-    document.title = title;
+  const localBusinessSchema = getLocalBusinessSchema();
+  const faqSchema = faqs && faqs.length > 0 ? getFaqSchema(faqs) : null;
+  const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? getBreadcrumbSchema(breadcrumbs) : null;
 
-    // 2. Helper to set or update meta tag
-    const setMeta = (name, content, attr = 'name') => {
-      let tag = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!tag) {
-        tag = document.createElement('meta');
-        tag.setAttribute(attr, name);
-        document.head.appendChild(tag);
-      }
-      tag.setAttribute('content', content);
-    };
+  return (
+    <Helmet>
+      {/* Standard Meta */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="robots" content={robots} />
+      <meta name="theme-color" content="#050505" />
 
-    // Standard Meta
-    setMeta('description', description);
-    setMeta('robots', robots);
-    setMeta('theme-color', '#050505');
+      {/* Dynamic Canonical Link */}
+      <link rel="canonical" href={canonicalUrl} />
 
-    // OpenGraph
-    setMeta('og:title', title, 'property');
-    setMeta('og:description', description, 'property');
-    setMeta('og:type', ogType, 'property');
-    setMeta('og:url', canonicalUrl, 'property');
-    setMeta('og:image', ogImage, 'property');
-    setMeta('og:site_name', 'GraphicX Studio', 'property');
-    setMeta('og:locale', 'en_IN', 'property');
+      {/* OpenGraph */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:site_name" content="GraphicX Studio" />
+      <meta property="og:locale" content="en_IN" />
 
-    // Twitter Card
-    setMeta('twitter:card', 'summary_large_image');
-    setMeta('twitter:title', title);
-    setMeta('twitter:description', description);
-    setMeta('twitter:image', ogImage);
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
 
-    // 3. Dynamic Canonical Link
-    let canonicalTag = document.querySelector('link[rel="canonical"]');
-    if (!canonicalTag) {
-      canonicalTag = document.createElement('link');
-      canonicalTag.rel = 'canonical';
-      document.head.appendChild(canonicalTag);
-    }
-    canonicalTag.href = canonicalUrl;
+      {/* Structured Data (JSON-LD) */}
+      <script type="application/ld+json">
+        {JSON.stringify(localBusinessSchema)}
+      </script>
 
-    // 4. Structured Data (JSON-LD)
-    const injectScript = (id, data) => {
-      if (!data) return;
-      let el = document.getElementById(id);
-      if (!el) {
-        el = document.createElement('script');
-        el.id = id;
-        el.type = 'application/ld+json';
-        document.head.appendChild(el);
-      }
-      el.textContent = JSON.stringify(data);
-    };
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
 
-    // Inject LocalBusiness schema on every page
-    injectScript('gx-schema-local-business', getLocalBusinessSchema());
+      {faqSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      )}
 
-    // Inject Custom Schema if passed
-    if (schema) {
-      injectScript('gx-schema-custom', schema);
-    }
-
-    // Inject FAQs schema if passed
-    if (faqs && faqs.length > 0) {
-      injectScript('gx-schema-faqs', getFaqSchema(faqs));
-    } else {
-      const existingFaq = document.getElementById('gx-schema-faqs');
-      if (existingFaq) existingFaq.remove();
-    }
-
-    // Inject Breadcrumbs schema if passed
-    if (breadcrumbs && breadcrumbs.length > 0) {
-      injectScript('gx-schema-breadcrumbs', getBreadcrumbSchema(breadcrumbs));
-    } else {
-      const existingCrumb = document.getElementById('gx-schema-breadcrumbs');
-      if (existingCrumb) existingCrumb.remove();
-    }
-
-    return () => {
-      // Clean up custom scripts on unmount if moving between pages
-      const customScript = document.getElementById('gx-schema-custom');
-      if (customScript) customScript.remove();
-    };
-  }, [title, description, canonicalUrl, ogImage, ogType, robots, schema, faqs, breadcrumbs]);
-
-  return null;
+      {breadcrumbSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      )}
+    </Helmet>
+  );
 }
 
 export default DocumentHead;
