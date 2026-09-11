@@ -1,7 +1,7 @@
 import { contactInfo } from '../data/siteContent';
 
 export const BASE_URL = 'https://graphicxstudio.com';
-export const defaultOgImage = `${BASE_URL}/Icon.svg`;
+export const defaultOgImage = `${BASE_URL}/logo.png`;
 
 /**
  * Builds canonical URL without trailing slashes (except root)
@@ -47,10 +47,16 @@ export const getLocalBusinessSchema = () => ({
       closes: '20:30',
     },
   ],
-  areaServed: contactInfo.areasServed.map((area) => ({
-    '@type': 'AdministrativeArea',
-    name: `${area}, Surat, Gujarat`,
-  })),
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'Surat',
+    },
+    {
+      '@type': 'State',
+      name: 'Gujarat',
+    }
+  ],
   sameAs: [
     contactInfo.instagramUrl,
     contactInfo.whatsappUrl,
@@ -84,22 +90,12 @@ export const getServiceSchema = (service) => {
     description: service.shortDesc || service.fullDesc,
     serviceType: 'Signage & Branding',
     provider: {
-      '@type': 'LocalBusiness',
-      name: contactInfo.name,
-      url: BASE_URL,
-      telephone: contactInfo.phone,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Surat',
-        addressRegion: 'Gujarat',
-        addressCountry: 'IN',
-      },
+      '@id': `${BASE_URL}/#localbusiness`
     },
     areaServed: {
       '@type': 'City',
       name: 'Surat',
     },
-    termsOfService: `${BASE_URL}/contact`,
     category: service.category || 'Signage',
   };
 };
@@ -135,7 +131,7 @@ export const getBreadcrumbSchema = (breadcrumbs = []) => {
       '@type': 'ListItem',
       position: index + 1,
       name: crumb.name,
-      item: crumb.path ? `${BASE_URL}${crumb.path.startsWith('/') ? crumb.path : `/${crumb.path}`}` : BASE_URL,
+      item: crumb.path ? getCanonicalUrl(crumb.path) : BASE_URL,
     })),
   };
 };
