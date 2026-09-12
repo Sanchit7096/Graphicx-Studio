@@ -17,47 +17,79 @@ const videos = [
 
 const BgVideo = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
+  const [isMobile, setIsMobile] = useState(true); // Assume mobile first for LCP
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef(null);
+
+  useEffect(() => {
+    const checkMobile = () => window.innerWidth < 768;
+    setIsMobile(checkMobile());
+
+    const handleResize = () => setIsMobile(checkMobile());
+    window.addEventListener('resize', handleResize);
+    
+    // Defer loading video on desktop
+    const timer = setTimeout(() => {
+      setShouldLoadVideo(true);
+    }, 1000); // Delay video loading until after initial render
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timer);
+    };
+  }, []);
 
   const handleVideoEnd = () => {
     setCurrentVideo((prev) => (prev + 1) % videos.length);
   };
 
   useEffect(() => {
+    if (isMobile) return;
+    
     // Switch video after 19 seconds
     const timer = setTimeout(() => {
       handleVideoEnd();
     }, 19000);
 
     return () => clearTimeout(timer);
-  }, [currentVideo]);
+  }, [currentVideo, isMobile]);
 
   useEffect(() => {
-    if (videoRef.current) {
+    if (!isMobile && shouldLoadVideo && videoRef.current) {
       videoRef.current.load();
       videoRef.current.play().catch(() => {
         // Autoplay may be restricted by low power mode/browser policies
       });
     }
-  }, [currentVideo]);
+  }, [currentVideo, isMobile, shouldLoadVideo]);
 
   return (
     <div className="absolute inset-0 z-0 w-full h-full overflow-hidden" aria-hidden="true">
       {/* Background Video Implementation */}
-      <video
-        ref={videoRef}
-        key={currentVideo}
-        muted
-        autoPlay
-        playsInline
-        preload="metadata"
-        poster={videos[currentVideo].poster}
-        disablePictureInPicture
-        onEnded={handleVideoEnd}
-        className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-1000"
-      >
-        <source src={videos[currentVideo].src} type="video/mp4" />
-      </video>
+      {isMobile ? (
+        <img
+          src={videos[currentVideo].poster}
+          alt="Hero Background"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-1000"
+          decoding="sync"
+          loading="eager"
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          key={currentVideo}
+          muted
+          autoPlay={shouldLoadVideo}
+          playsInline
+          preload="none"
+          poster={videos[currentVideo].poster}
+          disablePictureInPicture
+          onEnded={handleVideoEnd}
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-1000"
+        >
+          {shouldLoadVideo && <source src={videos[currentVideo].src} type="video/mp4" />}
+        </video>
+      )}
 
       {/* Layer 1: Mid-Tone Cinematic Overlay (Glassmorphic) */}
       <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px] z-[1]"></div>

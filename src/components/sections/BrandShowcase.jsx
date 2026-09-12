@@ -5,7 +5,7 @@ import { optimizeCloudinaryUrl } from "../../utils/cloudinary";
 
 const LOGOS = brandLogos.map((logo) => ({
   ...logo,
-  src: optimizeCloudinaryUrl(logo.src, { width: 320 }),
+  src: optimizeCloudinaryUrl(logo.src, { width: 120 }),
 }));
 
 const BrandShowcase = () => {
@@ -15,22 +15,27 @@ const BrandShowcase = () => {
 
   useEffect(() => {
     let animFrameId;
+    let timerId;
     const ctx = gsap.context(() => {
-      animFrameId = requestAnimationFrame(() => {
-        if (!marqueeRef.current) return;
-        const totalWidth = marqueeRef.current.scrollWidth;
-        const distance = totalWidth / 2;
+      // Delay initialization to avoid forced synchronous layout during initial paint
+      timerId = setTimeout(() => {
+        animFrameId = requestAnimationFrame(() => {
+          if (!marqueeRef.current) return;
+          const totalWidth = marqueeRef.current.scrollWidth;
+          const distance = totalWidth / 2;
 
-        tweenRef.current = gsap.to(marqueeRef.current, {
-          x: -distance,
-          duration: 50,
-          ease: "none",
-          repeat: -1,
+          tweenRef.current = gsap.to(marqueeRef.current, {
+            x: -distance,
+            duration: 50,
+            ease: "none",
+            repeat: -1,
+          });
         });
-      });
+      }, 500);
     }, containerRef);
 
     return () => {
+      clearTimeout(timerId);
       if (animFrameId) cancelAnimationFrame(animFrameId);
       ctx.revert();
     };

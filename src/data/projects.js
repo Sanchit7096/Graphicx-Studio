@@ -2,7 +2,7 @@
 import img1 from "../assets/Projects/img1.png";
 import img2 from "../assets/Projects/img2.png";
 import img3 from "../assets/Projects/img3.png";
-import img4 from "../assets/Projects/img4.png";
+import img4 from "../assets/Projects/img4.webp";
 
 const featureImg1 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515592/whv9dti1wjtjwsmfgrw9.jpg";
 const featureImg2 = "https://res.cloudinary.com/fj3hcwbi/image/upload/v1786515588/wjcqgfzad6vjfe9ug35v.jpg";
