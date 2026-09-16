@@ -35,6 +35,7 @@ function About() {
 
   return (
     <>
+      <DocumentHead canonicalPath="/about" />
       <Navbar />
 
       <main className="pt-20 font-poppins bg-black min-h-screen text-white">

@@ -29,8 +29,6 @@ function Projects() {
   return (
     <>
       <DocumentHead
-        title="Signage & Branding Projects Portfolio Surat | GraphicX Studio"
-        description="Explore our completed signage and branding projects across Surat: 3D LED letters, ACP elevations, shop fronts, banners, and office branding installations."
         canonicalPath="/projects"
         breadcrumbs={breadcrumbs}
       />

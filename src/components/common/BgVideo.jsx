@@ -17,13 +17,12 @@ const videos = [
 
 const BgVideo = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
-  const [isMobile, setIsMobile] = useState(true); // Assume mobile first for LCP
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : true); // Assume mobile first for LCP
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef(null);
 
   useEffect(() => {
     const checkMobile = () => window.innerWidth < 768;
-    setIsMobile(checkMobile());
 
     const handleResize = () => setIsMobile(checkMobile());
     window.addEventListener('resize', handleResize);

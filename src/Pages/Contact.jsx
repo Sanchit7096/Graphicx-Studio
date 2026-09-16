@@ -33,8 +33,6 @@ function Contact() {
   return (
     <>
       <DocumentHead
-        title="Contact GraphicX Studio | Sign Board Manufacturer in Surat"
-        description="Get in touch with GraphicX Studio Surat for free site measurements, 3D signboard mockups, and competitive rates. Located in Dindoli, Surat, Gujarat."
         canonicalPath="/contact"
         breadcrumbs={breadcrumbs}
       />

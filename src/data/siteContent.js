@@ -413,13 +413,13 @@ export const testimonials = [
 
 // ─── Hero Content ───────────────────────────────────────────────
 export const heroContent = {
-  tagline: "GraphicX Studio — Sign Board Maker & Branding in Surat",
+  tagline: "GraphicX Studio — Sign Board Manufacturer & Advertising Agency in Surat",
   headline: {
     line1: "We Create",
     line2: "Brand Identity",
     line3: 'Not Just "Sign Board"',
   },
-  body: "From custom LED sign boards and architectural ACP elevations to flex banner printing and turnkey shop branding, GraphicX Studio delivers in-house precision manufacturing and flawless installation for businesses across Surat, Gujarat.",
+  body: "As a leading advertising agency and custom sign board manufacturer, GraphicX Studio delivers in-house precision manufacturing. From custom LED sign boards and architectural ACP elevations to flex banner printing and turnkey shop branding, we serve businesses across Surat, Gujarat.",
   stats: [
     { value: "4k+", label: "Projects Done", accent: null },
     { value: "6", valueSuffix: "yr", label: "Experience", accentColor: "#ff4d6d" },

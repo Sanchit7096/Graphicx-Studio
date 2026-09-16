@@ -52,8 +52,6 @@ function Services() {
   return (
     <>
       <DocumentHead
-        title="Signage & Printing Services in Surat | GraphicX Studio"
-        description="Comprehensive signage, printing & branding services in Surat. LED sign boards, ACP elevation, 3D letters, flex banner printing, shop branding & vehicle wraps."
         canonicalPath="/services"
         breadcrumbs={breadcrumbs}
       />

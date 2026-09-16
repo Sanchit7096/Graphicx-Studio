@@ -14,8 +14,6 @@ function Home() {
   return (
     <div id="top" className="min-h-screen bg-black">
       <DocumentHead
-        title="Sign Board Maker & LED Signage Manufacturer in Surat | GraphicX Studio"
-        description="GraphicX Studio is Surat's premier signage & branding company. Custom LED sign boards, ACP elevation, 3D letter signs, flex banners & shop branding in Surat, Gujarat."
         canonicalPath="/"
         faqs={aboutContent.faq}
       />

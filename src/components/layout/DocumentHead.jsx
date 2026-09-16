@@ -1,4 +1,6 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
+import { getSeoConfigForPath } from '../../config/seoConfig';
 import { 
   defaultOgImage, 
   getCanonicalUrl, 
@@ -21,7 +23,17 @@ function DocumentHead({
   faqs = null,
   breadcrumbs = null,
 }) {
-  const canonicalUrl = getCanonicalUrl(canonicalPath);
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const routeSeo = getSeoConfigForPath(currentPath) || {};
+
+  // If the passed title/desc are exactly the defaults, try to pull from config
+  const finalTitle = title === defaultSiteTitle && routeSeo.title ? routeSeo.title : title;
+  const finalDescription = description === defaultDescription && routeSeo.description ? routeSeo.description : description;
+  const finalCanonicalPath = canonicalPath || routeSeo.canonicalPath || currentPath;
+  const finalRobots = robots === 'index, follow' && routeSeo.robots ? routeSeo.robots : robots;
+
+  const canonicalUrl = getCanonicalUrl(finalCanonicalPath);
 
   const localBusinessSchema = getLocalBusinessSchema();
   const faqSchema = faqs && faqs.length > 0 ? getFaqSchema(faqs) : null;
@@ -30,17 +42,17 @@ function DocumentHead({
   return (
     <Helmet>
       {/* Standard Meta */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="robots" content={robots} />
+      <title>{finalTitle}</title>
+      <meta name="description" content={finalDescription} />
+      <meta name="robots" content={finalRobots} />
       <meta name="theme-color" content="#050505" />
 
       {/* Dynamic Canonical Link */}
       <link rel="canonical" href={canonicalUrl} />
 
       {/* OpenGraph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={finalTitle} />
+      <meta property="og:description" content={finalDescription} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
@@ -49,8 +61,8 @@ function DocumentHead({
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={finalTitle} />
+      <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={ogImage} />
 
       {/* Structured Data (JSON-LD) */}
