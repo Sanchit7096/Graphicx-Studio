@@ -1,16 +1,13 @@
 import { StrictMode } from 'react'
-import { hydrateRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import { createRoot } from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
 import './index.css'
 import App from './App.jsx'
 
-hydrateRoot(document.getElementById('root'), (
+createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </HelmetProvider>
-  </StrictMode>
-))
+  </StrictMode>,
+)
